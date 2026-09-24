@@ -7,3 +7,19 @@
 }
 
 @import "./tokens.css";
+
+/* Line heights for the token type scale. Tailwind pairs each text-* size with its own default
+   leading; these replace them with the three from DESIGN.md §3. */
+@theme inline {
+  --text-2xs--line-height: var(--leading-ui);
+  --text-xs--line-height: var(--leading-ui);
+  --text-sm--line-height: var(--leading-ui);
+  --text-base--line-height: var(--leading-body);
+  --text-lg--line-height: var(--leading-ui);
+  --text-xl--line-height: var(--leading-display);
+  --text-2xl--line-height: var(--leading-display);
+  --text-3xl--line-height: var(--leading-display);
+  --text-4xl--line-height: var(--leading-display);
+}
+
+@import "./article.css";

@@ -8,7 +8,7 @@ everything already published, scope-checked, and approved by a human before goin
 
 ---
 
-## ▶ Status: M1 + M2 done — next is M3 (public site)
+## ▶ Status: M1–M3 done — next is M4 (AI pipeline, needs spike results) or M5
 
 **Before M4 is written, the user should run `docs/spike/README.md`** — a 45-minute, no-code
 validation in AI Studio that Gemini + Search grounding actually produces publishable, in-scope,
@@ -16,12 +16,16 @@ well-cited health content. M4 is two sessions built on that assumption. If the s
 M4's design changes (human-written pillars, AI clusters only). **Ask for the spike results before
 starting M4.**
 
-**Next: `docs/MVP.md` §2, task M3.1** and work down. M3 and M4 are independent (MVP.md §3).
+**Next:** M4 needs the spike results and a real `GEMINI_API_KEY`. M5 (admin) needs M4's drafts to
+review, but auth + layout guard (M5.1) can start now.
 
-Built: M1 foundation; M2 schema (5 migrations, RLS on every table), seed (7 categories, 203 cells),
-generated types, `features/posts` + `features/taxonomy` queries, 30 integration tests.
-`.env.local` points at the **local** Supabase stack; `GEMINI_API_KEY` is still a placeholder.
-M2.1's hosted project is not created yet — local is enough until deploy (M6.7).
+Built: M1 foundation · M2 schema, RLS, seed, typed queries · M3 public site — home, article,
+category (+ `/page/N`), About/Contact/Disclaimer/Privacy/Terms, markdown pipeline, CSS-only
+reading progress, pgvector related posts. 37 tests.
+`.env.local` points at the **local** Supabase stack. `pnpm db:seed:dev` loads 4 sample articles.
+
+**Before launch, confirm in `src/config/site.ts`:** `publisher.legalName` (a real data controller),
+`contactEmail`. The legal pages render from these.
 
 **Blocked on the user:** Supabase keys, `GEMINI_API_KEY`, domain registration.
 
@@ -128,6 +132,11 @@ pnpm db:reset         # re-apply all migrations + seed.sql from scratch
 pnpm db:types         # regenerate database.types.ts — same commit as the migration
 pnpm db:seed:build    # topic-matrix.csv → supabase/seed.sql
 ```
+
+**Caching:** public pages use ISR (`export const revalidate`) + `generateStaticParams`, not Cache
+Components — `notFound()` must return a real 404 for SEO. Approve/edit (M5) must call
+`revalidatePath`. **Styles:** base/component CSS lives in `@layer base`/`@layer components`; any
+unlayered rule beats every Tailwind utility.
 
 **Supabase gotchas:** the CLI is a devDependency (`pnpm exec supabase …`), not global. Public pages
 read through `createPublicClient()` (cookieless, stays static); `createSessionClient()` is for

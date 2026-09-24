@@ -63,6 +63,11 @@ describe("posts queries", () => {
     expect(inSleep.items).toHaveLength(1);
     expect(inSleep.pageCount).toBe(inSleep.total);
 
+    const pastEnd = await posts.listByCategory(sleep!.id, { page: 9999 });
+    expect(pastEnd.items).toEqual([]);
+    expect(pastEnd.total).toBe(inSleep.total);
+    expect(pastEnd.page).toBeGreaterThan(pastEnd.pageCount);
+
     const inFood = await posts.listByCategory(food!.id);
     expect(inFood.items.map((item) => item.id)).not.toContain(published.id);
   });

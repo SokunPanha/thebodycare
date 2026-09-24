@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Article body typography — the rendered markdown inside .prose.
+   Tokens only. (DESIGN.md §3, STRUCTURE.md rule 6)
+   ========================================================================== */
+
+@layer components {
+  .prose > * + * {
+    margin-top: var(--space-4);
+  }
+
+  .prose :is(h2, h3) {
+    scroll-margin-top: var(--space-8);
+  }
+  .prose h2 {
+    margin-top: var(--space-12);
+  }
+  .prose h3 {
+    margin-top: var(--space-8);
+  }
+  .prose :is(h2, h3) + * {
+    margin-top: var(--space-3);
+  }
+
+  .prose :is(ul, ol) {
+    padding-left: var(--space-6);
+  }
+  .prose ul {
+    list-style: disc;
+  }
+  .prose ol {
+    list-style: decimal;
+  }
+  .prose li + li {
+    margin-top: var(--space-2);
+  }
+  .prose li::marker {
+    color: var(--ink-muted);
+  }
+
+  .prose strong {
+    font-weight: 600;
+  }
+
+  .prose blockquote {
+    border-left: 3px solid var(--line-strong);
+    padding-left: var(--space-4);
+    color: var(--ink-muted);
+  }
+
+  .prose hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin-block: var(--space-12);
+  }
+
+  .prose code {
+    font-size: 0.9em;
+    background: var(--surface-subtle);
+    border-radius: var(--radius-sm);
+    padding: 0.1em 0.35em;
+  }
+
+  /* Tables: wrapped in .table-scroll by the markdown pipeline so wide ones scroll themselves. */
+  .prose .table-scroll {
+    overflow-x: auto;
+    max-width: 100%;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+    line-height: var(--leading-ui);
+    font-variant-numeric: tabular-nums;
+  }
+  .prose :is(th, td) {
+    text-align: left;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--line);
+  }
+  .prose th {
+    font-weight: 600;
+    background: var(--surface-subtle);
+  }
+  .prose tr:last-child td {
+    border-bottom: 0;
+  }
+}
+
+/* ---- Reading progress (DESIGN.md §5) -------------------------------------
+   Pure CSS scroll-driven animation: no JS, no scroll listener, fixed position so
+   it can't shift layout. Only where supported and motion is welcome. */
+.reading-progress {
+  display: none;
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reading-progress {
+      display: block;
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 3px;
+      z-index: 50;
+      background: var(--primary);
+      transform-origin: 0 50%;
+      animation: reading-progress linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+@keyframes reading-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

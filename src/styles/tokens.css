@@ -212,87 +212,94 @@
 /* --------------------------------------------------------------------------
    5. Base
    -------------------------------------------------------------------------- */
-html {
-  background: var(--ground);
-  /* 1rem = 16px so the rem scale above is predictable; body opts up to 18px. */
-  -webkit-text-size-adjust: 100%;
+/* Layered so Tailwind utilities can override them. In Tailwind v4 unlayered rules beat every
+   utility — `text-ink` on a link would silently lose to `a { color }`. */
+@layer base {
+  html {
+    background: var(--ground);
+    /* 1rem = 16px so the rem scale above is predictable; body opts up to 18px. */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    line-height: var(--leading-display);
+    text-wrap: balance;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: var(--text-3xl);
+    letter-spacing: var(--tracking-display);
+  }
+  h2 {
+    font-size: var(--text-xl);
+    letter-spacing: var(--tracking-display);
+  }
+  h3 {
+    font-size: var(--text-lg);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: var(--primary);
+    text-underline-offset: 0.18em;
+  }
+  a:hover {
+    color: var(--primary-hover);
+  }
+
+  /* Always visible — never `outline: none`. */
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
 }
 
-body {
-  background: var(--ground);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: var(--leading-body);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+@layer components {
+  /* Metadata columns line up: read time, source count, dates. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-display);
-  line-height: var(--leading-display);
-  text-wrap: balance;
-  font-weight: 600;
-}
-h1 {
-  font-size: var(--text-3xl);
-  letter-spacing: var(--tracking-display);
-}
-h2 {
-  font-size: var(--text-xl);
-  letter-spacing: var(--tracking-display);
-}
-h3 {
-  font-size: var(--text-lg);
-}
+  /* Uppercase category eyebrow — the only category identifier site-wide (DESIGN.md §2). */
+  .eyebrow {
+    font-size: var(--text-2xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--primary);
+    line-height: var(--leading-ui);
+  }
 
-p {
-  text-wrap: pretty;
-}
+  /* Article body: the hard measure cap. */
+  .prose {
+    max-width: var(--measure);
+  }
 
-a {
-  color: var(--primary);
-  text-underline-offset: 0.18em;
-}
-a:hover {
-  color: var(--primary-hover);
-}
-
-/* Always visible — never `outline: none`. */
-:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
-
-/* Metadata columns line up: read time, source count, dates. */
-.tabular {
-  font-variant-numeric: tabular-nums;
-}
-
-/* Uppercase category eyebrow — the only category identifier site-wide (DESIGN.md §2). */
-.eyebrow {
-  font-size: var(--text-2xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-eyebrow);
-  color: var(--primary);
-  line-height: var(--leading-ui);
-}
-
-/* Article body: the hard measure cap. */
-.prose {
-  max-width: var(--measure);
-}
-
-/* Wide children must scroll themselves so the page body never scrolls sideways. */
-.prose :is(table, pre) {
-  display: block;
-  overflow-x: auto;
-  max-width: 100%;
+  /* Wide children must scroll themselves so the page body never scrolls sideways.
+     Tables get the same via the .table-scroll wrapper the markdown pipeline adds (article.css). */
+  .prose pre {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
