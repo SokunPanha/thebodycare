@@ -66,6 +66,15 @@ const eslintConfig = defineConfig([
   ]),
 
   {
+    rules: {
+      // `_previous` etc.: positional params a framework passes (useActionState) but we don't read.
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
+    },
+  },
+  {
     files: ["src/**/*.{ts,tsx}"],
     rules: {
       "no-restricted-imports": restrictedImports(supabaseImport, adminClientImport),
@@ -93,6 +102,12 @@ const eslintConfig = defineConfig([
   {
     files: ["src/lib/supabase/admin.ts", "src/env.ts"],
     rules: { "no-restricted-syntax": "off" },
+  },
+
+  // Playwright fixtures call `use()`, which is not React's `use`.
+  {
+    files: ["tests/e2e/**"],
+    rules: { "react-hooks/rules-of-hooks": "off" },
   },
 
   // Rule 2, relative-path half: a feature may not reach into another feature's internals.

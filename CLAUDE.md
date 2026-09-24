@@ -8,7 +8,7 @@ everything already published, scope-checked, and approved by a human before goin
 
 ---
 
-## ▶ Status: M1–M3 + M5.1 done — next is M4 (needs spike results) or M5.2+
+## ▶ Status: M1–M3 + M5.1–5.3 done — next is M4 (needs spike results)
 
 **Before M4 is written, the user should run `docs/spike/README.md`** — a 45-minute, no-code
 validation in AI Studio that Gemini + Search grounding actually produces publishable, in-scope,
@@ -16,8 +16,12 @@ well-cited health content. M4 is two sessions built on that assumption. If the s
 M4's design changes (human-written pillars, AI clusters only). **Ask for the spike results before
 starting M4.**
 
-**Next:** M4 needs the spike results and a real `GEMINI_API_KEY`. M5.2+ (review queue etc.) can be
-built against hand-inserted `in_review` rows, but is more useful once M4 produces drafts.
+**Next:** M4 needs the spike results and a real `GEMINI_API_KEY`. Remaining M5 (5.4 post list,
+5.5 dashboard, 5.6 topic matrix view) doesn't depend on M4.
+
+**M4 must honour two contracts the review screen already reads:** `generation_runs.scope_verdict`
+must match `scopeVerdictSchema` in `features/posts/schema.ts`, and each draft needs a
+`generation_runs` row linking `topic_id` → `post_id` so approve/reject update the topic and cell.
 
 Built: M1 foundation · M2 schema, RLS, seed, typed queries · M3 public site — home, article,
 category (+ `/page/N`), About/Contact/Disclaimer/Privacy/Terms, markdown pipeline, CSS-only
@@ -127,6 +131,7 @@ pnpm typecheck        # next typegen && tsc — typegen provides LayoutProps/Pag
 pnpm lint             # eslint, zero warnings allowed
 pnpm format           # prettier (Markdown is excluded on purpose)
 pnpm test             # vitest — integration tests need `pnpm db:start` first
+pnpm test:e2e         # playwright: builds, starts on :3200, runs E3/E4/E5 against local Supabase
 pnpm db:start         # local Supabase (Docker). Applies migrations + seed on first start
 pnpm db:reset         # re-apply all migrations + seed.sql from scratch
 pnpm db:types         # regenerate database.types.ts — same commit as the migration

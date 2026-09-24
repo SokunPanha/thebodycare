@@ -226,6 +226,7 @@ export type Database = {
           next_review_at: string | null
           published_at: string | null
           reading_time_min: number
+          review_note: string | null
           reviewed_at: string | null
           reviewer_id: string | null
           seo_description: string | null
@@ -249,6 +250,7 @@ export type Database = {
           next_review_at?: string | null
           published_at?: string | null
           reading_time_min?: number
+          review_note?: string | null
           reviewed_at?: string | null
           reviewer_id?: string | null
           seo_description?: string | null
@@ -272,6 +274,7 @@ export type Database = {
           next_review_at?: string | null
           published_at?: string | null
           reading_time_min?: number
+          review_note?: string | null
           reviewed_at?: string | null
           reviewer_id?: string | null
           seo_description?: string | null
@@ -445,6 +448,13 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      approve_post: {
+        Args: { p_post_id: string }
+        Returns: {
+          category_slug: string
+          slug: string
+        }[]
+      }
       match_posts: {
         Args: {
           exclude_post_id?: string
@@ -455,6 +465,10 @@ export type Database = {
           post_id: string
           similarity: number
         }[]
+      }
+      reject_post: {
+        Args: { p_post_id: string; p_reason: string }
+        Returns: undefined
       }
       related_posts: {
         Args: { match_count?: number; target_post_id: string }

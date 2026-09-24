@@ -17,7 +17,8 @@
     "db:types": "supabase gen types typescript --local --schema public > src/lib/supabase/database.types.ts && prettier --write src/lib/supabase/database.types.ts",
     "db:seed:build": "node scripts/build-seed.mjs",
     "db:seed:dev": "node scripts/seed-dev-posts.mjs",
-    "staff:create": "node scripts/create-staff.mjs"
+    "staff:create": "node scripts/create-staff.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
@@ -37,6 +38,7 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
     "@types/hast": "^3.0.5",
     "@types/mdast": "^4.0.4",

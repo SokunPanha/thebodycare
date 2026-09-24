@@ -1,5 +1,6 @@
 import "server-only";
 
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { cache } from "react";
 
@@ -47,4 +48,14 @@ export async function requireStaff(): Promise<Staff> {
   const staff = await getCurrentStaff();
   if (!staff) notFound();
   return staff;
+}
+
+/**
+ * Metadata for admin routes. A static `metadata` export renders even when the page 404s, so the
+ * title alone would reveal that /admin exists. Non-staff get the 404 page's own title instead.
+ */
+export async function staffMetadata(title: string): Promise<Metadata> {
+  const robots = { index: false, follow: false };
+  if (!(await getCurrentStaff())) return { robots };
+  return { title: `${title} · Admin`, robots };
 }

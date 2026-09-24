@@ -1,13 +1,7 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Container } from "@/components/layout";
 import { requireStaff, signOut } from "@/features/auth";
-
-export const metadata: Metadata = {
-  title: { default: "Admin", template: "%s · Admin" },
-  robots: { index: false, follow: false },
-};
 
 // ⚠ This check is NOT enough on its own. Next renders layouts and pages in parallel, so a page
 // under a layout that calls notFound() still renders, and its output is streamed into the 404
@@ -25,6 +19,9 @@ export default async function AdminLayout({ children }: LayoutProps<"/admin">) {
           <nav aria-label="Admin" className="flex items-center gap-6 text-sm font-semibold">
             <Link href="/admin" className="text-ink no-underline">
               Admin
+            </Link>
+            <Link href="/admin/review" className="text-ink-muted no-underline hover:text-ink">
+              Review queue
             </Link>
           </nav>
           <div className="flex items-center gap-4 text-sm text-ink-muted">

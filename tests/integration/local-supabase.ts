@@ -67,8 +67,14 @@ export async function signedInAs(role: Database["public"]["Enums"]["user_role"])
   };
 }
 
-/** Inserts a valid post via the service role. Returns its id. */
-export async function insertPost(status: Database["public"]["Enums"]["post_status"]) {
+/** Inserts a valid post via the service role, with `sourceCount` sources. Returns its id. */
+export async function insertPost(
+  status: Database["public"]["Enums"]["post_status"],
+  {
+    sourceCount = 1,
+    source = "human",
+  }: { sourceCount?: number; source?: Database["public"]["Enums"]["post_source"] } = {},
+) {
   const admin = service();
   const { data: category, error: categoryError } = await admin
     .from("categories")
@@ -89,18 +95,22 @@ export async function insertPost(status: Database["public"]["Enums"]["post_statu
       when_to_seek_care: "- If it lasts more than three weeks.",
       category_id: category.id,
       status,
+      source,
       published_at: status === "published" ? new Date().toISOString() : null,
     })
     .select("id, slug")
     .single();
   if (error) throw error;
 
-  const { error: sourceError } = await admin.from("post_sources").insert({
-    post_id: data.id,
-    url: "https://www.nhs.uk/",
-    title: "NHS",
-    publisher: "NHS",
-  });
+  const { error: sourceError } = await admin.from("post_sources").insert(
+    Array.from({ length: sourceCount }, (_, i) => ({
+      post_id: data.id,
+      url: `https://www.nhs.uk/${i}`,
+      title: `Source ${i + 1}`,
+      publisher: "NHS",
+      sort_order: i,
+    })),
+  );
   if (sourceError) throw sourceError;
 
   return data;

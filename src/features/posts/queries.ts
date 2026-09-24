@@ -2,7 +2,8 @@ import "server-only";
 
 import type { QueryData } from "@supabase/supabase-js";
 
-import { createPublicClient } from "@/lib/supabase/server";
+import { requireStaff } from "@/features/auth";
+import { createPublicClient, createSessionClient } from "@/lib/supabase/server";
 
 // Reads for the public site. The anon client means RLS guarantees published-only —
 // the explicit status filters below make intent clear and let the partial index be used.
@@ -152,4 +153,69 @@ export async function listRelatedPosts(
   }
 
   return related;
+}
+
+// ---------------------------------------------------------------------------
+// Admin reads. Each calls requireStaff() itself (a layout check is not enough — see
+// app/(admin)/admin/layout.tsx) and reads through the session client, so RLS applies as the
+// signed-in staff member rather than bypassing it.
+// ---------------------------------------------------------------------------
+
+const runSelect = `runs:generation_runs ( model, prompt_version, scope_verdict, created_at, topic:topic_queue ( dedup_score, target_keyword ) )`;
+
+type SessionClient = Awaited<ReturnType<typeof createSessionClient>>;
+
+// Builders take the client rather than creating it: a query builder is a thenable, so returning
+// one from an async function would execute it instead of returning it.
+function reviewQueueQuery(supabase: SessionClient) {
+  return (
+    supabase
+      .from("posts")
+      .select(
+        `id, slug, title, source, created_at,
+       category:categories!inner ( name ),
+       sources:post_sources ( count ),
+       ${runSelect}`,
+      )
+      .eq("status", "in_review")
+      // Oldest first: nothing should wait longest. (MVP.md M5.2)
+      .order("created_at", { ascending: true })
+      .order("created_at", { referencedTable: "generation_runs", ascending: false })
+  );
+}
+
+export type ReviewQueueItem = QueryData<ReturnType<typeof reviewQueueQuery>>[number] & {
+  waiting_days: number;
+};
+
+export async function listReviewQueue(): Promise<ReviewQueueItem[]> {
+  await requireStaff();
+  const { data, error } = await reviewQueueQuery(await createSessionClient()).limit(100);
+  if (error) throw error;
+  const now = Date.now();
+  return data.map((item) => ({
+    ...item,
+    waiting_days: Math.floor((now - new Date(item.created_at).getTime()) / 86_400_000),
+  }));
+}
+
+function staffPostQuery(supabase: SessionClient) {
+  return supabase
+    .from("posts")
+    .select(`${postSelect}, ${runSelect}`)
+    .order("sort_order", { referencedTable: "post_sources" })
+    .order("created_at", { referencedTable: "generation_runs", ascending: false });
+}
+
+export type StaffPost = NonNullable<QueryData<ReturnType<typeof staffPostQuery>>[number]>;
+
+/** Any post by id, whatever its status. */
+export async function getPostForStaff(id: string): Promise<StaffPost | null> {
+  await requireStaff();
+  if (!/^[0-9a-f-]{36}$/i.test(id)) return null;
+  const { data, error } = await staffPostQuery(await createSessionClient())
+    .eq("id", id)
+    .maybeSingle();
+  if (error) throw error;
+  return data;
 }

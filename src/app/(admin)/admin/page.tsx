@@ -1,6 +1,8 @@
-import { requireStaff } from "@/features/auth";
+import { requireStaff, staffMetadata } from "@/features/auth";
 
 // Placeholder until the dashboard lands in M5.5.
+export const generateMetadata = () => staffMetadata("Dashboard");
+
 export default async function AdminHomePage() {
   // Page-level guard — see the note in ./layout.tsx.
   const staff = await requireStaff();
