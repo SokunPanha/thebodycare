@@ -1,0 +1,305 @@
+/* ==========================================================================
+   The Body Cue — design tokens
+   Direction B "Daylight".  Spec: docs/DESIGN.md
+   Nothing else in the codebase declares a colour, size, or font. (STRUCTURE.md, rule 6)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Palette — light (default)
+   Semantic names only. Never --color-blue; always --primary.
+   -------------------------------------------------------------------------- */
+:root {
+  --ground: #fbfbfe;
+  --surface: #ffffff;
+  --surface-subtle: #f4f5fa;
+
+  --line: #e4e6f0;
+  --line-strong: #cfd3e4;
+
+  --ink: #1a2036;
+  --ink-muted: #6e7691;
+  --ink-subtle: #939ab0;
+
+  --primary: #4a63d6;
+  --primary-hover: #3a51bc;
+  --primary-wash: #eef0fc;
+  --on-primary: #ffffff;
+
+  /* Attention only: the "when to seek care" block. Nowhere else. */
+  --accent: #e8664a;
+  --accent-ink: #b0432b; /* raw --accent is 3.1:1 on white — borders/icons only */
+  --accent-wash: #fdeeea;
+
+  /* Shadows are tinted with the ink hue, never black, so they don't grey the page. */
+  --shadow-sm: 0 1px 2px rgb(26 32 54 / 0.05), 0 1px 3px rgb(26 32 54 / 0.06);
+  --shadow-md: 0 4px 12px rgb(26 32 54 / 0.08), 0 2px 4px rgb(26 32 54 / 0.05);
+
+  color-scheme: light;
+}
+
+/* --------------------------------------------------------------------------
+   2. Palette — dark
+   Not an inversion: the ground gains a navy cast and the primary lightens,
+   because #4A63D6 is unreadable on a dark ground.
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #101425;
+    --surface: #171c31;
+    --surface-subtle: #1e2440;
+
+    --line: #2a3150;
+    --line-strong: #3a436b;
+
+    --ink: #e6e8f2;
+    --ink-muted: #969dba;
+    --ink-subtle: #6e7694;
+
+    --primary: #8e9cf2;
+    --primary-hover: #a6b1f6;
+    --primary-wash: #1c2244;
+    --on-primary: #0e1222;
+
+    --accent: #ff8a6b;
+    --accent-ink: #ff8a6b;
+    --accent-wash: #2a1d1a;
+
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3), 0 1px 3px rgb(0 0 0 / 0.24);
+    --shadow-md: 0 4px 12px rgb(0 0 0 / 0.4), 0 2px 4px rgb(0 0 0 / 0.28);
+
+    color-scheme: dark;
+  }
+}
+
+/* Explicit user choice must win over the OS preference in BOTH directions. */
+:root[data-theme="dark"] {
+  --ground: #101425;
+  --surface: #171c31;
+  --surface-subtle: #1e2440;
+  --line: #2a3150;
+  --line-strong: #3a436b;
+  --ink: #e6e8f2;
+  --ink-muted: #969dba;
+  --ink-subtle: #6e7694;
+  --primary: #8e9cf2;
+  --primary-hover: #a6b1f6;
+  --primary-wash: #1c2244;
+  --on-primary: #0e1222;
+  --accent: #ff8a6b;
+  --accent-ink: #ff8a6b;
+  --accent-wash: #2a1d1a;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3), 0 1px 3px rgb(0 0 0 / 0.24);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 0.4), 0 2px 4px rgb(0 0 0 / 0.28);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --ground: #fbfbfe;
+  --surface: #ffffff;
+  --surface-subtle: #f4f5fa;
+  --line: #e4e6f0;
+  --line-strong: #cfd3e4;
+  --ink: #1a2036;
+  --ink-muted: #6e7691;
+  --ink-subtle: #939ab0;
+  --primary: #4a63d6;
+  --primary-hover: #3a51bc;
+  --primary-wash: #eef0fc;
+  --on-primary: #ffffff;
+  --accent: #e8664a;
+  --accent-ink: #b0432b;
+  --accent-wash: #fdeeea;
+  --shadow-sm: 0 1px 2px rgb(26 32 54 / 0.05), 0 1px 3px rgb(26 32 54 / 0.06);
+  --shadow-md: 0 4px 12px rgb(26 32 54 / 0.08), 0 2px 4px rgb(26 32 54 / 0.05);
+  color-scheme: light;
+}
+
+/* --------------------------------------------------------------------------
+   3. Type, space, radius, motion
+   --font-display / --font-body are supplied by next/font/google in layout.tsx
+   (build-time self-hosted: no CDN request, no layout shift).
+   -------------------------------------------------------------------------- */
+:root {
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* 1.25 major third, 18px base. 18 not 16: readers skew older, sessions run ~6 min. */
+  --text-2xs: 0.72rem; /* 11.5px  eyebrows, badges        */
+  --text-xs: 0.9rem; /* 14.4px  metadata, captions      */
+  --text-sm: 1rem; /* 16px    secondary UI            */
+  --text-base: 1.125rem; /* 18px    ARTICLE BODY            */
+  --text-lg: 1.406rem; /* 22.5px  standfirst, h3          */
+  --text-xl: 1.758rem; /* 28px    h2                      */
+  --text-2xl: 2.197rem; /* 35px    card title, small h1    */
+  --text-3xl: 2.746rem; /* 44px    article h1              */
+  --text-4xl: 3.433rem; /* 55px    home hero               */
+
+  --leading-display: 1.15;
+  --leading-ui: 1.4;
+  --leading-body: 1.7;
+
+  --tracking-display: -0.025em; /* ≥28px only */
+  --tracking-eyebrow: 0.14em;
+
+  --measure: 65ch; /* hard cap; extra viewport becomes margin */
+
+  /* 4px scale. Nothing off-scale. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Three radii, not a free choice. */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-full: 999px;
+
+  --rail: 280px;
+  --shell: 1200px;
+
+  --ease: cubic-bezier(0.2, 0, 0.2, 1);
+  --dur: 150ms;
+}
+
+/* --------------------------------------------------------------------------
+   4. Tailwind v4 bridge
+   `@theme inline` keeps the var reference live, so utilities follow the
+   runtime theme switch instead of freezing the light value at build time.
+   -------------------------------------------------------------------------- */
+@theme inline {
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-wash: var(--primary-wash);
+  --color-on-primary: var(--on-primary);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-wash: var(--accent-wash);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+
+  --text-2xs: var(--text-2xs);
+  --text-xs: var(--text-xs);
+  --text-sm: var(--text-sm);
+  --text-base: var(--text-base);
+  --text-lg: var(--text-lg);
+  --text-xl: var(--text-xl);
+  --text-2xl: var(--text-2xl);
+  --text-3xl: var(--text-3xl);
+  --text-4xl: var(--text-4xl);
+
+  --radius-sm: var(--radius-sm);
+  --radius-DEFAULT: var(--radius);
+  --radius-full: var(--radius-full);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   5. Base
+   -------------------------------------------------------------------------- */
+html {
+  background: var(--ground);
+  /* 1rem = 16px so the rem scale above is predictable; body opts up to 18px. */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  line-height: var(--leading-display);
+  text-wrap: balance;
+  font-weight: 600;
+}
+h1 {
+  font-size: var(--text-3xl);
+  letter-spacing: var(--tracking-display);
+}
+h2 {
+  font-size: var(--text-xl);
+  letter-spacing: var(--tracking-display);
+}
+h3 {
+  font-size: var(--text-lg);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--primary);
+  text-underline-offset: 0.18em;
+}
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* Always visible — never `outline: none`. */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Metadata columns line up: read time, source count, dates. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Uppercase category eyebrow — the only category identifier site-wide (DESIGN.md §2). */
+.eyebrow {
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--primary);
+  line-height: var(--leading-ui);
+}
+
+/* Article body: the hard measure cap. */
+.prose {
+  max-width: var(--measure);
+}
+
+/* Wide children must scroll themselves so the page body never scrolls sideways. */
+.prose :is(table, pre) {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button {
+    transition:
+      color var(--dur) var(--ease),
+      background-color var(--dur) var(--ease);
+  }
+}

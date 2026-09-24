@@ -1,0 +1,7 @@
+pnpm-lock.yaml
+.next
+src/lib/supabase/database.types.ts
+docs/spike
+supabase/seed/*.csv
+# Hand-written docs; table alignment is deliberate.
+*.md

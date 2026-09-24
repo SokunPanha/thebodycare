@@ -1,0 +1,99 @@
+{
+  "type": "object",
+  "required": [
+    "title",
+    "slug",
+    "excerpt",
+    "key_points",
+    "sections",
+    "when_to_seek_care",
+    "sources",
+    "seo"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Plain, specific headline. Maximum 70 characters — hard limit, the display typeface breaks past it."
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL slug: lowercase, hyphenated, no stop words where avoidable."
+    },
+    "excerpt": {
+      "type": "string",
+      "description": "Standfirst shown under the headline. One or two sentences, 140-200 characters."
+    },
+    "key_points": {
+      "type": "array",
+      "description": "The answer, before the essay. Most readers want only this.",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": { "type": "string" }
+    },
+    "sections": {
+      "type": "array",
+      "description": "Article body. Vary the number and shape between articles — do not use a fixed skeleton.",
+      "minItems": 3,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["heading", "body"],
+        "properties": {
+          "heading": { "type": "string" },
+          "body": {
+            "type": "string",
+            "description": "Markdown. Paragraphs, lists and bold permitted. No headings inside — use a new section."
+          }
+        }
+      }
+    },
+    "when_to_seek_care": {
+      "type": "string",
+      "description": "REQUIRED. Specific thresholds — durations, measurable changes, symptom combinations. Generic advice to 'see a doctor if concerned' is a failure. Markdown list permitted."
+    },
+    "faq": {
+      "type": "array",
+      "description": "Optional. Real questions people ask about this, drawn from search. Feeds FAQPage schema.",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["question", "answer"],
+        "properties": {
+          "question": { "type": "string" },
+          "answer": { "type": "string" }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "At least 3. Only sources actually used, each supporting a claim actually made.",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["title", "url", "publisher"],
+        "properties": {
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "publisher": {
+            "type": "string",
+            "description": "e.g. NHS, Mayo Clinic, BMJ, CDC"
+          }
+        }
+      }
+    },
+    "seo": {
+      "type": "object",
+      "required": ["title", "description"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Max 60 characters."
+        },
+        "description": {
+          "type": "string",
+          "description": "Max 155 characters."
+        }
+      }
+    }
+  }
+}

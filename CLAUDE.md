@@ -1,0 +1,132 @@
+# The Body Cue — thebodycue.com
+
+A health blog that helps people live healthily and understand what their body is signalling.
+Next.js 16 + Supabase + Gemini. Articles are AI-generated on a schedule, deduplicated against
+everything already published, scope-checked, and approved by a human before going live.
+
+**The site does not practise medicine.** No drugs, no dosages, no diagnosis — see `docs/EDITORIAL.md`.
+
+---
+
+## ▶ Status: M1 (foundation) done — next is M2, the data layer
+
+**Before M4 is written, the user should run `docs/spike/README.md`** — a 45-minute, no-code
+validation in AI Studio that Gemini + Search grounding actually produces publishable, in-scope,
+well-cited health content. M4 is two sessions built on that assumption. If the spike comes back red,
+M4's design changes (human-written pillars, AI clusters only). **Ask for the spike results before
+starting M4.**
+
+**Next: `docs/MVP.md` §2, task M2.1** and work down. Tasks are ordered and dependency-marked.
+M2 needs a Supabase project (or `supabase start` locally — the CLI is not installed yet).
+
+Built in M1: Next.js 16.3 scaffold, folder skeleton (MVP features only: posts, generation,
+taxonomy), `src/env.ts`, ESLint enforcing rules 2/3/4/6, Prettier, husky + lint-staged, fonts +
+tokens wired. `.env.local` holds **placeholders**.
+
+**Blocked on the user:** Supabase keys, `GEMINI_API_KEY`, domain registration.
+
+**Next.js 16, not 15** — read `AGENTS.md`; check `node_modules/next/dist/docs/` before writing
+route/caching/proxy code. `middleware.ts` is now `proxy.ts`.
+
+---
+
+## Docs — read in this order
+
+| File | What it settles |
+|---|---|
+| `docs/PLAN.md` | Architecture, DB schema, dedup design, costs, phases |
+| `docs/MVP.md` | **What to build next.** Scope, ordered tasks, definition of done |
+| `docs/EDITORIAL.md` | What may and may not be published — the safety boundary |
+| `docs/DESIGN.md` | Colour, type, spacing, component specs |
+| `docs/STRUCTURE.md` | Folder layout, naming, the seven rules |
+| `docs/TESTING.md` | Test scenarios, especially the scope-guard fixtures |
+| `docs/GROWTH.md` | How anyone finds the site. Keyword method, distribution, decision gates |
+| `docs/OPERATIONS.md` | Backups, alerting, content re-review, runbooks |
+| `docs/LEGAL.md` | Required pages, GDPR, consent, AdSense prerequisites |
+| `docs/TOPIC-MATRIX.md` | The 7 categories and the topic seed. Data: `supabase/seed/topic-matrix.csv` |
+| `docs/spike/` | **Run before M4.** Validates Gemini output quality with no code |
+
+---
+
+## Non-negotiables
+
+Break any of these and the project fails in a way that's expensive to unwind.
+
+1. **`app/` has no business logic.** Routes compose; features do the work.
+2. **Features are imported through `index.ts` only** — never a deep path into another feature.
+3. **DB access lives in `features/*/queries.ts` and `actions.ts`.** Nowhere else. No component
+   builds its own Supabase query.
+4. **`SUPABASE_SERVICE_ROLE_KEY` has exactly one importer:** `lib/supabase/admin.ts`, marked
+   `server-only`, used only from `app/api/**` and server actions. It bypasses all RLS.
+5. **Every Gemini response is `.parse()`d through Zod** before it touches the database. A partial
+   write at 3am is worse than a clean failure.
+6. **No raw colour, font, or spacing value in a component.** Tokens only — `src/styles/tokens.css`.
+7. **Prompts are immutable.** Never edit `prompts/v1/`; add `v2/`. Every `generation_runs` row
+   records the version that produced it.
+
+Full reasoning for each in `docs/STRUCTURE.md` §3.
+
+---
+
+## Conventions
+
+- Files `kebab-case`; components `PascalCase` matching the filename
+- Reads `get*` / `list*`; writes are verb-first in `actions.ts`
+- DB is `snake_case` **all the way to the component** — no camelCase mapping layer
+- Migrations `NNNN_verb_noun.sql`; regenerate `database.types.ts` in the same commit
+- Commits: Conventional Commits (`feat(generation): add scope guard`)
+- Alias `@/*` → `src/*`
+
+---
+
+## Design quick reference
+
+Direction **B — Daylight**. Full spec in `docs/DESIGN.md`.
+
+- Primary `#4A63D6` periwinkle · accent `#E8664A` coral
+- **Coral is semantic only** — the "when to seek care" block, nowhere else
+- Bricolage Grotesque (display) + Public Sans (body), self-hosted via `next/font/google`
+- Body text **18px**, measure **65ch**, hard-capped
+- **No cover images anywhere.** Listings are a dense text index, not a card grid. OG images are
+  generated typographically and never appear on-site.
+- No per-category colours — categories are an uppercase label in `--primary`
+
+---
+
+## Gotchas
+
+- **Gemini model IDs: use `gemini-3.7-flash`.** Verified 2026-09-24. Do not write `gemini-2.5-*`
+  from memory — that's two generations stale, and it's the mistake this plan already made once.
+  All IDs go in `lib/ai/models.ts` and nowhere else. `PLAN.md` §8 has the full table.
+- **Prior art lives in `../Youtube Automation/backend`** — a production Gemini pipeline in Python.
+  Worth reading before writing `lib/ai/`: `utils/gemini_text.py` (transient-vs-permanent error
+  classification, thinking-config fallback ladder, `unwrap_json` — markdown fences still appear in
+  JSON mode, so parse defensively) and `core/costs.py` (prefix-matched pricing so `-preview` and
+  dated suffixes still resolve). Different language, but the failure modes are already mapped.
+- **Dedup thresholds (0.86 / 0.90) are guesses.** They're env vars for a reason — tune against the
+  first ~50 real drafts.
+- **CLS must be zero.** With no images there's no image shift, so any CLS is an unreserved ad slot.
+- **Scope-guard false positives matter as much as leaks.** A guard that rejects everything looks
+  like a guard that works. `docs/TESTING.md` §1b tests for this.
+- **When a guard leak is found in production, add the fixture in the same commit as the fix.**
+- The `topic_matrix` is what keeps generation from starving at 4 posts/day. Random topic ideation
+  hits a wall around month three — see `docs/PLAN.md` §3.2.
+
+---
+
+## Commands
+
+```bash
+pnpm dev              # dev server
+pnpm build            # production build (fails on bad env)
+pnpm typecheck        # next typegen && tsc — typegen provides LayoutProps/PageProps
+pnpm lint             # eslint, zero warnings allowed
+pnpm format           # prettier (Markdown is excluded on purpose)
+# not yet wired — added with the first test / first migration:
+pnpm test             # vitest — unit + integration
+pnpm test:e2e         # playwright
+supabase db push      # apply migrations
+supabase gen types typescript --local > src/lib/supabase/database.types.ts
+```
+
+The pre-commit hook runs lint-staged (eslint + prettier on staged code) and `pnpm typecheck`.
