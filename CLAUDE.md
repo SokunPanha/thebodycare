@@ -95,8 +95,8 @@ Direction **B — Daylight**. Full spec in `docs/DESIGN.md`.
 - **Coral is semantic only** — the "when to seek care" block, nowhere else
 - Bricolage Grotesque (display) + Public Sans (body), self-hosted via `next/font/google`
 - Body text **18px**, measure **65ch**, hard-capped
-- **No cover images anywhere.** Listings are a dense text index, not a card grid. OG images are
-  generated typographically and never appear on-site.
+- **Covers (revised 2026-09-25):** AI-generated photos (MiniMax `image-01`) or staff uploads, with
+  code-generated art as the fallback — `DESIGN.md` §6. Coral never appears in covers.
 - No per-category colours — categories are an uppercase label in `--primary`
 
 ---
@@ -137,6 +137,11 @@ pnpm db:reset         # re-apply all migrations + seed.sql from scratch
 pnpm db:types         # regenerate database.types.ts — same commit as the migration
 pnpm db:seed:build    # topic-matrix.csv → supabase/seed.sql
 ```
+
+**Covers:** `posts.cover_*` + the public `covers` bucket (migration 0008). `PostCover` renders the
+photo or falls back to `CoverArt`. AI generation needs `MINIMAX_API_KEY` in `.env.local` (optional —
+the editor's "Generate with AI" button is disabled without it). The storage SELECT policy is
+required: without it, deleting a replaced cover silently does nothing (tested).
 
 **Admin auth — read before adding any admin page or action:** every admin **page** and **server
 action** must call `requireStaff()` itself. The layout's call is not enough: Next renders layouts and

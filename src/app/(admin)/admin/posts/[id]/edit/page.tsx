@@ -2,7 +2,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { requireStaff, staffMetadata } from "@/features/auth";
-import { getPostForStaff, PostEditForm, updatePost } from "@/features/posts";
+import {
+  CoverEditor,
+  generateAiCover,
+  getPostForStaff,
+  PostCover,
+  PostEditForm,
+  removeCover,
+  updatePost,
+  uploadCover,
+} from "@/features/posts";
+import { isImageGenerationConfigured } from "@/lib/ai/minimax";
 import { listCategories } from "@/features/taxonomy";
 
 export const generateMetadata = () => staffMetadata("Edit");
@@ -33,6 +43,15 @@ export default async function EditPostPage({
           Saved. The live page has been updated.
         </p>
       )}
+      <CoverEditor
+        preview={<PostCover post={post} ratio="16/10" sizes="(min-width: 768px) 720px, 100vw" />}
+        hasCover={Boolean(post.cover_path)}
+        source={post.cover_source as "ai" | "upload" | null}
+        aiEnabled={isImageGenerationConfigured()}
+        generate={generateAiCover.bind(null, post.id)}
+        upload={uploadCover.bind(null, post.id)}
+        remove={removeCover.bind(null, post.id)}
+      />
       <PostEditForm values={post} categories={categories} action={updatePost.bind(null, post.id)} />
     </div>
   );

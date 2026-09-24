@@ -11,4 +11,5 @@ export const generationConfig = {
     bodyThreshold: env.DEDUPE_BODY_THRESHOLD,
   },
   dailyCostCapUsd: env.GENERATION_DAILY_COST_CAP_USD,
+  coverCostUsd: env.GENERATION_COVER_COST_USD,
 } as const;

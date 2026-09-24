@@ -218,6 +218,11 @@ export type Database = {
           author_id: string | null
           body_md: string
           category_id: string
+          cover_alt: string | null
+          cover_height: number | null
+          cover_path: string | null
+          cover_source: string | null
+          cover_width: number | null
           created_at: string
           excerpt: string
           faq: Json
@@ -242,6 +247,11 @@ export type Database = {
           author_id?: string | null
           body_md: string
           category_id: string
+          cover_alt?: string | null
+          cover_height?: number | null
+          cover_path?: string | null
+          cover_source?: string | null
+          cover_width?: number | null
           created_at?: string
           excerpt: string
           faq?: Json
@@ -266,6 +276,11 @@ export type Database = {
           author_id?: string | null
           body_md?: string
           category_id?: string
+          cover_alt?: string | null
+          cover_height?: number | null
+          cover_path?: string | null
+          cover_source?: string | null
+          cover_width?: number | null
           created_at?: string
           excerpt?: string
           faq?: Json

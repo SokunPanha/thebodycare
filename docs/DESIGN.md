@@ -2,7 +2,7 @@
 
 **Direction:** B — *Daylight*
 **Domain:** thebodycue.com
-**Covers:** none (see §6)
+**Covers:** AI-generated photos, generated art as fallback (§6, revised 2026-09-25)
 **Locked:** 2026-09-24
 
 The implementation of this file is `src/styles/tokens.css`. Nothing in the codebase hardcodes a
@@ -169,7 +169,27 @@ animates while someone is reading about their symptoms. All of it inside
 
 ---
 
-## 6. No cover images — what follows
+## 6. Cover images
+
+> **Revised 2026-09-25 — covers are back, by owner decision.** The original "no covers" reasoning
+> below is kept for the record. What replaced it:
+>
+> - **Every post gets a cover photo**, AI-generated with MiniMax `image-01` from the post's title
+>   and standfirst (`prompts/v1/cover-image.ts`), or uploaded by staff from the editor.
+> - **Until a post has one, it shows generated art** — a code-drawn image unique to the post, in a
+>   motif per category (crescents for Sleep, waves for Digestion…). Same box size either way, so
+>   swapping one for the other never shifts layout.
+> - **Covers stay in the periwinkle family.** The generated art uses the `--cover-*` tokens; the AI
+>   prompt asks for cool blue-violet tones. Coral is still reserved for "when to seek care".
+> - **AI images are labelled** "Image: AI-generated" on the article (LEGAL.md §8).
+> - **The image prompt carries EDITORIAL.md:** no pills, supplements, medical equipment, clinical
+>   settings, injury or distress.
+> - Listings are now cards on the home page, and index rows elsewhere carry a thumbnail.
+>
+> Costs this reintroduces: a per-image charge (set `GENERATION_COVER_COST_USD` from MiniMax pricing),
+> Supabase Storage, and image weight on listing pages.
+
+### Original decision (2026-09-24): no cover images
 
 You chose no covers, and it's the right call at this cadence. Real consequences:
 

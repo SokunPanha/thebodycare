@@ -4,6 +4,7 @@ import type { Article } from "../article";
 import { ArticleDisclaimer } from "./article-disclaimer";
 import { FaqList } from "./faq-list";
 import { KeyPoints } from "./key-points";
+import { PostCover } from "./post-cover";
 import { RelatedPosts } from "./related-posts";
 import { SourceList } from "./source-list";
 import { TableOfContents } from "./table-of-contents";
@@ -24,6 +25,18 @@ export function ArticleView({ article }: { article: Article }) {
       <div className="lg:grid lg:grid-cols-[minmax(0,var(--measure))_var(--rail)] lg:justify-between lg:gap-16">
         <article className="max-w-(--measure) min-w-0 pt-12">
           <header>
+            <figure className="mb-8">
+              <PostCover
+                post={post}
+                ratio="4/1"
+                sizes="(min-width: 1024px) 720px, 100vw"
+                className="rounded"
+                eager
+              />
+              {post.cover_source === "ai" && (
+                <figcaption className="mt-2 text-xs text-ink-muted">Image: AI-generated</figcaption>
+              )}
+            </figure>
             <Link href={`/category/${post.category.slug}`} className="eyebrow no-underline">
               {post.category.name}
             </Link>

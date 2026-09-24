@@ -14,6 +14,12 @@ const clientSchema = z.object({
   NEXT_PUBLIC_SITE_URL: z.url().transform((url) => url.replace(/\/$/, "")),
 });
 
+// `KEY=` in a .env file means "not set", not "set to an empty string".
+const optionalSecret = z.preprocess(
+  (value) => (value === "" ? undefined : value),
+  z.string().min(1).optional(),
+);
+
 const serverSchema = z.object({
   // Bypasses RLS. Read ONLY by lib/supabase/admin.ts — rule 4, enforced by lint.
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
@@ -32,8 +38,17 @@ const serverSchema = z.object({
   // Guards /api/cron/generate. Vercel cron sends it as a bearer token.
   CRON_SECRET: z.string().min(32),
 
+  // Cover images — MiniMax image generation. Optional: without it, posts fall back to generated
+  // art and staff can still upload covers by hand. International host by default; accounts on
+  // MiniMax's China platform use https://api.minimaxi.com.
+  MINIMAX_API_KEY: optionalSecret,
+  MINIMAX_API_BASE: z.url().default("https://api.minimax.io"),
+  // What one cover costs, for the dashboard and the daily cap. MiniMax's docs don't state a price —
+  // set this from your account's pricing page. 0 means cover spend isn't counted.
+  GENERATION_COVER_COST_USD: z.coerce.number().min(0).default(0),
+
   // Later — optional until the newsletter ships.
-  RESEND_API_KEY: z.string().min(1).optional(),
+  RESEND_API_KEY: optionalSecret,
 });
 
 const isServer = typeof window === "undefined";

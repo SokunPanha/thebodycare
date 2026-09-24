@@ -13,6 +13,7 @@ export const POSTS_PAGE_SIZE = 20;
 // Listing rows: enough for the dense index (DESIGN.md §7), no body.
 const listingSelect = `
   id, slug, title, excerpt, reading_time_min, published_at,
+  cover_path, cover_alt, cover_width, cover_height,
   category:categories!inner ( slug, name ),
   sources:post_sources ( count )
 ` as const;

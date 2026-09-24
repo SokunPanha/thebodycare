@@ -23,3 +23,16 @@ export async function getCategoryBySlug(slug: string): Promise<Category | null> 
   if (error) throw error;
   return data;
 }
+
+export type CategoryWithCount = Category & { post_count: number };
+
+/** Categories with their number of published posts, for the home page's topic cards. */
+export async function listCategoriesWithCounts(): Promise<CategoryWithCount[]> {
+  const { data, error } = await createPublicClient()
+    .from("categories")
+    .select("*, posts ( count )")
+    .eq("posts.status", "published")
+    .order("sort_order");
+  if (error) throw error;
+  return data.map(({ posts, ...category }) => ({ ...category, post_count: posts[0]?.count ?? 0 }));
+}

@@ -336,18 +336,23 @@ for (const article of articles) {
 
 let filler = 0;
 if (process.argv.includes("--bulk")) {
-  const rows = Array.from({ length: 24 }, (_, i) => ({
-    slug: `sample-filler-${i + 1}`,
-    title: `Sample sleep note ${i + 1}`,
-    excerpt: "Filler post for exercising pagination in local development.",
-    key_points: ["One", "Two", "Three"],
-    body_md: "Filler.",
-    when_to_seek_care: "Filler.",
-    category_id: categoryId("sleep"),
-    status: "published",
-    source: "ai",
-    published_at: days(10 + i),
-  }));
+  // Spread across categories so grids show every motif; Sleep keeps enough to paginate.
+  const spread = ["sleep", "digestion", "movement", "food", "mind", "everyday-body", "prevention"];
+  const rows = Array.from({ length: 24 }, (_, i) => {
+    const category = i < 14 ? spread[i % spread.length] : "sleep";
+    return {
+      slug: `sample-filler-${i + 1}`,
+      title: `Sample ${category.replace("-", " ")} note ${i + 1}`,
+      excerpt: "Filler post for exercising layouts and pagination in local development.",
+      key_points: ["One", "Two", "Three"],
+      body_md: "Filler.",
+      when_to_seek_care: "Filler.",
+      category_id: categoryId(category),
+      status: "published",
+      source: "ai",
+      published_at: days(10 + i),
+    };
+  });
   filler = must(await db.from("posts").insert(rows).select("id")).length;
 }
 
