@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 
 import { requireStaff } from "@/features/auth";
+import { renderMarkdown } from "@/lib/markdown/render";
 import { createSessionClient } from "@/lib/supabase/server";
 import { readingTime } from "@/lib/utils/reading-time";
 
@@ -83,4 +84,14 @@ export async function updatePost(
     redirect(`/admin/posts/${id}/edit?saved=1`);
   }
   redirect(`/admin/review/${id}`);
+}
+
+/**
+ * Renders markdown through the same pipeline as the live site, for the editor's Preview tab —
+ * so what the editor previews is exactly what readers will get.
+ */
+export async function previewMarkdown(markdown: string): Promise<string> {
+  await requireStaff();
+  const source = z.string().max(200_000).parse(markdown);
+  return (await renderMarkdown(source)).html;
 }

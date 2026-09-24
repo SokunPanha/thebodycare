@@ -1,16 +1,22 @@
+import { generationConfig } from "@/config/generation";
 import { requireStaff, staffMetadata } from "@/features/auth";
+import { DashboardView, getDashboardStats, listRecentRuns } from "@/features/dashboard";
 
-// Placeholder until the dashboard lands in M5.5.
 export const generateMetadata = () => staffMetadata("Dashboard");
 
-export default async function AdminHomePage() {
-  // Page-level guard — see the note in ./layout.tsx.
-  const staff = await requireStaff();
+export default async function DashboardPage() {
+  await requireStaff(); // page-level guard — see ./layout.tsx
+  const [stats, runs] = await Promise.all([getDashboardStats(), listRecentRuns()]);
 
   return (
-    <div className="max-w-(--measure)">
+    <div className="space-y-6">
       <h1 className="text-2xl">Dashboard</h1>
-      <p className="mt-2 text-ink-muted">Signed in as {staff.email}.</p>
+      <DashboardView
+        stats={stats}
+        runs={runs}
+        costCapUsd={generationConfig.dailyCostCapUsd}
+        postsPerDay={generationConfig.postsPerDay}
+      />
     </div>
   );
 }

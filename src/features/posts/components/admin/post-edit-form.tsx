@@ -3,6 +3,7 @@
 import { useActionState, useState } from "react";
 
 import type { EditState } from "../../actions";
+import { MarkdownField } from "./markdown-field";
 
 type Values = {
   title: string;
@@ -132,9 +133,8 @@ export function PostEditForm({
         hint="Markdown. Use ## for section headings."
         errors={errors.body_md}
       >
-        <textarea
+        <MarkdownField
           id="body_md"
-          name="body_md"
           rows={24}
           defaultValue={values.body_md}
           className={`${input} ${mono}`}
@@ -147,9 +147,8 @@ export function PostEditForm({
         hint="Specific thresholds — durations, changes, combinations. Markdown list allowed."
         errors={errors.when_to_seek_care}
       >
-        <textarea
+        <MarkdownField
           id="when_to_seek_care"
-          name="when_to_seek_care"
           rows={8}
           defaultValue={values.when_to_seek_care}
           className={`${input} ${mono}`}

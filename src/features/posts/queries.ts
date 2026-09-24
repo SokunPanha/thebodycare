@@ -219,3 +219,34 @@ export async function getPostForStaff(id: string): Promise<StaffPost | null> {
   if (error) throw error;
   return data;
 }
+
+const STAFF_PAGE_SIZE = 50;
+
+export type PostStatus = "draft" | "in_review" | "published" | "archived";
+
+function staffListQuery(supabase: SessionClient) {
+  return supabase
+    .from("posts")
+    .select(
+      "id, slug, title, status, source, updated_at, published_at, category:categories!inner ( name )",
+      { count: "exact" },
+    )
+    .order("updated_at", { ascending: false })
+    .order("id");
+}
+
+export type StaffPostListing = QueryData<ReturnType<typeof staffListQuery>>[number];
+
+/** Every post, any status, most recently changed first. */
+export async function listPostsForStaff({
+  status,
+  page = 1,
+}: { status?: PostStatus; page?: number } = {}): Promise<Page<StaffPostListing>> {
+  await requireStaff();
+  let query = staffListQuery(await createSessionClient());
+  if (status) query = query.eq("status", status);
+  const { data, count, error } = await query.range(...range(page, STAFF_PAGE_SIZE));
+  if (isPastLastPage(error)) return toPage([], 0, page, STAFF_PAGE_SIZE);
+  if (error) throw error;
+  return toPage(data, count, page, STAFF_PAGE_SIZE);
+}

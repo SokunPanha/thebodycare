@@ -6,6 +6,7 @@ export { PostEditForm } from "./components/admin/post-edit-form";
 export { ReviewActions } from "./components/admin/review-actions";
 export { ReviewPanel } from "./components/admin/review-panel";
 export { ReviewQueue } from "./components/admin/review-queue";
+export { StaffPostList } from "./components/admin/staff-post-list";
 export { ArticleView } from "./components/article-view";
 export { LeadPost } from "./components/lead-post";
 export { PostIndex } from "./components/post-index";
@@ -14,12 +15,15 @@ export {
   getPostForStaff,
   listByCategory,
   listPublished,
+  listPostsForStaff,
   listPublishedSlugs,
   listRelatedPosts,
   listReviewQueue,
   POSTS_PAGE_SIZE,
   type Page,
   type PostListing,
+  type PostStatus,
+  type StaffPostListing,
   type PostWithSources,
   type ReviewQueueItem,
   type StaffPost,

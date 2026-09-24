@@ -455,6 +455,7 @@ export type Database = {
           slug: string
         }[]
       }
+      dashboard_stats: { Args: never; Returns: Json }
       match_posts: {
         Args: {
           exclude_post_id?: string

@@ -64,3 +64,39 @@ test("edit a draft: validation errors inline, then save", async ({ page, staff, 
   await page.waitForURL(`/admin/review/${draft.id}`);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("An edited headline");
 });
+
+test("M5.4: edit a published post from the post list — live page updates", async ({
+  page,
+  staff,
+}) => {
+  const { deletePosts, insertPost } = await import("../integration/local-supabase");
+  const post = await insertPost("published", { sourceCount: 3 });
+  try {
+    await page.goto(`/posts/${post.slug}`); // warm the ISR cache with the old title
+    await signIn(page, staff);
+    await page.getByRole("link", { name: "Posts", exact: true }).click();
+    await page.getByRole("link", { name: "Published", exact: true }).click();
+    await page.getByRole("link", { name: "Test published post" }).first().click();
+
+    await page.getByLabel("Headline").fill("A corrected headline");
+    await page.getByRole("tab", { name: "Preview" }).first().click();
+    await expect(page.locator(".prose").first()).toContainText("Body.");
+    await page.getByRole("button", { name: "Save" }).click();
+    await expect(page.getByRole("status")).toContainText("Saved");
+
+    await page.context().clearCookies();
+    await page.goto(`/posts/${post.slug}`);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("A corrected headline");
+  } finally {
+    await deletePosts([post.id]);
+  }
+});
+
+// The `draft` fixture guarantees at least one post in review.
+test("M5.5: dashboard counts the draft waiting for review", async ({ page, staff, draft }) => {
+  expect(draft.id).toBeTruthy();
+  await signIn(page, staff);
+  await expect(page.getByRole("link", { name: /Waiting for review/ })).toContainText(
+    /Waiting for review[1-9]/,
+  );
+});
