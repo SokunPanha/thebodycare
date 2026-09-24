@@ -16,7 +16,8 @@
     "db:reset": "supabase db reset",
     "db:types": "supabase gen types typescript --local --schema public > src/lib/supabase/database.types.ts && prettier --write src/lib/supabase/database.types.ts",
     "db:seed:build": "node scripts/build-seed.mjs",
-    "db:seed:dev": "node scripts/seed-dev-posts.mjs"
+    "db:seed:dev": "node scripts/seed-dev-posts.mjs",
+    "staff:create": "node scripts/create-staff.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

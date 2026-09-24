@@ -8,7 +8,7 @@ everything already published, scope-checked, and approved by a human before goin
 
 ---
 
-## ▶ Status: M1–M3 done — next is M4 (AI pipeline, needs spike results) or M5
+## ▶ Status: M1–M3 + M5.1 done — next is M4 (needs spike results) or M5.2+
 
 **Before M4 is written, the user should run `docs/spike/README.md`** — a 45-minute, no-code
 validation in AI Studio that Gemini + Search grounding actually produces publishable, in-scope,
@@ -16,8 +16,8 @@ well-cited health content. M4 is two sessions built on that assumption. If the s
 M4's design changes (human-written pillars, AI clusters only). **Ask for the spike results before
 starting M4.**
 
-**Next:** M4 needs the spike results and a real `GEMINI_API_KEY`. M5 (admin) needs M4's drafts to
-review, but auth + layout guard (M5.1) can start now.
+**Next:** M4 needs the spike results and a real `GEMINI_API_KEY`. M5.2+ (review queue etc.) can be
+built against hand-inserted `in_review` rows, but is more useful once M4 produces drafts.
 
 Built: M1 foundation · M2 schema, RLS, seed, typed queries · M3 public site — home, article,
 category (+ `/page/N`), About/Contact/Disclaimer/Privacy/Terms, markdown pipeline, CSS-only
@@ -133,6 +133,15 @@ pnpm db:types         # regenerate database.types.ts — same commit as the migr
 pnpm db:seed:build    # topic-matrix.csv → supabase/seed.sql
 ```
 
+**Admin auth — read before adding any admin page or action:** every admin **page** and **server
+action** must call `requireStaff()` itself. The layout's call is not enough: Next renders layouts and
+pages in parallel, and a page under a layout that 404s still streams its content into the response
+(verified — it leaked the page body to a reader). Non-staff get 404, never a redirect. Public
+sign-up is off (`[auth] enable_signup = false`); do **not** set `[auth.email] enable_signup = false`
+— that disables email login entirely. Local accounts: `pnpm staff:create <email> [admin|editor]`.
+Production: invite from the Supabase dashboard, then `update profiles set role = 'admin' …`, and
+turn off "Allow new users to sign up" in the dashboard — config.toml only affects local.
+
 **Caching:** public pages use ISR (`export const revalidate`) + `generateStaticParams`, not Cache
 Components — `notFound()` must return a real 404 for SEO. Approve/edit (M5) must call
 `revalidatePath`. **Styles:** base/component CSS lives in `@layer base`/`@layer components`; any
@@ -140,7 +149,6 @@ unlayered rule beats every Tailwind utility.
 
 **Supabase gotchas:** the CLI is a devDependency (`pnpm exec supabase …`), not global. Public pages
 read through `createPublicClient()` (cookieless, stays static); `createSessionClient()` is for
-admin/auth. Make yourself admin after first sign-up:
-`update profiles set role = 'admin' where id = (select id from auth.users where email = '…');`
+admin/auth. Promote a user: `update profiles set role = 'admin' where id = (select id from auth.users where email = '…');`
 
 The pre-commit hook runs lint-staged (eslint + prettier on staged code) and `pnpm typecheck`.
