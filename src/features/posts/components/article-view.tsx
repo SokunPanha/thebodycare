@@ -59,7 +59,7 @@ export function ArticleView({ article }: { article: Article }) {
         </article>
 
         <aside className="hidden lg:block">
-          <TableOfContents headings={article.headings} className="sticky top-8 pt-12" />
+          <TableOfContents headings={article.headings} className="sticky top-8 pt-12 xl:top-24" />
         </aside>
       </div>
 

@@ -138,6 +138,11 @@ pnpm db:types         # regenerate database.types.ts — same commit as the migr
 pnpm db:seed:build    # topic-matrix.csv → supabase/seed.sql
 ```
 
+**Search (added 2026-09-25, pulled forward from post-MVP):** Postgres full-text — `posts.search_vector`
+(generated, weighted title > standfirst > body) + `search_posts()` (migration 0009). `/search` is
+dynamic and `noindex, follow`. Header: single row with search box only from 1280px (measured — all
+seven topics + a search box don't fit narrower); below that, a search icon and topics on their own row.
+
 **Covers:** `posts.cover_*` + the public `covers` bucket (migration 0008). `PostCover` renders the
 photo or falls back to `CoverArt`. AI generation needs `MINIMAX_API_KEY` in `.env.local` (optional —
 the editor's "Generate with AI" button is disabled without it). The storage SELECT policy is

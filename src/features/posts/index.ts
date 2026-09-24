@@ -30,6 +30,7 @@ export {
   listRelatedPosts,
   listReviewQueue,
   POSTS_PAGE_SIZE,
+  searchPosts,
   type Page,
   type PostListing,
   type PostStatus,

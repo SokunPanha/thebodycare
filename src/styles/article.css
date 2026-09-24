@@ -8,8 +8,9 @@
     margin-top: var(--space-4);
   }
 
+  /* Clears the pinned desktop header when jumping to a heading from the TOC. */
   .prose :is(h2, h3) {
-    scroll-margin-top: var(--space-8);
+    scroll-margin-top: var(--space-24);
   }
   .prose h2 {
     margin-top: var(--space-12);

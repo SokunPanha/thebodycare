@@ -3,3 +3,5 @@ export { SiteFooter } from "./site-footer";
 export { SiteHeader } from "./site-header";
 export { Pagination } from "./pagination";
 export { ProsePage } from "./prose-page";
+export { LogoMark, SearchIcon } from "./icons";
+export { SearchForm } from "./search-form";

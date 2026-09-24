@@ -108,6 +108,34 @@ export async function listByCategory(
   return toPage(data, count, page, pageSize);
 }
 
+export const SEARCH_PAGE_SIZE = 20;
+
+/** Published posts matching a reader's query, best match first. Empty query → no results. */
+export async function searchPosts(
+  query: string,
+  { page = 1 }: { page?: number } = {},
+): Promise<Page<PostListing>> {
+  const text = query.trim().slice(0, 200);
+  if (!text) return toPage([], 0, 1, SEARCH_PAGE_SIZE);
+
+  const db = createPublicClient();
+  const [from] = range(page, SEARCH_PAGE_SIZE);
+  const { data: matches, error } = await db.rpc("search_posts", {
+    query: text,
+    match_limit: SEARCH_PAGE_SIZE,
+    match_offset: from,
+  });
+  if (error) throw error;
+  if (matches.length === 0) return toPage([], 0, page, SEARCH_PAGE_SIZE);
+
+  const ids = matches.map((match) => match.post_id);
+  const { data: rows, error: rowsError } = await listingQuery().in("id", ids);
+  if (rowsError) throw rowsError;
+  // Keep relevance order, not the listing query's recency order.
+  const ordered = ids.flatMap((id) => rows.filter((row) => row.id === id));
+  return toPage(ordered, matches[0]?.total ?? 0, page, SEARCH_PAGE_SIZE);
+}
+
 /** Every published slug — for generateStaticParams. */
 export async function listPublishedSlugs(): Promise<string[]> {
   const { data, error } = await createPublicClient()

@@ -234,6 +234,7 @@ export type Database = {
           review_note: string | null
           reviewed_at: string | null
           reviewer_id: string | null
+          search_vector: unknown
           seo_description: string | null
           seo_title: string | null
           slug: string
@@ -263,6 +264,7 @@ export type Database = {
           review_note?: string | null
           reviewed_at?: string | null
           reviewer_id?: string | null
+          search_vector?: unknown
           seo_description?: string | null
           seo_title?: string | null
           slug: string
@@ -292,6 +294,7 @@ export type Database = {
           review_note?: string | null
           reviewed_at?: string | null
           reviewer_id?: string | null
+          search_vector?: unknown
           seo_description?: string | null
           seo_title?: string | null
           slug?: string
@@ -491,6 +494,14 @@ export type Database = {
         Returns: {
           post_id: string
           similarity: number
+        }[]
+      }
+      search_posts: {
+        Args: { match_limit?: number; match_offset?: number; query: string }
+        Returns: {
+          post_id: string
+          rank: number
+          total: number
         }[]
       }
     }
