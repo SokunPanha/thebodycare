@@ -8,7 +8,7 @@ everything already published, scope-checked, and approved by a human before goin
 
 ---
 
-## ▶ Status: M1 (foundation) done — next is M2, the data layer
+## ▶ Status: M1 + M2 done — next is M3 (public site)
 
 **Before M4 is written, the user should run `docs/spike/README.md`** — a 45-minute, no-code
 validation in AI Studio that Gemini + Search grounding actually produces publishable, in-scope,
@@ -16,12 +16,12 @@ well-cited health content. M4 is two sessions built on that assumption. If the s
 M4's design changes (human-written pillars, AI clusters only). **Ask for the spike results before
 starting M4.**
 
-**Next: `docs/MVP.md` §2, task M2.1** and work down. Tasks are ordered and dependency-marked.
-M2 needs a Supabase project (or `supabase start` locally — the CLI is not installed yet).
+**Next: `docs/MVP.md` §2, task M3.1** and work down. M3 and M4 are independent (MVP.md §3).
 
-Built in M1: Next.js 16.3 scaffold, folder skeleton (MVP features only: posts, generation,
-taxonomy), `src/env.ts`, ESLint enforcing rules 2/3/4/6, Prettier, husky + lint-staged, fonts +
-tokens wired. `.env.local` holds **placeholders**.
+Built: M1 foundation; M2 schema (5 migrations, RLS on every table), seed (7 categories, 203 cells),
+generated types, `features/posts` + `features/taxonomy` queries, 30 integration tests.
+`.env.local` points at the **local** Supabase stack; `GEMINI_API_KEY` is still a placeholder.
+M2.1's hosted project is not created yet — local is enough until deploy (M6.7).
 
 **Blocked on the user:** Supabase keys, `GEMINI_API_KEY`, domain registration.
 
@@ -122,11 +122,16 @@ pnpm build            # production build (fails on bad env)
 pnpm typecheck        # next typegen && tsc — typegen provides LayoutProps/PageProps
 pnpm lint             # eslint, zero warnings allowed
 pnpm format           # prettier (Markdown is excluded on purpose)
-# not yet wired — added with the first test / first migration:
-pnpm test             # vitest — unit + integration
-pnpm test:e2e         # playwright
-supabase db push      # apply migrations
-supabase gen types typescript --local > src/lib/supabase/database.types.ts
+pnpm test             # vitest — integration tests need `pnpm db:start` first
+pnpm db:start         # local Supabase (Docker). Applies migrations + seed on first start
+pnpm db:reset         # re-apply all migrations + seed.sql from scratch
+pnpm db:types         # regenerate database.types.ts — same commit as the migration
+pnpm db:seed:build    # topic-matrix.csv → supabase/seed.sql
 ```
+
+**Supabase gotchas:** the CLI is a devDependency (`pnpm exec supabase …`), not global. Public pages
+read through `createPublicClient()` (cookieless, stays static); `createSessionClient()` is for
+admin/auth. Make yourself admin after first sign-up:
+`update profiles set role = 'admin' where id = (select id from auth.users where email = '…');`
 
 The pre-commit hook runs lint-staged (eslint + prettier on staged code) and `pnpm typecheck`.
