@@ -3,18 +3,22 @@
 import { randomUUID } from "node:crypto";
 
 import { imageSize } from "image-size";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, updateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
 import { requireStaff } from "@/features/auth";
 import { generationConfig } from "@/config/generation";
 import { COVER_PROMPT_VERSION, coverImageAlt, coverImagePrompt } from "@/features/generation";
-import { generateImage, ImageGenerationError, isImageGenerationConfigured } from "@/lib/ai/minimax";
+import {
+  generateCoverImage,
+  ImageGenerationError,
+  isImageGenerationConfigured,
+} from "@/lib/ai/image";
 import { imageModels } from "@/lib/ai/models";
 import { renderMarkdown } from "@/lib/markdown/render";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { createSessionClient } from "@/lib/supabase/server";
+import { CONTENT_TAG, createSessionClient } from "@/lib/supabase/server";
 import { COVERS_BUCKET } from "@/lib/supabase/storage";
 import { readingTime } from "@/lib/utils/reading-time";
 
@@ -28,8 +32,12 @@ export type EditState = ActionState & { fieldErrors?: Record<string, string[]> }
 
 const idSchema = z.uuid();
 
-/** Published content changed: every page may list it (home, category, related). */
+/**
+ * Published content changed: every page may list it (home, category, related, search, sitemaps).
+ * Both are needed — the tag expires the cached *data*, the path the cached *pages*.
+ */
 function revalidateSite() {
+  updateTag(CONTENT_TAG);
   revalidatePath("/", "layout");
 }
 
@@ -225,13 +233,9 @@ async function createAiCover(id: string): Promise<CoverState> {
 
   let bytes: Buffer;
   try {
-    bytes = await generateImage({
-      prompt: coverImagePrompt({
-        title: post.title,
-        excerpt: post.excerpt,
-        category: post.category.name,
-      }),
-    });
+    bytes = await generateCoverImage(
+      coverImagePrompt({ title: post.title, excerpt: post.excerpt, category: post.category.name }),
+    );
   } catch (cause) {
     const message =
       cause instanceof ImageGenerationError ? cause.message : "Image generation failed.";
@@ -260,7 +264,10 @@ export async function generateAiCover(postId: string, _previous: CoverState): Pr
   await requireStaff();
   const id = idSchema.parse(postId);
   if (!isImageGenerationConfigured()) {
-    return { error: "Image generation isn't set up — add MINIMAX_API_KEY to the environment." };
+    return {
+      error:
+        "Image generation isn't set up — add WAVESPEED_API_KEY (or MINIMAX_API_KEY) to the environment.",
+    };
   }
   return createAiCover(id);
 }
@@ -274,7 +281,10 @@ const COVERS_PER_BATCH = 5;
 export async function generateMissingCovers(_previous: BulkCoverState): Promise<BulkCoverState> {
   await requireStaff();
   if (!isImageGenerationConfigured()) {
-    return { error: "Image generation isn't set up — add MINIMAX_API_KEY to the environment." };
+    return {
+      error:
+        "Image generation isn't set up — add WAVESPEED_API_KEY (or MINIMAX_API_KEY) to the environment.",
+    };
   }
 
   const supabase = await createSessionClient();

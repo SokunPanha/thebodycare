@@ -4,6 +4,7 @@ import { z } from "zod";
 
 import { env } from "@/env";
 
+import { ImageGenerationError } from "./image-errors";
 import { imageModels } from "./models";
 
 // MiniMax text-to-image. https://platform.minimax.io/docs/api-reference/image-generation-t2i
@@ -16,21 +17,6 @@ const responseSchema = z.object({
   base_resp: z.object({ status_code: z.number(), status_msg: z.string().optional() }),
 });
 
-/**
- * Transient failures are worth one retry later; permanent ones aren't — retrying a bad key or an
- * empty balance just burns time. (Same split as ../Youtube Automation's gemini_text.py.)
- */
-export class ImageGenerationError extends Error {
-  constructor(
-    message: string,
-    readonly code: number | null,
-    readonly transient: boolean,
-  ) {
-    super(message);
-    this.name = "ImageGenerationError";
-  }
-}
-
 const TRANSIENT = new Set([1000, 1001, 1002, 1013]); // unknown, timeout, rate limit, internal
 const REASONS: Record<number, string> = {
   1002: "MiniMax rate limit reached — try again shortly.",
@@ -39,11 +25,9 @@ const REASONS: Record<number, string> = {
   1026: "MiniMax flagged the prompt as sensitive. Try a different angle or upload a cover.",
 };
 
-export function isImageGenerationConfigured() {
-  return Boolean(env.MINIMAX_API_KEY);
-}
+export { ImageGenerationError };
 
-export async function generateImage({
+export async function generateMinimaxImage({
   prompt,
   aspectRatio = "3:2",
   seed,

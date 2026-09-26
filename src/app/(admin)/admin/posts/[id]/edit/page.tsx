@@ -12,7 +12,7 @@ import {
   updatePost,
   uploadCover,
 } from "@/features/posts";
-import { isImageGenerationConfigured } from "@/lib/ai/minimax";
+import { isImageGenerationConfigured } from "@/lib/ai/image";
 import { listCategories } from "@/features/taxonomy";
 
 export const generateMetadata = () => staffMetadata("Edit");

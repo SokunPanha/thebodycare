@@ -20,5 +20,8 @@ export default defineConfig({
     url: `http://localhost:${PORT}`,
     timeout: 240_000,
     reuseExistingServer: false,
+    // Never generate real (billed) images from a test, whatever keys .env.local holds. Next.js
+    // doesn't let .env files override variables already set, and blank counts as unset (env.ts).
+    env: { WAVESPEED_API_KEY: "", MINIMAX_API_KEY: "" },
   },
 });

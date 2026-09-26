@@ -38,7 +38,9 @@ export function PostCover({ post, ratio, sizes, className = "", eager, decorativ
 
   return (
     <div
-      className={`relative overflow-hidden bg-surface-subtle ${className}`}
+      // "fill" boxes are positioned by the caller (absolute inset-0 in a feature card); anything
+      // else needs `relative` so next/image's fill has a positioned parent.
+      className={`overflow-hidden bg-surface-subtle ${ratio === "fill" ? "" : "relative"} ${className}`}
       style={ratio === "fill" ? undefined : { aspectRatio: ratio }}
     >
       <Image

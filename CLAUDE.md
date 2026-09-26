@@ -144,8 +144,11 @@ dynamic and `noindex, follow`. Header: single row with search box only from 1280
 seven topics + a search box don't fit narrower); below that, a search icon and topics on their own row.
 
 **Covers:** `posts.cover_*` + the public `covers` bucket (migration 0008). `PostCover` renders the
-photo or falls back to `CoverPlaceholder` (plain tint gradient). AI generation needs `MINIMAX_API_KEY` in `.env.local` (optional —
-the editor's "Generate with AI" button is disabled without it). The storage SELECT policy is
+photo or falls back to `CoverPlaceholder` (plain tint gradient). Images: MiniMax `image-01` **via
+WaveSpeed** (`WAVESPEED_API_KEY` — the same backend `../Youtube Automation` uses; ~26s, $0.0035 each),
+or MiniMax direct (`MINIMAX_API_KEY`); `lib/ai/image.ts` picks. Prompt is `prompts/v2/cover-image.ts`
+— v1 let underwear and bottle-like props through. The model still ignores exclusions sometimes:
+**look at every cover at review**.  The storage SELECT policy is
 required: without it, deleting a replaced cover silently does nothing (tested).
 
 **Admin auth — read before adding any admin page or action:** every admin **page** and **server
@@ -156,6 +159,11 @@ sign-up is off (`[auth] enable_signup = false`); do **not** set `[auth.email] en
 — that disables email login entirely. Local accounts: `pnpm staff:create <email> [admin|editor]`.
 Production: invite from the Supabase dashboard, then `update profiles set role = 'admin' …`, and
 turn off "Allow new users to sign up" in the dashboard — config.toml only affects local.
+
+**Public data is tagged `content`** (`CONTENT_TAG` in `lib/supabase/server.ts`). On ISR pages Next
+caches every fetch in its Data Cache, which survives rebuilds and deploys — untagged, changes made
+outside an admin action stayed invisible for up to an hour (found 2026-09-26). Server actions call
+`updateTag(CONTENT_TAG)`; route handlers (the M4 cron) must call `revalidateTag(CONTENT_TAG, "max")`.
 
 **Caching:** public pages use ISR (`export const revalidate`) + `generateStaticParams`, not Cache
 Components — `notFound()` must return a real 404 for SEO. Approve/edit (M5) must call

@@ -11,7 +11,7 @@ import {
   StaffPostList,
   type PostStatus,
 } from "@/features/posts";
-import { isImageGenerationConfigured } from "@/lib/ai/minimax";
+import { isImageGenerationConfigured } from "@/lib/ai/image";
 
 export const generateMetadata = () => staffMetadata("Posts");
 

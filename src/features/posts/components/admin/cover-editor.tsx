@@ -90,7 +90,7 @@ export function CoverEditor({
       </div>
       {!aiEnabled && (
         <p className="text-xs text-ink-muted">
-          AI covers are off until MINIMAX_API_KEY is set. You can still upload one.
+          AI covers are off until WAVESPEED_API_KEY is set. You can still upload one.
         </p>
       )}
 

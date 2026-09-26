@@ -34,7 +34,7 @@ export function SearchForm({
         autoFocus={autoFocus}
         maxLength={200}
         className={`w-full rounded-full border border-line bg-surface text-ink shadow-sm placeholder:text-ink-subtle hover:border-line-strong focus:border-primary ${
-          large ? "py-4 pr-6 pl-13 text-lg shadow-md" : "py-2 pr-4 pl-9 text-sm"
+          large ? "py-4 pr-6 pl-13 text-base shadow-md sm:text-lg" : "py-2 pr-4 pl-9 text-sm"
         }`}
       />
     </Form>

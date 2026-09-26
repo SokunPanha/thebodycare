@@ -38,13 +38,14 @@ const serverSchema = z.object({
   // Guards /api/cron/generate. Vercel cron sends it as a bearer token.
   CRON_SECRET: z.string().min(32),
 
-  // Cover images — MiniMax image generation. Optional: without it, posts fall back to generated
-  // art and staff can still upload covers by hand. International host by default; accounts on
-  // MiniMax's China platform use https://api.minimaxi.com.
+  // Cover images — MiniMax image-01, via WaveSpeed (preferred, same as ../Youtube Automation) or
+  // MiniMax directly. Both optional: without either, posts show a placeholder and staff can still
+  // upload covers. MiniMax China-platform accounts use MINIMAX_API_BASE=https://api.minimaxi.com.
+  WAVESPEED_API_KEY: optionalSecret,
   MINIMAX_API_KEY: optionalSecret,
   MINIMAX_API_BASE: z.url().default("https://api.minimax.io"),
-  // What one cover costs, for the dashboard and the daily cap. MiniMax's docs don't state a price —
-  // set this from your account's pricing page. 0 means cover spend isn't counted.
+  // What one cover costs, for the dashboard and the daily cap. MiniMax image-01 on WaveSpeed bills
+  // $0.0035/image (confirmed in ../Youtube Automation/backend/core/costs.py, Jun 2026).
   GENERATION_COVER_COST_USD: z.coerce.number().min(0).default(0),
 
   // Later — optional until the newsletter ships.

@@ -36,7 +36,7 @@ describe("generateImage", () => {
       base_resp: { status_code: 0, status_msg: "success" },
     });
 
-    const bytes = await minimax.generateImage({ prompt: "a calm bedroom", seed: 7 });
+    const bytes = await minimax.generateMinimaxImage({ prompt: "a calm bedroom", seed: 7 });
 
     expect(bytes.toString()).toBe("fake-jpeg");
     const [url, init] = fetchMock.mock.calls[0]!;
@@ -56,7 +56,7 @@ describe("generateImage", () => {
       data: { image_base64: ["eA=="] },
       base_resp: { status_code: 0 },
     });
-    await minimax.generateImage({ prompt: "x".repeat(2000) });
+    await minimax.generateMinimaxImage({ prompt: "x".repeat(2000) });
     expect(JSON.parse(fetchMock.mock.calls[0]![1].body).prompt).toHaveLength(1500);
   });
 
@@ -67,7 +67,7 @@ describe("generateImage", () => {
     [1026, false, /sensitive/],
   ])("classifies status %i (transient: %s)", async (code, transient, message) => {
     respond({ data: null, base_resp: { status_code: code, status_msg: "x" } });
-    const error = await minimax.generateImage({ prompt: "p" }).catch((e: unknown) => e);
+    const error = await minimax.generateMinimaxImage({ prompt: "p" }).catch((e: unknown) => e);
     expect(error).toBeInstanceOf(minimax.ImageGenerationError);
     expect(error).toMatchObject({ code, transient });
     expect((error as Error).message).toMatch(message);
@@ -75,9 +75,11 @@ describe("generateImage", () => {
 
   it("treats HTTP 5xx as transient and a malformed body as permanent", async () => {
     respond({}, 503);
-    await expect(minimax.generateImage({ prompt: "p" })).rejects.toMatchObject({ transient: true });
+    await expect(minimax.generateMinimaxImage({ prompt: "p" })).rejects.toMatchObject({
+      transient: true,
+    });
     respond({ unexpected: true });
-    await expect(minimax.generateImage({ prompt: "p" })).rejects.toMatchObject({
+    await expect(minimax.generateMinimaxImage({ prompt: "p" })).rejects.toMatchObject({
       transient: false,
     });
   });

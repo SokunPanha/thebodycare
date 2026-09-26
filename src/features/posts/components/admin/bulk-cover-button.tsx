@@ -34,7 +34,7 @@ export function BulkCoverButton({
         </button>
       </form>
       {!aiEnabled && (
-        <p className="text-xs text-ink-muted">Needs MINIMAX_API_KEY in the environment.</p>
+        <p className="text-xs text-ink-muted">Needs WAVESPEED_API_KEY in the environment.</p>
       )}
       {state.done !== undefined && (
         <p role="status" className="text-sm">
