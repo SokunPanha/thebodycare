@@ -3,6 +3,9 @@ import "server-only";
 import { cache } from "react";
 
 import { renderMarkdown, type TocHeading } from "@/lib/markdown/render";
+import { articleGraph } from "@/lib/seo/json-ld";
+import { coverUrl } from "@/lib/supabase/storage";
+import { siteConfig } from "@/config/site";
 
 import type { FaqItem } from "./components/faq-list";
 import {
@@ -63,4 +66,20 @@ export async function getReviewArticle(
   const post = await getPostForStaff(id);
   if (!post) return null;
   return { post, article: await buildArticle(post, []) };
+}
+
+/** The post's social card URL, versioned so an edit gets past platform caches. */
+export function articleOgImage(post: { slug: string; updated_at: string }) {
+  return `/og/posts/${post.slug}?v=${new Date(post.updated_at).getTime()}`;
+}
+
+/** Structured data for an article page — the cover photo when there is one, else the social card. */
+export function articleJsonLd({ post, faq }: Article) {
+  return articleGraph({
+    ...post,
+    faq,
+    image: post.cover_path
+      ? coverUrl(post.cover_path)
+      : new URL(articleOgImage(post), siteConfig.url).toString(),
+  });
 }

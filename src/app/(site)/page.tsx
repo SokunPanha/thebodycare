@@ -1,12 +1,23 @@
 import Link from "next/link";
 
+import type { Metadata } from "next";
+
 import { CoverArt } from "@/components/art";
+import { JsonLd } from "@/components/seo-json-ld";
 import { Container } from "@/components/layout";
 import { siteConfig } from "@/config/site";
 import { LeadPost, listPublished, PostCard, PostIndex } from "@/features/posts";
 import { listCategoriesWithCounts, TopicGrid } from "@/features/taxonomy";
+import { websiteGraph } from "@/lib/seo/json-ld";
+import { pageMetadata } from "@/lib/seo/metadata";
 
 export const revalidate = 600;
+
+export const metadata: Metadata = {
+  ...pageMetadata({ title: siteConfig.name, description: siteConfig.description, path: "/" }),
+  // The home page is the brand itself — no "· The Body Cue" suffix.
+  title: { absolute: `${siteConfig.name} — understand what your body is telling you` },
+};
 
 const GRID_SIZE = 6;
 
@@ -33,6 +44,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <JsonLd data={websiteGraph()} />
       <section className="border-b border-line bg-surface">
         <Container className="grid items-center gap-10 py-12 md:py-16 lg:grid-cols-[1.2fr_1fr]">
           <div>

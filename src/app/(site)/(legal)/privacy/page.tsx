@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ProsePage } from "@/components/layout";
+import { pageMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Privacy policy",
   description: `How ${siteConfig.name} handles personal data.`,
-  alternates: { canonical: "/privacy" },
-};
+  path: "/privacy",
+});
 
 // Mirrors the data map in docs/LEGAL.md §6. Update this page whenever a processor or data type is
 // added — newsletter, comments and ads each require changes here before they launch.

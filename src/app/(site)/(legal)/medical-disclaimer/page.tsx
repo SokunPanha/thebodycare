@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ProsePage } from "@/components/layout";
+import { pageMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Medical disclaimer",
   description: `${siteConfig.name} is educational and does not provide medical advice.`,
-  alternates: { canonical: "/medical-disclaimer" },
-};
+  path: "/medical-disclaimer",
+});
 
 export default function MedicalDisclaimerPage() {
   return (

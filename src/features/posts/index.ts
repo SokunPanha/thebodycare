@@ -8,7 +8,14 @@ export {
   updatePost,
   uploadCover,
 } from "./actions";
-export { getArticle, getPublishedPost, getReviewArticle, type Article } from "./article";
+export {
+  articleJsonLd,
+  articleOgImage,
+  getArticle,
+  getPublishedPost,
+  getReviewArticle,
+  type Article,
+} from "./article";
 export { CoverEditor } from "./components/admin/cover-editor";
 export { PostEditForm } from "./components/admin/post-edit-form";
 export { ReviewActions } from "./components/admin/review-actions";
@@ -21,16 +28,19 @@ export { PostCard } from "./components/post-card";
 export { PostCover } from "./components/post-cover";
 export { PostIndex } from "./components/post-index";
 export {
+  countPublishedPosts,
   getPostBySlug,
   getPostForStaff,
   listByCategory,
   listPublished,
   listPostsForStaff,
+  listPostsForSitemap,
   listPublishedSlugs,
   listRelatedPosts,
   listReviewQueue,
   POSTS_PAGE_SIZE,
   searchPosts,
+  SITEMAP_CHUNK,
   type Page,
   type PostListing,
   type PostStatus,

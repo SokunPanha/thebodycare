@@ -8,6 +8,10 @@ const isLocalSupabase = ["127.0.0.1", "localhost"].includes(supabase.hostname);
 
 const nextConfig: NextConfig = {
   typedRoutes: true,
+  // Read from disk at request time by lib/seo/og.tsx — make sure they ship with the functions.
+  outputFileTracingIncludes: {
+    "/**": ["./assets/fonts/*.woff", "./src/styles/tokens.css"],
+  },
   experimental: {
     // Cover uploads: the covers bucket allows 5 MB, plus multipart overhead.
     serverActions: { bodySizeLimit: "6mb" },

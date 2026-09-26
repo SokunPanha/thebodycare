@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 
 import { listByCategory } from "@/features/posts";
+import { pageMetadata } from "@/lib/seo/metadata";
 import { getCategoryBySlug } from "@/features/taxonomy";
 
 import { CategoryListing } from "../../category-listing";
@@ -24,11 +25,12 @@ export async function generateMetadata({
   const { slug, page } = await params;
   const category = await getCategoryBySlug(slug);
   if (!category) return {};
-  return {
+  return pageMetadata({
     title: `${category.name} — page ${page}`,
     description: category.description,
-    alternates: { canonical: `/category/${category.slug}/page/${page}` },
-  };
+    image: `/og/category/${category.slug}`,
+    path: `/category/${category.slug}/page/${page}`,
+  });
 }
 
 export default async function CategoryPagedPage({

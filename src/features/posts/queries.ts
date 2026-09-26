@@ -136,6 +136,27 @@ export async function searchPosts(
   return toPage(ordered, matches[0]?.total ?? 0, page, SEARCH_PAGE_SIZE);
 }
 
+export const SITEMAP_CHUNK = 10_000;
+
+/** One sitemap's worth of published posts, oldest first so chunk boundaries stay stable. */
+export async function listPostsForSitemap(chunk: number) {
+  const from = chunk * SITEMAP_CHUNK;
+  const { data, error } = await createPublicClient()
+    .from("posts")
+    .select("slug, updated_at, cover_path")
+    .eq("status", "published")
+    .order("published_at", { ascending: true })
+    .order("id")
+    .range(from, from + SITEMAP_CHUNK - 1);
+  if (isPastLastPage(error)) return [];
+  if (error) throw error;
+  return data;
+}
+
+export async function countPublishedPosts(): Promise<number> {
+  return (await countPublished()) ?? 0;
+}
+
 /** Every published slug — for generateStaticParams. */
 export async function listPublishedSlugs(): Promise<string[]> {
   const { data, error } = await createPublicClient()

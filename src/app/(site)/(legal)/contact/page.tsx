@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 
 import { ProsePage } from "@/components/layout";
+import { pageMetadata } from "@/lib/seo/metadata";
 import { siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description: `How to reach ${siteConfig.name}.`,
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   const email = siteConfig.contactEmail;
