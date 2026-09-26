@@ -26,10 +26,10 @@ export function TopicNav({
               <Link
                 href={href}
                 aria-current={active ? "page" : undefined}
-                className={`block rounded-full px-2.5 py-1.5 text-sm font-medium no-underline ${
+                className={`block rounded-full px-3 py-2 text-sm font-medium no-underline ${
                   active
-                    ? "bg-primary-wash text-primary"
-                    : "text-ink-muted hover:bg-surface-subtle hover:text-ink"
+                    ? "bg-surface text-primary shadow-sm"
+                    : "text-ink-muted hover:bg-surface hover:text-ink"
                 }`}
               >
                 {category.name}

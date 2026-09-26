@@ -3,9 +3,20 @@ import Link from "next/link";
 
 import { Pagination } from "@/components/layout";
 import { requireStaff, staffMetadata } from "@/features/auth";
-import { listPostsForStaff, StaffPostList, type PostStatus } from "@/features/posts";
+import {
+  BulkCoverButton,
+  countPostsWithoutCover,
+  generateMissingCovers,
+  listPostsForStaff,
+  StaffPostList,
+  type PostStatus,
+} from "@/features/posts";
+import { isImageGenerationConfigured } from "@/lib/ai/minimax";
 
 export const generateMetadata = () => staffMetadata("Posts");
+
+// "Generate missing covers" runs up to five image generations in one action.
+export const maxDuration = 300;
 
 const filters: { status?: PostStatus; label: string }[] = [
   { label: "All" },
@@ -28,7 +39,10 @@ export default async function PostsPage({ searchParams }: PageProps<"/admin/post
   const params = await searchParams;
   const status = filters.find((filter) => filter.status && filter.status === params.status)?.status;
   const page = Math.max(1, Number.parseInt(String(params.page ?? "1"), 10) || 1);
-  const posts = await listPostsForStaff({ status, page });
+  const [posts, missingCovers] = await Promise.all([
+    listPostsForStaff({ status, page }),
+    countPostsWithoutCover(),
+  ]);
 
   return (
     <div className="space-y-6">
@@ -38,6 +52,11 @@ export default async function PostsPage({ searchParams }: PageProps<"/admin/post
           {posts.total} · most recently changed first
         </p>
       </div>
+      <BulkCoverButton
+        missing={missingCovers}
+        aiEnabled={isImageGenerationConfigured()}
+        action={generateMissingCovers}
+      />
       <nav aria-label="Filter by status" className="flex flex-wrap gap-2">
         {filters.map((filter) => {
           const active = filter.status === status;

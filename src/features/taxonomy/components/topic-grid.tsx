@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-import { CoverArt } from "@/components/art";
+import { categoryTint, tintBg } from "@/config/categories";
 
 import type { CategoryWithCount } from "../queries";
 
-// One card per category, each wearing its own motif — the cover language, introduced.
+// One soft-tinted tile per topic: name, what it covers, how many articles.
 export function TopicGrid({ categories }: { categories: CategoryWithCount[] }) {
   return (
     <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -12,22 +12,20 @@ export function TopicGrid({ categories }: { categories: CategoryWithCount[] }) {
         <li key={category.slug}>
           <Link
             href={`/category/${category.slug}`}
-            className="group flex h-full items-center gap-4 rounded border border-line bg-surface p-3 text-ink no-underline hover:border-line-strong hover:text-ink hover:shadow-sm"
+            className={`group flex h-full flex-col rounded-lg p-6 text-ink no-underline hover:-translate-y-0.5 hover:text-ink hover:shadow-md ${tintBg[categoryTint(category.slug)]}`}
           >
-            <CoverArt
-              seed={category.slug}
-              category={category.slug}
-              ratio="1/1"
-              className="w-16 shrink-0 rounded-sm"
-            />
-            <div className="min-w-0">
-              <p className="font-display text-lg font-semibold group-hover:text-primary">
-                {category.name}
-              </p>
-              <p className="tabular text-xs text-ink-muted">
+            <p className="font-display text-xl font-semibold tracking-(--tracking-display)">
+              {category.name}
+            </p>
+            <p className="mt-2 text-sm text-ink-muted">{category.description}</p>
+            <p className="tabular mt-auto flex items-center justify-between pt-6 text-sm font-semibold">
+              <span>
                 {category.post_count} {category.post_count === 1 ? "article" : "articles"}
-              </p>
-            </div>
+              </span>
+              <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </p>
           </Link>
         </li>
       ))}

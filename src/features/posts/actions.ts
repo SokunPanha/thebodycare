@@ -203,14 +203,8 @@ export async function uploadCover(
   });
 }
 
-/** Generates a cover with MiniMax from the post's title and standfirst. Logged as a run. */
-export async function generateAiCover(postId: string, _previous: CoverState): Promise<CoverState> {
-  await requireStaff();
-  const id = idSchema.parse(postId);
-  if (!isImageGenerationConfigured()) {
-    return { error: "Image generation isn't set up — add MINIMAX_API_KEY to the environment." };
-  }
-
+/** Generates and stores an AI cover for one post. Callers have already checked staff. */
+async function createAiCover(id: string): Promise<CoverState> {
   const supabase = await createSessionClient();
   const { data: post, error } = await supabase
     .from("posts")
@@ -259,6 +253,55 @@ export async function generateAiCover(postId: string, _previous: CoverState): Pr
   });
 
   return storeCover(id, bytes, { alt: coverImageAlt(post.title), source: "ai" });
+}
+
+/** Generates a cover with MiniMax from the post's title and standfirst. Logged as a run. */
+export async function generateAiCover(postId: string, _previous: CoverState): Promise<CoverState> {
+  await requireStaff();
+  const id = idSchema.parse(postId);
+  if (!isImageGenerationConfigured()) {
+    return { error: "Image generation isn't set up — add MINIMAX_API_KEY to the environment." };
+  }
+  return createAiCover(id);
+}
+
+export type BulkCoverState = { error: string | null; done?: number; failed?: number };
+
+// Each image takes 10–30s; five per click stays inside one server function's time limit.
+const COVERS_PER_BATCH = 5;
+
+/** Fills in covers for posts that don't have one, newest first, a batch at a time. */
+export async function generateMissingCovers(_previous: BulkCoverState): Promise<BulkCoverState> {
+  await requireStaff();
+  if (!isImageGenerationConfigured()) {
+    return { error: "Image generation isn't set up — add MINIMAX_API_KEY to the environment." };
+  }
+
+  const supabase = await createSessionClient();
+  const { data: posts, error } = await supabase
+    .from("posts")
+    .select("id")
+    .is("cover_path", null)
+    .neq("status", "archived")
+    .order("created_at", { ascending: false })
+    .limit(COVERS_PER_BATCH);
+  if (error) return { error: error.message };
+
+  let done = 0;
+  const failures: string[] = [];
+  // One at a time: parallel requests would trip MiniMax's rate limit (status 1002).
+  for (const post of posts) {
+    const result = await createAiCover(post.id);
+    if (result.error) failures.push(result.error);
+    else done++;
+  }
+  return {
+    error: failures.length
+      ? `${failures.length} failed: ${[...new Set(failures)].join(" ")}`
+      : null,
+    done,
+    failed: failures.length,
+  };
 }
 
 export async function removeCover(postId: string, _previous: CoverState): Promise<CoverState> {

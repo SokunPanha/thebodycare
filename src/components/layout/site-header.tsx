@@ -17,8 +17,8 @@ type NavCategory = { slug: string; name: string };
  */
 export function SiteHeader({ categories }: { categories: NavCategory[] }) {
   return (
-    <header className="border-b border-line bg-surface xl:sticky xl:top-0 xl:z-40 xl:bg-surface/90 xl:backdrop-blur">
-      <Container className="flex h-16 items-center gap-4">
+    <header className="relative z-40 border-b border-line/70 bg-ground/85 backdrop-blur-md xl:sticky xl:top-0">
+      <Container className="flex h-[4.5rem] items-center gap-4">
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2.5 font-display text-xl font-semibold tracking-(--tracking-display) text-ink no-underline hover:text-ink"
@@ -39,13 +39,13 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
           <Link
             href="/search"
             aria-label="Search"
-            className="flex size-10 items-center justify-center rounded-full text-ink-muted hover:bg-surface-subtle hover:text-ink xl:hidden"
+            className="flex size-10 items-center justify-center rounded-full bg-surface text-ink-muted shadow-sm hover:text-ink xl:hidden"
           >
             <SearchIcon className="size-5" />
           </Link>
           <Link
             href="/about"
-            className="rounded-full px-3 py-1.5 text-sm font-medium text-ink-muted no-underline hover:bg-surface-subtle hover:text-ink"
+            className="rounded-full px-3.5 py-2 text-sm font-medium text-ink-muted no-underline hover:bg-surface hover:text-ink"
           >
             About
           </Link>

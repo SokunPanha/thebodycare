@@ -300,3 +300,17 @@ export async function listPostsForStaff({
   if (error) throw error;
   return toPage(data, count, page, STAFF_PAGE_SIZE);
 }
+
+/** Posts still showing a placeholder instead of a cover photo (archived ones don't matter). */
+export async function countPostsWithoutCover(): Promise<number> {
+  await requireStaff();
+  const { count, error } = await (
+    await createSessionClient()
+  )
+    .from("posts")
+    .select("id", { count: "exact", head: true })
+    .is("cover_path", null)
+    .neq("status", "archived");
+  if (error) throw error;
+  return count ?? 0;
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Public_Sans } from "next/font/google";
+import { Figtree, Outfit } from "next/font/google";
 
 import { siteConfig } from "@/config/site";
 
@@ -7,16 +7,15 @@ import "@/styles/globals.css";
 
 // Variable fonts, self-hosted at build time. tokens.css maps these onto
 // --font-display / --font-body. (DESIGN.md §3)
-const bricolage = Bricolage_Grotesque({
+const outfit = Outfit({
   subsets: ["latin"],
-  axes: ["opsz"],
-  variable: "--font-bricolage",
+  variable: "--font-outfit",
   display: "swap",
 });
 
-const publicSans = Public_Sans({
+const figtree = Figtree({
   subsets: ["latin"],
-  variable: "--font-public-sans",
+  variable: "--font-figtree",
   display: "swap",
 });
 
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${publicSans.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${figtree.variable}`}>
       <body>{children}</body>
     </html>
   );

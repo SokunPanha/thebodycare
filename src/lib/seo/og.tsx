@@ -10,14 +10,18 @@ import { siteConfig } from "@/config/site";
 
 export const OG_SIZE = { width: 1200, height: 630 };
 
-const read = (...path: string[]) => readFile(join(process.cwd(), ...path));
+// Literal paths, not a helper that joins arguments: with a dynamic path the bundler can't tell
+// which files are read and traces the whole project into the function.
+const TOKENS_CSS = join(process.cwd(), "src/styles/tokens.css");
+const DISPLAY_FONT = join(process.cwd(), "assets/fonts/outfit-latin-600-normal.woff");
+const BODY_FONT = join(process.cwd(), "assets/fonts/figtree-latin-600-normal.woff");
 
 /**
  * Satori can't resolve CSS variables, and rule 6 forbids hex literals in components — so colours
  * are read from tokens.css itself (the light-mode :root block). One source of truth.
  */
 async function loadTokens() {
-  const css = (await read("src", "styles", "tokens.css")).toString();
+  const css = (await readFile(TOKENS_CSS)).toString();
   const root = css.slice(css.indexOf(":root {"), css.indexOf("}", css.indexOf(":root {")));
   const token = (name: string) => {
     const match = root.match(new RegExp(`--${name}:\\s*([^;]+);`));
@@ -34,11 +38,7 @@ async function loadTokens() {
 }
 
 // Loaded once per server instance, not per image.
-const assets = Promise.all([
-  loadTokens(),
-  read("assets", "fonts", "bricolage-grotesque-latin-700-normal.woff"),
-  read("assets", "fonts", "public-sans-latin-600-normal.woff"),
-]);
+const assets = Promise.all([loadTokens(), readFile(DISPLAY_FONT), readFile(BODY_FONT)]);
 
 /** The Body Cue mark, as in components/layout/icons.tsx. */
 function Mark({ size, primary, onPrimary }: { size: number; primary: string; onPrimary: string }) {
@@ -86,14 +86,14 @@ export async function renderOgImage({
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <Mark size={48} primary={colors.primary} onPrimary={colors.onPrimary} />
-          <span style={{ fontFamily: "Bricolage", fontSize: 32, color: colors.ink }}>
+          <span style={{ fontFamily: "Display", fontSize: 32, color: colors.ink }}>
             {siteConfig.name}
           </span>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <span
             style={{
-              fontFamily: "Public Sans",
+              fontFamily: "Body",
               fontSize: 22,
               letterSpacing: 4,
               textTransform: "uppercase",
@@ -104,7 +104,7 @@ export async function renderOgImage({
           </span>
           <span
             style={{
-              fontFamily: "Bricolage",
+              fontFamily: "Display",
               fontSize: photo ? 58 : 72,
               lineHeight: 1.1,
               letterSpacing: -1.5,
@@ -114,7 +114,7 @@ export async function renderOgImage({
             {title}
           </span>
         </div>
-        <span style={{ fontFamily: "Public Sans", fontSize: 22, color: colors.muted }}>
+        <span style={{ fontFamily: "Body", fontSize: 22, color: colors.muted }}>
           {new URL(siteConfig.url).host}
         </span>
       </div>
@@ -126,8 +126,8 @@ export async function renderOgImage({
     {
       ...OG_SIZE,
       fonts: [
-        { name: "Bricolage", data: display, weight: 700, style: "normal" },
-        { name: "Public Sans", data: body, weight: 600, style: "normal" },
+        { name: "Display", data: display, weight: 600, style: "normal" },
+        { name: "Body", data: body, weight: 600, style: "normal" },
       ],
     },
   );

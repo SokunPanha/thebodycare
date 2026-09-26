@@ -1,1 +1,1 @@
-export { CoverArt } from "./cover-art";
+export { CoverPlaceholder } from "./cover-placeholder";

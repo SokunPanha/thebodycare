@@ -8,13 +8,13 @@ import { PostCover } from "./post-cover";
 import { RelatedPosts } from "./related-posts";
 import { SourceList } from "./source-list";
 import { TableOfContents } from "./table-of-contents";
+import { TopicPill } from "./topic-pill";
 import { TrustBar } from "./trust-bar";
 import { WhenToSeekCare } from "./when-to-seek-care";
 
 /**
- * Eyebrow → headline → standfirst → trust bar → key points → body → when to seek care →
- * sources → disclaimer → related. (MVP.md §1)
- * Below 1024px: one 65ch column with the TOC inline. From 1024px: 65ch + a 280px sticky rail.
+ * Topic → headline → standfirst → cover → trust bar → key points → body → FAQ → when to seek care
+ * → sources → disclaimer → related. From 1024px the table of contents sits in a sticky rail.
  */
 export function ArticleView({ article }: { article: Article }) {
   const { post } = article;
@@ -22,48 +22,57 @@ export function ArticleView({ article }: { article: Article }) {
   return (
     <>
       <div className="reading-progress" aria-hidden="true" />
-      <div className="lg:grid lg:grid-cols-[minmax(0,var(--measure))_var(--rail)] lg:justify-between lg:gap-16">
-        <article className="max-w-(--measure) min-w-0 pt-12">
-          <header>
-            <figure className="mb-8">
-              <PostCover
-                post={post}
-                ratio="4/1"
-                sizes="(min-width: 1024px) 720px, 100vw"
-                className="rounded"
-                eager
-              />
-              {post.cover_source === "ai" && (
-                <figcaption className="mt-2 text-xs text-ink-muted">Image: AI-generated</figcaption>
-              )}
-            </figure>
-            <Link href={`/category/${post.category.slug}`} className="eyebrow no-underline">
-              {post.category.name}
-            </Link>
-            <h1 className="mt-3 text-2xl md:text-3xl">{post.title}</h1>
-            <p className="mt-4 text-lg text-pretty text-ink-muted">{post.excerpt}</p>
-            <div className="mt-6">
-              <TrustBar post={post} />
-            </div>
-          </header>
 
-          <div className="mt-8 space-y-8">
-            <KeyPoints points={post.key_points} />
-            <TableOfContents headings={article.headings} className="lg:hidden" />
-            <div className="prose" dangerouslySetInnerHTML={{ __html: article.bodyHtml }} />
-            <FaqList items={article.faq} />
-            <WhenToSeekCare html={article.seekCareHtml} />
-            <SourceList sources={post.sources} />
-            <ArticleDisclaimer />
-          </div>
+      <header className="mx-auto max-w-3xl pt-10 text-center md:pt-14">
+        <Link href={`/category/${post.category.slug}`} className="no-underline">
+          <TopicPill category={post.category} />
+        </Link>
+        <h1 className="mt-5 text-3xl md:text-4xl">{post.title}</h1>
+        <p className="mx-auto mt-5 max-w-2xl text-lg text-pretty text-ink-muted">{post.excerpt}</p>
+      </header>
+
+      {/* Only a real photo earns this much space; without one the article opens on its text. */}
+      {post.cover_path && (
+        <figure className="mx-auto mt-10 max-w-5xl">
+          <PostCover
+            post={post}
+            ratio="16/9"
+            sizes="(min-width: 1024px) 1024px, 100vw"
+            className="rounded-xl shadow-md"
+            eager
+          />
+          {post.cover_source === "ai" && (
+            <figcaption className="mt-2 text-center text-xs text-ink-muted">
+              Image: AI-generated
+            </figcaption>
+          )}
+        </figure>
+      )}
+
+      <div className="mx-auto mt-10 max-w-5xl lg:grid lg:grid-cols-[minmax(0,var(--measure))_var(--rail)] lg:justify-between lg:gap-12">
+        <article className="min-w-0 space-y-8">
+          <TrustBar post={post} />
+          <KeyPoints points={post.key_points} />
+          <TableOfContents
+            headings={article.headings}
+            className="rounded-lg bg-surface p-5 shadow-sm lg:hidden"
+          />
+          <div className="prose" dangerouslySetInnerHTML={{ __html: article.bodyHtml }} />
+          <FaqList items={article.faq} />
+          <WhenToSeekCare html={article.seekCareHtml} />
+          <SourceList sources={post.sources} />
+          <ArticleDisclaimer />
         </article>
 
         <aside className="hidden lg:block">
-          <TableOfContents headings={article.headings} className="sticky top-8 pt-12 xl:top-24" />
+          <TableOfContents
+            headings={article.headings}
+            className="sticky top-8 rounded-lg bg-surface p-5 shadow-sm xl:top-28"
+          />
         </aside>
       </div>
 
-      <div className="mt-16 max-w-(--measure)">
+      <div className="mx-auto mt-20 max-w-5xl">
         <RelatedPosts posts={article.related} />
       </div>
     </>

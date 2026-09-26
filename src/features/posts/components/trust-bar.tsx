@@ -46,7 +46,7 @@ export function TrustBar({ post }: { post: PostWithSources }) {
 
   // Inline text rather than flex: when it wraps, separators stay attached to their neighbours.
   return (
-    <p className="tabular border-y border-line py-3 text-xs text-ink-muted">
+    <p className="tabular rounded-lg bg-surface px-5 py-4 text-xs text-ink-muted shadow-sm">
       {parts.map((part, i) => (
         <Fragment key={part}>
           {i > 0 && <span aria-hidden="true"> · </span>}

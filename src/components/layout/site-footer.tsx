@@ -3,6 +3,7 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 import { Container } from "./container";
+import { LogoMark } from "./icons";
 
 type NavCategory = { slug: string; name: string };
 
@@ -16,10 +17,13 @@ const pages = [
 
 export function SiteFooter({ categories }: { categories: NavCategory[] }) {
   return (
-    <footer className="mt-24 border-t border-line bg-surface-subtle">
-      <Container className="grid gap-8 py-12 text-sm md:grid-cols-[2fr_1fr_1fr]">
+    <footer className="mt-24 rounded-t-xl bg-surface-subtle">
+      <Container className="grid gap-10 py-14 text-sm md:grid-cols-[2fr_1fr_1fr]">
         <div className="max-w-(--measure)">
-          <p className="font-display text-lg font-semibold text-ink">{siteConfig.name}</p>
+          <p className="flex items-center gap-2.5 font-display text-xl font-semibold tracking-(--tracking-display) text-ink">
+            <LogoMark className="size-8" />
+            {siteConfig.name}
+          </p>
           <p className="mt-2 text-ink-muted">
             Educational content about everyday health. Not medical advice, diagnosis or treatment —
             if you&rsquo;re worried about a symptom, talk to a qualified health professional.{" "}

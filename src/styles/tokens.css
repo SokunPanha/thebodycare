@@ -1,171 +1,149 @@
 /* ==========================================================================
    The Body Cue — design tokens
-   Direction B "Daylight".  Spec: docs/DESIGN.md
+   Direction "Soft wellness" (2026-09-26, replaces "Daylight"). Spec: docs/DESIGN.md
    Nothing else in the codebase declares a colour, size, or font. (STRUCTURE.md, rule 6)
+   Every text pair below is checked against WCAG AA in both themes (DESIGN.md §2).
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. Palette — light (default)
-   Semantic names only. Never --color-blue; always --primary.
+   1. Palette — light (default). Warm cream, charcoal ink, sage primary.
    -------------------------------------------------------------------------- */
 :root {
-  --ground: #fbfbfe;
+  --ground: #faf6f0;
   --surface: #ffffff;
-  --surface-subtle: #f4f5fa;
+  --surface-subtle: #f3ede4;
 
-  --line: #e4e6f0;
-  --line-strong: #cfd3e4;
+  --line: #ebe3d8;
+  --line-strong: #d9cebf;
 
-  --ink: #1a2036;
-  --ink-muted: #6e7691;
-  --ink-subtle: #939ab0;
+  --ink: #2a2925;
+  --ink-muted: #66615a;
+  --ink-subtle: #8f897f;
 
-  --primary: #4a63d6;
-  --primary-hover: #3a51bc;
-  --primary-wash: #eef0fc;
+  --primary: #3d6b55;
+  --primary-hover: #30574a;
+  --primary-wash: #e4eee7;
   --on-primary: #ffffff;
 
-  /* Attention only: the "when to seek care" block. Nowhere else. */
-  --accent: #e8664a;
-  --accent-ink: #b0432b; /* raw --accent is 3.1:1 on white — borders/icons only */
-  --accent-wash: #fdeeea;
+  /* "When to seek care" only — terracotta, so it never blends into the soft tints. */
+  --accent: #d9674a;
+  --accent-ink: #a8432b;
+  --accent-wash: #fbe9e1;
 
-  /* Shadows are tinted with the ink hue, never black, so they don't grey the page. */
-  --shadow-sm: 0 1px 2px rgb(26 32 54 / 0.05), 0 1px 3px rgb(26 32 54 / 0.06);
-  --shadow-md: 0 4px 12px rgb(26 32 54 / 0.08), 0 2px 4px rgb(26 32 54 / 0.05);
+  /* Soft tints for cards, topics and cover placeholders. Decorative — never carry meaning alone. */
+  --tint-sage: #dcebe1;
+  --tint-peach: #fbe3d5;
+  --tint-sky: #dce8f3;
+  --tint-lilac: #e9e3f4;
+  --tint-butter: #f8edcb;
 
-  /* Generated cover art — one periwinkle family, light → strong. Never coral. (DESIGN.md §6) */
-  --cover-ground: #eef0fc;
-  --cover-soft: #d9def9;
-  --cover-mid: #a8b4f1;
-  --cover-strong: #4a63d6;
-  --cover-deep: #2b3a8f;
+  /* Warm, diffuse shadows — never grey. */
+  --shadow-sm: 0 1px 2px rgb(60 45 25 / 0.04), 0 2px 8px rgb(60 45 25 / 0.05);
+  --shadow-md: 0 8px 24px rgb(60 45 25 / 0.08), 0 2px 6px rgb(60 45 25 / 0.04);
+  --shadow-lg: 0 24px 48px rgb(60 45 25 / 0.12), 0 4px 12px rgb(60 45 25 / 0.05);
+
   color-scheme: light;
 }
 
 /* --------------------------------------------------------------------------
-   2. Palette — dark
-   Not an inversion: the ground gains a navy cast and the primary lightens,
-   because #4A63D6 is unreadable on a dark ground.
+   2. Palette — dark. Warm near-black, not blue-black; sage lightens.
    -------------------------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --ground: #101425;
-    --surface: #171c31;
-    --surface-subtle: #1e2440;
-
-    --line: #2a3150;
-    --line-strong: #3a436b;
-
-    --ink: #e6e8f2;
-    --ink-muted: #969dba;
-    --ink-subtle: #6e7694;
-
-    --primary: #8e9cf2;
-    --primary-hover: #a6b1f6;
-    --primary-wash: #1c2244;
-    --on-primary: #0e1222;
-
-    --accent: #ff8a6b;
-    --accent-ink: #ff8a6b;
-    --accent-wash: #2a1d1a;
-
-    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3), 0 1px 3px rgb(0 0 0 / 0.24);
-    --shadow-md: 0 4px 12px rgb(0 0 0 / 0.4), 0 2px 4px rgb(0 0 0 / 0.28);
-
-    --cover-ground: #1c2244;
-    --cover-soft: #283163;
-    --cover-mid: #3e4c9e;
-    --cover-strong: #8e9cf2;
-    --cover-deep: #c3cbf8;
+  :root:not([data-theme="light"]) {
+    --ground: #171614;
+    --surface: #211f1c;
+    --surface-subtle: #2a2824;
+    --line: #34312c;
+    --line-strong: #46423b;
+    --ink: #f3efe8;
+    --ink-muted: #b8b1a6;
+    --ink-subtle: #8a8378;
+    --primary: #93c2a8;
+    --primary-hover: #aad2bb;
+    --primary-wash: #22302a;
+    --on-primary: #171614;
+    --accent: #f29a7e;
+    --accent-ink: #f29a7e;
+    --accent-wash: #3a2620;
+    --tint-sage: #1f2c25;
+    --tint-peach: #33251e;
+    --tint-sky: #1d2733;
+    --tint-lilac: #27223a;
+    --tint-butter: #302a18;
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3), 0 2px 8px rgb(0 0 0 / 0.2);
+    --shadow-md: 0 8px 24px rgb(0 0 0 / 0.35), 0 2px 6px rgb(0 0 0 / 0.25);
+    --shadow-lg: 0 24px 48px rgb(0 0 0 / 0.45), 0 4px 12px rgb(0 0 0 / 0.3);
     color-scheme: dark;
   }
 }
 
-/* Explicit user choice must win over the OS preference in BOTH directions. */
+/* Explicit user choice wins over the OS preference. */
 :root[data-theme="dark"] {
-  --ground: #101425;
-  --surface: #171c31;
-  --surface-subtle: #1e2440;
-  --line: #2a3150;
-  --line-strong: #3a436b;
-  --ink: #e6e8f2;
-  --ink-muted: #969dba;
-  --ink-subtle: #6e7694;
-  --primary: #8e9cf2;
-  --primary-hover: #a6b1f6;
-  --primary-wash: #1c2244;
-  --on-primary: #0e1222;
-  --accent: #ff8a6b;
-  --accent-ink: #ff8a6b;
-  --accent-wash: #2a1d1a;
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3), 0 1px 3px rgb(0 0 0 / 0.24);
-  --shadow-md: 0 4px 12px rgb(0 0 0 / 0.4), 0 2px 4px rgb(0 0 0 / 0.28);
-  --cover-ground: #1c2244;
-  --cover-soft: #283163;
-  --cover-mid: #3e4c9e;
-  --cover-strong: #8e9cf2;
-  --cover-deep: #c3cbf8;
+  --ground: #171614;
+  --surface: #211f1c;
+  --surface-subtle: #2a2824;
+  --line: #34312c;
+  --line-strong: #46423b;
+  --ink: #f3efe8;
+  --ink-muted: #b8b1a6;
+  --ink-subtle: #8a8378;
+  --primary: #93c2a8;
+  --primary-hover: #aad2bb;
+  --primary-wash: #22302a;
+  --on-primary: #171614;
+  --accent: #f29a7e;
+  --accent-ink: #f29a7e;
+  --accent-wash: #3a2620;
+  --tint-sage: #1f2c25;
+  --tint-peach: #33251e;
+  --tint-sky: #1d2733;
+  --tint-lilac: #27223a;
+  --tint-butter: #302a18;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3), 0 2px 8px rgb(0 0 0 / 0.2);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.35), 0 2px 6px rgb(0 0 0 / 0.25);
+  --shadow-lg: 0 24px 48px rgb(0 0 0 / 0.45), 0 4px 12px rgb(0 0 0 / 0.3);
   color-scheme: dark;
 }
 
-:root[data-theme="light"] {
-  --ground: #fbfbfe;
-  --surface: #ffffff;
-  --surface-subtle: #f4f5fa;
-  --line: #e4e6f0;
-  --line-strong: #cfd3e4;
-  --ink: #1a2036;
-  --ink-muted: #6e7691;
-  --ink-subtle: #939ab0;
-  --primary: #4a63d6;
-  --primary-hover: #3a51bc;
-  --primary-wash: #eef0fc;
-  --on-primary: #ffffff;
-  --accent: #e8664a;
-  --accent-ink: #b0432b;
-  --accent-wash: #fdeeea;
-  --shadow-sm: 0 1px 2px rgb(26 32 54 / 0.05), 0 1px 3px rgb(26 32 54 / 0.06);
-  --shadow-md: 0 4px 12px rgb(26 32 54 / 0.08), 0 2px 4px rgb(26 32 54 / 0.05);
-  /* Generated cover art — one periwinkle family, light → strong. Never coral. (DESIGN.md §6) */
-  --cover-ground: #eef0fc;
-  --cover-soft: #d9def9;
-  --cover-mid: #a8b4f1;
-  --cover-strong: #4a63d6;
-  --cover-deep: #2b3a8f;
-  color-scheme: light;
+/* Text over photos: the same in both themes, because the photo doesn't change with the theme.
+   The scrim darkens the lower part of the image enough for white text to pass AA. */
+:root {
+  --on-photo: #ffffff;
+  --scrim: linear-gradient(
+    to top,
+    rgb(20 18 15 / 0.82) 0%,
+    rgb(20 18 15 / 0.45) 45%,
+    rgb(20 18 15 / 0) 75%
+  );
 }
 
 /* --------------------------------------------------------------------------
    3. Type, space, radius, motion
-   --font-display / --font-body are supplied by next/font/google in layout.tsx
-   (build-time self-hosted: no CDN request, no layout shift).
+   --font-outfit / --font-figtree are supplied by next/font/google in app/layout.tsx.
    -------------------------------------------------------------------------- */
 :root {
-  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
 
-  /* 1.25 major third, 18px base. 18 not 16: readers skew older, sessions run ~6 min. */
-  --text-2xs: 0.72rem; /* 11.5px  eyebrows, badges        */
-  --text-xs: 0.9rem; /* 14.4px  metadata, captions      */
-  --text-sm: 1rem; /* 16px    secondary UI            */
-  --text-base: 1.125rem; /* 18px    ARTICLE BODY            */
-  --text-lg: 1.406rem; /* 22.5px  standfirst, h3          */
-  --text-xl: 1.758rem; /* 28px    h2                      */
-  --text-2xl: 2.197rem; /* 35px    card title, small h1    */
-  --text-3xl: 2.746rem; /* 44px    article h1              */
-  --text-4xl: 3.433rem; /* 55px    home hero               */
+  --text-2xs: 0.75rem; /* 12px   eyebrows, badges        */
+  --text-xs: 0.875rem; /* 14px   metadata                */
+  --text-sm: 1rem; /* 16px   secondary UI            */
+  --text-base: 1.125rem; /* 18px   ARTICLE BODY            */
+  --text-lg: 1.375rem; /* 22px   standfirst, card titles */
+  --text-xl: 1.75rem; /* 28px   h2                      */
+  --text-2xl: 2.25rem; /* 36px   section titles          */
+  --text-3xl: 3rem; /* 48px   article h1              */
+  --text-4xl: 4rem; /* 64px   home hero               */
 
-  --leading-display: 1.15;
-  --leading-ui: 1.4;
-  --leading-body: 1.7;
+  --leading-display: 1.1;
+  --leading-ui: 1.45;
+  --leading-body: 1.75;
 
-  --tracking-display: -0.025em; /* ≥28px only */
-  --tracking-eyebrow: 0.14em;
+  --tracking-display: -0.03em;
+  --tracking-eyebrow: 0.12em;
 
-  --measure: 65ch; /* hard cap; extra viewport becomes margin */
+  --measure: 68ch;
 
-  /* 4px scale. Nothing off-scale. */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -176,22 +154,22 @@
   --space-16: 4rem;
   --space-24: 6rem;
 
-  /* Three radii, not a free choice. */
-  --radius-sm: 6px;
-  --radius: 10px;
+  /* Soft, generous corners. */
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
   --radius-full: 999px;
 
   --rail: 280px;
-  --shell: 1200px;
+  --shell: 1240px;
 
   --ease: cubic-bezier(0.2, 0, 0.2, 1);
-  --dur: 150ms;
+  --dur: 200ms;
 }
 
 /* --------------------------------------------------------------------------
    4. Tailwind v4 bridge
-   `@theme inline` keeps the var reference live, so utilities follow the
-   runtime theme switch instead of freezing the light value at build time.
    -------------------------------------------------------------------------- */
 @theme inline {
   --color-ground: var(--ground);
@@ -210,11 +188,12 @@
   --color-accent-ink: var(--accent-ink);
   --color-accent-wash: var(--accent-wash);
 
-  --color-cover-ground: var(--cover-ground);
-  --color-cover-soft: var(--cover-soft);
-  --color-cover-mid: var(--cover-mid);
-  --color-cover-strong: var(--cover-strong);
-  --color-cover-deep: var(--cover-deep);
+  --color-tint-sage: var(--tint-sage);
+  --color-tint-peach: var(--tint-peach);
+  --color-tint-sky: var(--tint-sky);
+  --color-tint-lilac: var(--tint-lilac);
+  --color-tint-butter: var(--tint-butter);
+  --color-on-photo: var(--on-photo);
 
   --font-display: var(--font-display);
   --font-sans: var(--font-body);
@@ -231,10 +210,13 @@
 
   --radius-sm: var(--radius-sm);
   --radius-DEFAULT: var(--radius);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
   --radius-full: var(--radius-full);
 
   --shadow-sm: var(--shadow-sm);
   --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
 }
 
 /* --------------------------------------------------------------------------
@@ -245,7 +227,6 @@
 @layer base {
   html {
     background: var(--ground);
-    /* 1rem = 16px so the rem scale above is predictable; body opts up to 18px. */
     -webkit-text-size-adjust: 100%;
   }
 
@@ -265,16 +246,15 @@
   h4 {
     font-family: var(--font-display);
     line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
     text-wrap: balance;
     font-weight: 600;
   }
   h1 {
     font-size: var(--text-3xl);
-    letter-spacing: var(--tracking-display);
   }
   h2 {
     font-size: var(--text-xl);
-    letter-spacing: var(--tracking-display);
   }
   h3 {
     font-size: var(--text-lg);
@@ -286,7 +266,7 @@
 
   a {
     color: var(--primary);
-    text-underline-offset: 0.18em;
+    text-underline-offset: 0.2em;
   }
   a:hover {
     color: var(--primary-hover);
@@ -295,18 +275,16 @@
   /* Always visible — never `outline: none`. */
   :focus-visible {
     outline: 2px solid var(--primary);
-    outline-offset: 2px;
+    outline-offset: 3px;
     border-radius: var(--radius-sm);
   }
 }
 
 @layer components {
-  /* Metadata columns line up: read time, source count, dates. */
   .tabular {
     font-variant-numeric: tabular-nums;
   }
 
-  /* Uppercase category eyebrow — the only category identifier site-wide (DESIGN.md §2). */
   .eyebrow {
     font-size: var(--text-2xs);
     font-weight: 700;
@@ -316,13 +294,9 @@
     line-height: var(--leading-ui);
   }
 
-  /* Article body: the hard measure cap. */
   .prose {
     max-width: var(--measure);
   }
-
-  /* Wide children must scroll themselves so the page body never scrolls sideways.
-     Tables get the same via the .table-scroll wrapper the markdown pipeline adds (article.css). */
   .prose pre {
     display: block;
     overflow-x: auto;
@@ -335,6 +309,8 @@
   button {
     transition:
       color var(--dur) var(--ease),
-      background-color var(--dur) var(--ease);
+      background-color var(--dur) var(--ease),
+      box-shadow var(--dur) var(--ease),
+      transform var(--dur) var(--ease);
   }
 }

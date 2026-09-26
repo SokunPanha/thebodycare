@@ -3,8 +3,9 @@ import Link from "next/link";
 import type { PostListing } from "../queries";
 import { PostCover } from "./post-cover";
 import { PostMeta } from "./post-meta";
+import { TopicPill } from "./topic-pill";
 
-// One row of the dense index: thumbnail + text. The whole row is a single link target.
+// A list row: rounded thumbnail + text. The whole row is one link target.
 export function PostRow({
   post,
   showCategory = true,
@@ -16,21 +17,19 @@ export function PostRow({
     <article>
       <Link
         href={`/posts/${post.slug}`}
-        className="group -mx-4 flex gap-4 rounded px-4 py-5 text-ink no-underline hover:bg-primary-wash hover:text-ink sm:gap-6 md:-mx-6 md:px-6"
+        className="group flex gap-4 rounded-lg p-3 text-ink no-underline hover:bg-surface hover:text-ink hover:shadow-sm sm:gap-6"
       >
         <PostCover
           post={post}
           ratio="1/1"
-          sizes="112px"
-          className="w-20 shrink-0 self-start rounded-sm sm:w-28"
+          sizes="128px"
+          className="w-24 shrink-0 self-start rounded sm:w-32"
           decorative
         />
-        <div className="min-w-0">
-          {showCategory && <p className="eyebrow">{post.category.name}</p>}
-          <h3 className="mt-1 text-lg group-hover:text-primary">{post.title}</h3>
-          <p className="mt-1 line-clamp-2 max-w-(--measure) text-sm text-ink-muted">
-            {post.excerpt}
-          </p>
+        <div className="min-w-0 py-1">
+          {showCategory && <TopicPill category={post.category} />}
+          <h3 className="mt-2 text-lg group-hover:text-primary">{post.title}</h3>
+          <p className="mt-1 line-clamp-2 text-sm text-ink-muted">{post.excerpt}</p>
           <div className="mt-2">
             <PostMeta
               readingTime={post.reading_time_min}

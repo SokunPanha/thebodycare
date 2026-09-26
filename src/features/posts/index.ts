@@ -3,6 +3,7 @@
 export {
   approvePost,
   generateAiCover,
+  generateMissingCovers,
   rejectPost,
   removeCover,
   updatePost,
@@ -16,6 +17,7 @@ export {
   getReviewArticle,
   type Article,
 } from "./article";
+export { BulkCoverButton } from "./components/admin/bulk-cover-button";
 export { CoverEditor } from "./components/admin/cover-editor";
 export { PostEditForm } from "./components/admin/post-edit-form";
 export { ReviewActions } from "./components/admin/review-actions";
@@ -23,11 +25,13 @@ export { ReviewPanel } from "./components/admin/review-panel";
 export { ReviewQueue } from "./components/admin/review-queue";
 export { StaffPostList } from "./components/admin/staff-post-list";
 export { ArticleView } from "./components/article-view";
-export { LeadPost } from "./components/lead-post";
+export { FeatureCard } from "./components/feature-card";
 export { PostCard } from "./components/post-card";
 export { PostCover } from "./components/post-cover";
 export { PostIndex } from "./components/post-index";
+export { TopicPill } from "./components/topic-pill";
 export {
+  countPostsWithoutCover,
   countPublishedPosts,
   getPostBySlug,
   getPostForStaff,

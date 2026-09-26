@@ -14,10 +14,11 @@ export function Pagination({
 }) {
   if (pageCount <= 1) return null;
 
-  const link = "rounded border border-line-strong px-4 py-2 text-sm font-semibold no-underline";
+  const link =
+    "rounded-full bg-surface px-5 py-2.5 text-sm font-semibold no-underline shadow-sm hover:shadow-md";
 
   return (
-    <nav aria-label="Pagination" className="mt-8 flex items-center justify-between gap-4">
+    <nav aria-label="Pagination" className="mt-10 flex items-center justify-between gap-4">
       {page > 1 ? (
         <Link href={hrefFor(page - 1)} rel="prev" className={link}>
           ← Newer

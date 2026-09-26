@@ -11,7 +11,8 @@ test("search from the header finds a published post and opens it", async ({ page
   try {
     await page.setViewportSize({ width: 1366, height: 800 });
     await page.goto("/");
-    const box = page.getByRole("search").getByRole("searchbox", { name: "Search articles" });
+    // The home page has two search boxes (header and hero); use the header's.
+    const box = page.getByRole("banner").getByRole("searchbox", { name: "Search articles" });
     await box.fill("quokka breathing");
     await box.press("Enter");
 
@@ -35,7 +36,7 @@ test("search results are noindex, and a no-match query says so", async ({ page }
 test("phone: the header search icon opens the search page, focused", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 800 });
   await page.goto("/");
-  await page.getByRole("link", { name: "Search" }).click();
+  await page.getByRole("banner").getByRole("link", { name: "Search", exact: true }).click();
   await expect(page).toHaveURL("/search");
   await expect(page.getByRole("searchbox", { name: "Search articles" })).toBeFocused();
 });

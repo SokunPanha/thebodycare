@@ -89,15 +89,15 @@ Full reasoning for each in `docs/STRUCTURE.md` §3.
 
 ## Design quick reference
 
-Direction **B — Daylight**. Full spec in `docs/DESIGN.md`.
+Direction **Soft wellness** (2026-09-26 — replaced "Daylight"). Full spec in `docs/DESIGN.md`.
 
-- Primary `#4A63D6` periwinkle · accent `#E8664A` coral
-- **Coral is semantic only** — the "when to seek care" block, nowhere else
-- Bricolage Grotesque (display) + Public Sans (body), self-hosted via `next/font/google`
-- Body text **18px**, measure **65ch**, hard-capped
-- **Covers (revised 2026-09-25):** AI-generated photos (MiniMax `image-01`) or staff uploads, with
-  code-generated art as the fallback — `DESIGN.md` §6. Coral never appears in covers.
-- No per-category colours — categories are an uppercase label in `--primary`
+- Warm cream ground `#FAF6F0`, charcoal ink, **sage** primary `#3D6B55`; soft topic tints
+  (sage/peach/sky/lilac/butter) mapped in `src/config/categories.ts`
+- **Terracotta is semantic only** — the "when to seek care" block, nowhere else
+- Outfit (display) + Figtree (body), self-hosted via `next/font/google`; body **18px**, measure 68ch
+- **Real photo covers** (AI via MiniMax, or uploaded); a plain tint placeholder until then — no
+  illustrations. Bento home, rounded 16–32px cards, warm shadows
+- Every text colour pair is AA in both themes — recompute contrast when changing a colour
 
 ---
 
@@ -144,7 +144,7 @@ dynamic and `noindex, follow`. Header: single row with search box only from 1280
 seven topics + a search box don't fit narrower); below that, a search icon and topics on their own row.
 
 **Covers:** `posts.cover_*` + the public `covers` bucket (migration 0008). `PostCover` renders the
-photo or falls back to `CoverArt`. AI generation needs `MINIMAX_API_KEY` in `.env.local` (optional —
+photo or falls back to `CoverPlaceholder` (plain tint gradient). AI generation needs `MINIMAX_API_KEY` in `.env.local` (optional —
 the editor's "Generate with AI" button is disabled without it). The storage SELECT policy is
 required: without it, deleting a replaced cover silently does nothing (tested).
 

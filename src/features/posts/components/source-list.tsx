@@ -4,7 +4,7 @@ export function SourceList({ sources }: { sources: PostWithSources["sources"] })
   if (sources.length === 0) return null;
 
   return (
-    <section aria-labelledby="sources">
+    <section aria-labelledby="sources" className="rounded-lg bg-surface p-6 shadow-sm">
       <h2 id="sources" className="text-lg">
         Sources
       </h2>

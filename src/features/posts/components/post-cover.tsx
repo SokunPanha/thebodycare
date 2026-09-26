@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { CoverArt } from "@/components/art";
+import { CoverPlaceholder } from "@/components/art";
 import { coverUrl } from "@/lib/supabase/storage";
 
 type CoverFields = {
@@ -14,7 +14,7 @@ type CoverFields = {
 
 type Props = {
   post: CoverFields;
-  ratio: "16/10" | "4/1" | "1/1" | "fill";
+  ratio: "16/10" | "16/9" | "4/1" | "1/1" | "fill";
   /** Responsive `sizes` for the optimizer — the rendered width at each breakpoint. */
   sizes: string;
   className?: string;
@@ -28,24 +28,17 @@ type Props = {
 };
 
 /**
- * The post's cover photo, or its generated art until it has one. The box has a fixed aspect
+ * The post's cover photo, or a plain tinted placeholder until it has one. The box has a fixed aspect
  * ratio either way, so swapping one for the other never shifts layout. (CLS must be zero.)
  */
 export function PostCover({ post, ratio, sizes, className = "", eager, decorative }: Props) {
   if (!post.cover_path || !post.cover_width || !post.cover_height) {
-    return (
-      <CoverArt
-        seed={post.slug}
-        category={post.category.slug}
-        ratio={ratio}
-        className={className}
-      />
-    );
+    return <CoverPlaceholder category={post.category.slug} ratio={ratio} className={className} />;
   }
 
   return (
     <div
-      className={`relative overflow-hidden bg-cover-ground ${className}`}
+      className={`relative overflow-hidden bg-surface-subtle ${className}`}
       style={ratio === "fill" ? undefined : { aspectRatio: ratio }}
     >
       <Image
