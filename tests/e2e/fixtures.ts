@@ -6,24 +6,31 @@ import { deletePosts, insertPost, service } from "../integration/local-supabase"
 
 type Staff = { email: string; password: string };
 
+async function createStaff(role: "admin" | "editor") {
+  const db = service();
+  const email = `e2e-${randomUUID()}@example.test`;
+  const password = randomUUID();
+  const { data, error } = await db.auth.admin.createUser({ email, password, email_confirm: true });
+  if (error) throw error;
+  await db.from("profiles").update({ role }).eq("id", data.user.id);
+  return { email, password, remove: () => db.auth.admin.deleteUser(data.user.id) };
+}
+
 /** A throwaway local staff account and an in_review draft, both removed after each test. */
 export const test = base.extend<{
   staff: Staff;
+  admin: Staff;
   draft: { id: string; slug: string; title: string };
 }>({
   staff: async ({}, use) => {
-    const db = service();
-    const email = `e2e-${randomUUID()}@example.test`;
-    const password = randomUUID();
-    const { data, error } = await db.auth.admin.createUser({
-      email,
-      password,
-      email_confirm: true,
-    });
-    if (error) throw error;
-    await db.from("profiles").update({ role: "editor" }).eq("id", data.user.id);
-    await use({ email, password });
-    await db.auth.admin.deleteUser(data.user.id);
+    const { remove, ...account } = await createStaff("editor");
+    await use(account);
+    await remove();
+  },
+  admin: async ({}, use) => {
+    const { remove, ...account } = await createStaff("admin");
+    await use(account);
+    await remove();
   },
   draft: async ({}, use) => {
     const post = await insertPost("in_review", { sourceCount: 3, source: "ai" });

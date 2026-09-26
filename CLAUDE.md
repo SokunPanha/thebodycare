@@ -8,7 +8,7 @@ everything already published, scope-checked, and approved by a human before goin
 
 ---
 
-## ▶ Status: M1–M3 + M5.1–5.3 done — next is M4 (needs spike results)
+## ▶ Status: M1–M3 + M5 done (+ covers, search) — next: M6 SEO, then M4 (needs spike results)
 
 **Before M4 is written, the user should run `docs/spike/README.md`** — a 45-minute, no-code
 validation in AI Studio that Gemini + Search grounding actually produces publishable, in-scope,
@@ -16,8 +16,8 @@ well-cited health content. M4 is two sessions built on that assumption. If the s
 M4's design changes (human-written pillars, AI clusters only). **Ask for the spike results before
 starting M4.**
 
-**Next:** M4 needs the spike results and a real `GEMINI_API_KEY`. Remaining M5 (5.4 post list,
-5.5 dashboard, 5.6 topic matrix view) doesn't depend on M4.
+**Next:** M6.1–6.4 (metadata, JSON-LD, sitemap/robots, OG images) don't depend on M4. M4 needs the
+spike results and a real `GEMINI_API_KEY`.
 
 **M4 must honour two contracts the review screen already reads:** `generation_runs.scope_verdict`
 must match `scopeVerdictSchema` in `features/posts/schema.ts`, and each draft needs a

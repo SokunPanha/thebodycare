@@ -504,6 +504,17 @@ export type Database = {
           total: number
         }[]
       }
+      topic_matrix_coverage: {
+        Args: never
+        Returns: {
+          by_format: Json
+          by_status: Json
+          category_id: string
+          category_name: string
+          category_slug: string
+          total: number
+        }[]
+      }
     }
     Enums: {
       matrix_status: "open" | "queued" | "drafted" | "published" | "exhausted"
