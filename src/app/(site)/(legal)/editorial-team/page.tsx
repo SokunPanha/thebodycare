@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 const team = siteConfig.editorialTeam;
 
 export const metadata: Metadata = pageMetadata({
-  title: team.name,
+  title: "Editorial team",
   description: `Who publishes ${siteConfig.name}'s articles, and how each one is researched, checked and approved.`,
   path: team.path,
 });
