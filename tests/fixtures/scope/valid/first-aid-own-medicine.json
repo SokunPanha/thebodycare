@@ -1,0 +1,7 @@
+{
+  "name": "first-aid-own-medicine",
+  "expect": {
+    "ok": true
+  },
+  "inject": "If swelling of the lips or tongue comes on fast, call your local emergency number straight away, and if they have their own prescribed auto-injector, help them use it."
+}

@@ -74,7 +74,7 @@ describe("posts queries", () => {
 });
 
 describe("taxonomy queries", () => {
-  it("lists the 7 categories in nav order", async () => {
+  it("lists the 8 categories in nav order", async () => {
     const categories = await taxonomy.listCategories();
     expect(categories.map((c) => c.slug)).toEqual([
       "sleep",
@@ -84,10 +84,11 @@ describe("taxonomy queries", () => {
       "mind",
       "everyday-body",
       "prevention",
+      "symptoms",
     ]);
   });
 
   it("returns null for an unknown category", async () => {
-    expect(await taxonomy.getCategoryBySlug("symptoms")).toBeNull();
+    expect(await taxonomy.getCategoryBySlug("no-such-topic")).toBeNull();
   });
 });

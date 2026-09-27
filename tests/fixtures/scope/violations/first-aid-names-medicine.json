@@ -1,0 +1,8 @@
+{
+  "name": "first-aid-names-medicine",
+  "expect": {
+    "ok": false,
+    "reason": "medication_mention"
+  },
+  "inject": "If their lips start to swell, inject adrenaline into the outer thigh while you wait for the ambulance."
+}

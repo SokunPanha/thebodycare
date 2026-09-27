@@ -162,8 +162,15 @@ seven topics + a search box don't fit narrower); below that, a search icon and t
   allowlist (`config/sources.ts`, data) AND the page loads. Grounding is topic-dependent (some
   topics search but return zero chunks), so it can't be the only source. `insufficient_sources`
   rejections list every offered domain and why it was dropped — use them to tune the allowlist.
-- **Prompts in use:** `v2/draft-article`, `v1/guard-scope`, `v2/cover-image`. v1 draft is kept for
-  traceability (rule 7).
+- **Prompts in use:** `v4/draft-article`, `v2/guard-scope`, `v2/cover-image`. Older versions stay
+  for traceability (rule 7).
+- **Drafting is two calls (v3+):** grounded research in plain text, then the structured write from
+  those notes with no search. Vertex returns **no grounding chunks when JSON output is requested**
+  (measured 2026-09-27), and model-written URLs were mostly invented — sources come only from the
+  research call's grounding.
+- **First aid** (v4, category `symptoms`, `hasFirstAid()` in `config/categories.ts`): rules in
+  EDITORIAL.md §2 — emergency call first, no medicine names or doses, no CPR/abdominal-thrust
+  instructions. Guard v2 knows first-aid steps aren't home remedies; fixtures cover both sides.
 - The DB side is migration 0011 (service role only): run lock, atomic cell claim (SKIP LOCKED),
   `nearest_content`, and `persist_draft` — one transaction, no partial posts.
 - The pipeline takes the admin client as a parameter (rule 4) and all its deps are injectable;

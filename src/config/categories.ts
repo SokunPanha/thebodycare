@@ -11,7 +11,16 @@ const tints: Record<string, Tint> = {
   mind: "sky",
   "everyday-body": "peach",
   prevention: "sage",
+  symptoms: "sky",
 };
+
+// Categories whose articles carry a "First aid: what to do now" section (prompts/v4/draft-article,
+// EDITORIAL.md §2).
+const firstAidCategories = new Set(["symptoms"]);
+
+export function hasFirstAid(slug: string): boolean {
+  return firstAidCategories.has(slug);
+}
 
 export function categoryTint(slug: string): Tint {
   return tints[slug] ?? "sage";

@@ -93,6 +93,20 @@ export const trustedPublishers: Record<string, string> = {
   "menopause.org": "The Menopause Society",
   "uspreventiveservicestaskforce.org": "US Preventive Services Task Force",
   "screening.nhs.uk": "NHS Screening",
+  // First aid (Symptoms & First Aid category, EDITORIAL.md §2)
+  "redcross.org": "American Red Cross",
+  "redcross.org.uk": "British Red Cross",
+  "redcross.org.au": "Australian Red Cross",
+  "redcross.ca": "Canadian Red Cross",
+  "ifrc.org": "IFRC",
+  "sja.org.uk": "St John Ambulance",
+  "stjohn.org.au": "St John Ambulance Australia",
+  "stjohn.org.nz": "St John New Zealand",
+  "resus.org.uk": "Resuscitation Council UK",
+  "poison.org": "National Capital Poison Center",
+  "healthychildren.org": "American Academy of Pediatrics",
+  "aap.org": "American Academy of Pediatrics",
+  "acep.org": "American College of Emergency Physicians",
 };
 
 /** Suffixes that are trustworthy as a class (government, academic, NHS trusts). */

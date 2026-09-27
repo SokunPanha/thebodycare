@@ -3,7 +3,7 @@ import "server-only";
 import { generateJson } from "@/lib/ai/gemini";
 import { textModels } from "@/lib/ai/models";
 
-import { guardSystemPrompt, guardUserPrompt } from "../prompts/v1/guard-scope";
+import { guardSystemPrompt, guardUserPrompt } from "../prompts/v2/guard-scope";
 import {
   guardVerdictJsonSchema,
   guardVerdictSchema,

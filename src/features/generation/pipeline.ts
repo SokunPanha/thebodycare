@@ -2,6 +2,7 @@ import "server-only";
 
 import { createHash } from "node:crypto";
 
+import { hasFirstAid } from "@/config/categories";
 import { generationConfig } from "@/config/generation";
 import { saveCover } from "@/features/posts";
 import { embeddingCost, groundingCost } from "@/lib/ai/costs";
@@ -12,7 +13,7 @@ import { readingTime } from "@/lib/utils/reading-time";
 import { slugify } from "@/lib/utils/slug";
 
 import { COVER_PROMPT_VERSION, coverImageAlt, coverImagePrompt } from "./prompts/v2/cover-image";
-import { DRAFT_PROMPT_VERSION, type DraftBrief } from "./prompts/v3/draft-article";
+import { DRAFT_PROMPT_VERSION, type DraftBrief } from "./prompts/v4/draft-article";
 import {
   cellPriority,
   claimCell,
@@ -237,6 +238,7 @@ async function runOne(
       audience: cell.audience,
       format: cell.format,
       targetQuery: cell.target_query,
+      firstAid: hasFirstAid(cell.category_slug),
       related: related.map((p) => ({ title: p.title, slug: p.slug })),
     };
     const allowedSlugs = new Set(related.map((p) => p.slug));

@@ -34,6 +34,23 @@ symptom article must answer this.
 
 **Prevention and awareness** — screening awareness, risk factors, understanding your own baseline.
 
+**First aid** (added 2026-09-27, with the Symptoms & First Aid category) — the immediate, practical
+steps a bystander can take until professional help arrives or the problem settles: cool a burn under
+running water, press on a bleeding wound, rest and raise a sprain. Rules:
+
+- **Steps come only from recognised first-aid bodies** — NHS, Red Cross, St John Ambulance,
+  Resuscitation Council, national health services. Never improvised, never folk remedies (butter
+  on a burn) except to say not to.
+- **Emergencies lead with the call.** Where a situation can be an emergency, "call your local
+  emergency number" comes first, before any step.
+- **Still no medicines, by name or dose.** Where official first aid involves one (an adrenaline
+  auto-injector, aspirin during a heart attack), say only "use their own prescribed emergency
+  medicine if they have one" or "the call handler may tell you what to do" — never the drug or dose.
+- **No skills that need training to do safely** as step-by-step instructions (CPR, the Heimlich
+  manoeuvre): describe what to expect, follow the call handler, and point to a first-aid course.
+- First aid is never presented as the whole answer: every first-aid article still ends with when
+  to seek care.
+
 ---
 
 ## 3. Out of scope — hard blocks
@@ -67,6 +84,8 @@ These are where a naive filter fails. Each has a fixture in `TESTING.md` §1b.
 | "Usually resolves in 7–10 days" | "This will clear it up" | Prognosis ≠ treatment promise |
 | A cited study whose title names a drug | The body naming a drug | Sources may mention drugs; prose may not |
 | "Worth mentioning to your doctor" | "No need to see anyone" | Always toward care, never away |
+| "Cool the burn under cool running water for 20 minutes" | "Put honey on the burn to heal it" | Official first-aid steps are allowed; remedies that treat are not |
+| "Use their own prescribed auto-injector if they have one" | "Give them adrenaline" / "Chew a 300mg aspirin" | First aid may point to the person's own emergency medicine, never name or dose it |
 
 ---
 

@@ -1,0 +1,7 @@
+{
+  "name": "first-aid-steps",
+  "expect": {
+    "ok": true
+  },
+  "inject": "If someone scalds their hand at the kettle, cool the burn under cool running water for 20 minutes, remove any rings nearby, and cover it loosely with cling film. Don't put butter or ice on it."
+}

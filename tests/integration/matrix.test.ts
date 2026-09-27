@@ -28,7 +28,7 @@ describe("topic_matrix_coverage", () => {
   it("counts every cell once, by status and by format, per category", async () => {
     const { data, error } = await editor.client.rpc("topic_matrix_coverage");
     expect(error).toBeNull();
-    expect(data).toHaveLength(7);
+    expect(data).toHaveLength(8);
 
     const { count } = await service()
       .from("topic_matrix")

@@ -15,6 +15,8 @@ const categories = [
   ["mind", "Mind", "Stress, focus, mood, burnout — non-clinical"],
   ["everyday-body", "Everyday Body", "Skin, hair, nails, teeth, eyes, ears"],
   ["prevention", "Prevention", "Screening awareness, ageing, health numbers"],
+  // Added 2026-09-27 at the owner's request. Articles carry a first-aid section (EDITORIAL.md §2).
+  ["symptoms", "Symptoms & First Aid", "Common symptoms, minor injuries, and what to do first"],
 ];
 
 const COLUMNS = ["category", "subtopic", "angle", "audience", "format", "target_query", "priority"];

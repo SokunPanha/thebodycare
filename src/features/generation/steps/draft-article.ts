@@ -11,7 +11,7 @@ import {
   researchSystemPrompt,
   researchUserPrompt,
   type DraftBrief,
-} from "../prompts/v3/draft-article";
+} from "../prompts/v4/draft-article";
 import { draftArticleJsonSchema, draftArticleSchema, type DraftArticle } from "../schema";
 
 export type DraftResult = {

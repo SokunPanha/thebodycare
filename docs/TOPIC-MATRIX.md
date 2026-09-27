@@ -1,6 +1,6 @@
 # Topic Matrix
 
-**File:** `supabase/seed/topic-matrix.csv` — 203 cells, 29 per category. Edit it in a spreadsheet;
+**File:** `supabase/seed/topic-matrix.csv` — 232 cells, 29 per category. Edit it in a spreadsheet;
 it converts to `seed.sql` at task M2.6.
 
 This is the fuel for the generation pipeline and the thing that decides whether the site ranks.
@@ -20,11 +20,14 @@ evenly.
 | Mind | `/category/mind` | Stress, focus, mood, burnout — non-clinical |
 | Everyday Body | `/category/everyday-body` | Skin, hair, nails, teeth, eyes, ears |
 | Prevention | `/category/prevention` | Screening awareness, ageing, health numbers |
+| Symptoms & First Aid | `/category/symptoms` | Common symptoms, minor injuries, and what to do first |
 
-**Note what isn't here: a "Symptoms" category.** It would become a dumping ground and it would
-compete with its own siblings. Instead, symptom content lives in the category it belongs to, and
-`/symptoms` is a **cross-cutting index page** filtering every `is-this-normal` piece across all
-seven. Same content, better architecture, no orphan category.
+**Symptoms & First Aid (added 2026-09-27, owner's call).** The original plan argued against a
+Symptoms category — it risks becoming a dumping ground that competes with its siblings. To keep it
+distinct, its cells are **acute** things: minor injuries, sudden symptoms, common infections, and
+emergency recognition, each with a "First aid: what to do now" section (EDITORIAL.md §2,
+`prompts/v4/draft-article`). Long-running symptoms still belong in their topic category. Dedup gates
+2–3 catch any overlap that slips through.
 
 **Everyday Body is the sleeper.** Skin, nails, ears and teeth are unglamorous, extremely
 high-volume, and the big health sites cover them thinly because they're low-value per visit. It's

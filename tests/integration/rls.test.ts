@@ -88,7 +88,7 @@ describe("anon", () => {
 
   it("reads categories", async () => {
     const { data } = await anon().from("categories").select("slug");
-    expect(data).toHaveLength(7);
+    expect(data).toHaveLength(8);
   });
 
   it("cannot call the role helpers over the API", async () => {

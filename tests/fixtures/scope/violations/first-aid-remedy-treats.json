@@ -1,0 +1,8 @@
+{
+  "name": "first-aid-remedy-treats",
+  "expect": {
+    "ok": false,
+    "reason": "home_remedy_as_treatment"
+  },
+  "inject": "For a minor burn, spread honey over it twice a day to heal the skin faster."
+}
