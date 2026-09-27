@@ -147,3 +147,63 @@ describe("reject_post", () => {
     expect(error?.code).toBe("42501");
   });
 });
+
+describe("publish_unreviewed (0013)", () => {
+  it("publishes the listed drafts with no reviewer, and marks their topic and cell published", async () => {
+    const a = await aiDraft();
+    const b = await aiDraft();
+    const { data, error } = await editor.client.rpc("publish_unreviewed", {
+      p_post_ids: [a.post.id, b.post.id],
+    });
+    expect(error).toBeNull();
+    expect(data).toBe(2);
+
+    const db = service();
+    const { data: rows } = await db
+      .from("posts")
+      .select("status, source, reviewer_id, reviewed_at, published_at")
+      .in("id", [a.post.id, b.post.id]);
+    for (const row of rows!) {
+      // No "Reviewed by": nobody read it. (EDITORIAL.md §7)
+      expect(row).toMatchObject({
+        status: "published",
+        source: "ai",
+        reviewer_id: null,
+        reviewed_at: null,
+      });
+      expect(row.published_at).not.toBeNull();
+    }
+    const { data: cell } = await db
+      .from("topic_matrix")
+      .select("status")
+      .eq("id", a.cellId)
+      .single();
+    const { data: topic } = await db
+      .from("topic_queue")
+      .select("status")
+      .eq("id", a.topicId)
+      .single();
+    expect(cell?.status).toBe("published");
+    expect(topic?.status).toBe("published");
+  });
+
+  it("skips drafts it wasn't given, and drafts with fewer than 3 sources", async () => {
+    const listed = await aiDraft({ sourceCount: 2 });
+    const unlisted = await aiDraft();
+    const { data } = await editor.client.rpc("publish_unreviewed", {
+      p_post_ids: [listed.post.id],
+    });
+    expect(data).toBe(0);
+    const { data: rows } = await service()
+      .from("posts")
+      .select("status")
+      .in("id", [listed.post.id, unlisted.post.id]);
+    expect(rows!.every((r) => r.status === "in_review")).toBe(true);
+  });
+
+  it("refuses a reader", async () => {
+    const { post } = await aiDraft();
+    const { error } = await reader.client.rpc("publish_unreviewed", { p_post_ids: [post.id] });
+    expect(error?.code).toBe("42501");
+  });
+});

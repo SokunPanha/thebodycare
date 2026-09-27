@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import type { ReviewQueueItem } from "../../queries";
+import { PostCover } from "../post-cover";
 import { scopeVerdictSchema } from "../../schema";
 import { VerdictBadge } from "./verdict-badge";
 
@@ -20,6 +21,9 @@ export function ReviewQueue({ items }: { items: ReviewQueueItem[] }) {
       <table className="tabular w-full text-left text-sm">
         <thead className="bg-surface-subtle text-xs text-ink-muted">
           <tr>
+            <th scope="col" className="px-4 py-2 font-semibold">
+              Cover
+            </th>
             <th scope="col" className="px-4 py-2 font-semibold">
               Draft
             </th>
@@ -45,6 +49,16 @@ export function ReviewQueue({ items }: { items: ReviewQueueItem[] }) {
             const dedup = run?.topic?.dedup_score;
             return (
               <tr key={item.id} className="bg-surface hover:bg-primary-wash">
+                <td className="px-4 py-3">
+                  {/* Covers are what the automated checks can't judge — scan them here. */}
+                  <PostCover
+                    post={item}
+                    ratio="16/9"
+                    sizes="160px"
+                    className="w-40 rounded-sm"
+                    decorative
+                  />
+                </td>
                 <td className="px-4 py-3">
                   <Link href={`/admin/review/${item.id}`} className="font-semibold text-ink">
                     {item.title}

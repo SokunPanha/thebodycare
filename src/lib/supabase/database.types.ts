@@ -627,6 +627,7 @@ export type Database = {
           slug: string
         }[]
       }
+      publish_unreviewed: { Args: { p_post_ids: string[] }; Returns: number }
       reject_post: {
         Args: { p_post_id: string; p_reason: string }
         Returns: undefined

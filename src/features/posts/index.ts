@@ -4,6 +4,7 @@ export {
   approvePost,
   generateAiCover,
   generateNextMissingCover,
+  publishAllUnreviewed,
   rejectPost,
   removeCover,
   updatePost,
@@ -20,6 +21,7 @@ export {
 export { BulkCoverButton } from "./components/admin/bulk-cover-button";
 export { CoverEditor } from "./components/admin/cover-editor";
 export { PostEditForm } from "./components/admin/post-edit-form";
+export { PublishAllForm } from "./components/admin/publish-all-form";
 export { ReviewActions } from "./components/admin/review-actions";
 export { ReviewPanel } from "./components/admin/review-panel";
 export { ReviewQueue } from "./components/admin/review-queue";

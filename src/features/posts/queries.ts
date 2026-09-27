@@ -229,7 +229,8 @@ function reviewQueueQuery(supabase: SessionClient) {
       .from("posts")
       .select(
         `id, slug, title, source, created_at,
-       category:categories!inner ( name ),
+       cover_path, cover_alt, cover_width, cover_height,
+       category:categories!inner ( name, slug ),
        sources:post_sources ( count ),
        ${runSelect}`,
       )

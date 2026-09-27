@@ -52,6 +52,27 @@ export async function approvePost(postId: string, _previous: ActionState): Promi
   redirect(`/admin/review?published=${encodeURIComponent(data[0]?.slug ?? "")}`);
 }
 
+/**
+ * "Publish all" — every AI draft in the queue with 3+ sources goes live WITHOUT a reviewer: no
+ * "Reviewed by", because nobody read them (owner's decision, 2026-09-27; EDITORIAL.md §7).
+ */
+export async function publishAllUnreviewed(
+  _previous: ActionState,
+  formData: FormData,
+): Promise<ActionState> {
+  await requireStaff();
+  // Exactly the drafts the editor saw on the page — not whatever arrived since.
+  const ids = z.array(idSchema).min(1).max(100).safeParse(formData.getAll("id"));
+  if (!ids.success) return { error: "Nothing to publish — reload the queue." };
+
+  const supabase = await createSessionClient();
+  const { data, error } = await supabase.rpc("publish_unreviewed", { p_post_ids: ids.data });
+  if (error) return { error: error.message };
+
+  revalidateSite();
+  redirect(`/admin/review?publishedAll=${data}`);
+}
+
 export async function rejectPost(
   postId: string,
   _previous: ActionState,
