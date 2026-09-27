@@ -54,8 +54,9 @@ export default function MedicalDisclaimerPage() {
 
       <h2>AI-assisted content</h2>
       <p>
-        Articles are drafted with the help of AI and checked before publication. Each article states
-        whether a named person reviewed it. See <Link href="/about">how articles are made</Link>.
+        Articles are drafted with the help of AI and checked automatically before publication. Not
+        every article has been reviewed by a person; those that have name the reviewer. See{" "}
+        <Link href="/about">how articles are made</Link>.
       </p>
 
       <h2>External links</h2>

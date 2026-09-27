@@ -9,12 +9,13 @@ const team = siteConfig.editorialTeam;
 
 export const metadata: Metadata = pageMetadata({
   title: "Editorial team",
-  description: `Who publishes ${siteConfig.name}'s articles, and how each one is researched, checked and approved.`,
+  description: `Who publishes ${siteConfig.name}'s articles, and how each one is researched and checked.`,
   path: team.path,
 });
 
-// The house byline's page. Every claim here must stay true: if GENERATION_AUTO_PUBLISH is ever
-// turned on, "approved by a person" below stops being true and must change with it.
+// The house byline's page. Every claim here must stay true. Since 2026-09-27 (owner's decision)
+// articles may be published without a human read, so the page says so plainly; if every article is
+// ever human-approved again, it can say that instead.
 export default function EditorialTeamPage() {
   return (
     <ProsePage title={team.name}>
@@ -36,16 +37,16 @@ export default function EditorialTeamPage() {
           that actually load are kept, and every article lists them at the end.
         </li>
         <li>
-          <strong>Checked against our editorial rules.</strong> Nothing that names a medication,
-          gives a dose, diagnoses, or promises a cure gets through.
+          <strong>Checked against our editorial rules before publication.</strong> Every draft is
+          checked automatically, and nothing that names a medication, gives a dose, diagnoses, or
+          promises a cure gets through. Drafts too close to something we&rsquo;ve already published
+          are dropped.
         </li>
         <li>
-          <strong>Approved by a person</strong> before it is published.
-        </li>
-        <li>
-          <strong>Named review when there is one.</strong> If a specific person has reviewed an
-          article, their name appears beside the byline. We never imply a review that didn&rsquo;t
-          happen.
+          <strong>Named review when there is one.</strong> Not every article has been read by a
+          person before publication. When one has, the reviewer&rsquo;s name appears beside the
+          byline; when there&rsquo;s no name, there was no human review. We never imply one that
+          didn&rsquo;t happen.
         </li>
       </ul>
 

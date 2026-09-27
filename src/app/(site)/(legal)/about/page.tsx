@@ -40,8 +40,8 @@ export default function AboutPage() {
           article lists the sources it relied on.
         </li>
         <li>
-          <strong>Every article is checked against our editorial rules</strong> before publication,
-          both automatically and by a person.
+          <strong>Every article is checked against our editorial rules</strong> before publication.
+          The checks are automatic; articles a person has also reviewed name that person.
         </li>
         <li>
           <strong>

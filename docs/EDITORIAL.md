@@ -121,3 +121,9 @@ Articles carry no per-article AI label (owner's decision, 2026-09-27); the site-
 lives on the Medical Disclaimer page. A reviewed article shows **"Reviewed by [name]"** with the
 review date; an unreviewed one shows no attribution. What it must never do is imply a review that
 didn't happen, or credit a person who didn't write or review it.
+
+**Human review is not guaranteed** (owner's decision, 2026-09-27: the first 50 articles were
+published on passing the automated checks — sources, dedup, scope guard — without a human read).
+The Editorial Team, About and Medical Disclaimer pages say so. AI-drafted posts carry the house
+byline, "The Body Cue Editorial Team". If every article is human-approved again, those pages may
+say so again.
