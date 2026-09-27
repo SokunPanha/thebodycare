@@ -59,6 +59,7 @@ export const trustedPublishers: Record<string, string> = {
   "gastro.org": "American Gastroenterological Association",
   "iffgd.org": "IFFGD",
   // Heart, lungs, metabolic
+  "acc.org": "American College of Cardiology",
   "diabetes.org": "American Diabetes Association",
   "stroke.org.uk": "Stroke Association",
   "stroke.org": "American Stroke Association",

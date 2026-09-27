@@ -63,6 +63,9 @@ export type SourceNote = {
   outcome: "kept" | "untrusted" | "dead" | "duplicate";
   /** grounding = Google's search record; suggested = the model's own list (verified here). */
   via: "grounding" | "suggested";
+  /** For dead links: the path and HTTP status, to tell an invented URL (404) from a site that
+   *  blocks our checker (401/403/429) or a network failure (0). */
+  detail?: string;
 };
 
 export async function collectSources(
@@ -102,7 +105,7 @@ export async function collectSources(
     const page = await check(chunk.web!.uri!);
     const domain = chunk.web?.domain ?? "?";
     if (page.status < 200 || page.status >= 400) {
-      notes?.push({ domain, outcome: "dead", via: "grounding" });
+      notes?.push({ domain, outcome: "dead", via: "grounding", detail: String(page.status) });
       continue;
     }
     const url = page.url.split("#")[0]!;
@@ -137,7 +140,13 @@ export async function collectSources(
     }
     const page = await check(suggestion.url);
     if (page.status < 200 || page.status >= 400) {
-      notes?.push({ domain: host, outcome: "dead", via: "suggested" });
+      const path = new URL(suggestion.url).pathname.slice(0, 60);
+      notes?.push({
+        domain: host,
+        outcome: "dead",
+        via: "suggested",
+        detail: `${page.status} ${path}`,
+      });
       continue;
     }
     const url = page.url.split("#")[0]!;

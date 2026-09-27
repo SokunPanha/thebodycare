@@ -312,7 +312,9 @@ async function runOne(
     if (!guard.ok) {
       // For too few sources, say what grounding offered and why each was dropped — that's what
       // tells an editor whether to extend the allowlist (config/sources.ts).
-      const offered = sourceNotes.map((n) => `${n.domain} (${n.via} ${n.outcome})`).join(", ");
+      const offered = sourceNotes
+        .map((n) => `${n.domain} (${n.via} ${n.outcome}${n.detail ? ` ${n.detail}` : ""})`)
+        .join(", ");
       const detail =
         guard.reason === "insufficient_sources"
           ? `${guard.verdict.violations[0]?.excerpt ?? ""}; grounding offered: ${offered || "nothing"}`
