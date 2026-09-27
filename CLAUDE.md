@@ -15,6 +15,14 @@ sources taken from grounding, never trusted from model text. **M4 is built and v
 a real cron run produced a complete draft (3 live authority sources, scope pass, AI cover) in 65s
 for $0.056.
 
+**Deployed 2026-09-27:** https://thebodycue.vercel.app (Vercel project `sokunpanhas-projects/thebodycue`,
+region iad1) ← GitHub `SokunPanha/thebodycare` (public) · Supabase project `the-body-cue`
+(ref `atciiikgiporguoulafw`, us-east-1, linked via `supabase link`). Deploy: `npx vercel@latest deploy
+--prod` (the global `vercel` is too old to log in). Production env lives in Vercel; local copies of
+the DB password and prod cron secret are in the gitignored `.secrets/`. `.vercelignore` keeps
+`.secrets/` and `.env*` out of uploads. Migrations: `pnpm exec supabase db push` against the linked
+project — never `--include-seed` again (the seed is already there).
+
 **Next (needs the user):** hosted Supabase project, domain, Vercel deploy + env (incl.
 `GEMINI_SERVICE_ACCOUNT_JSON`), Search Console, cookieless analytics, Sentry/backups (M6.5–6.9).
 Then generate 15–20 real posts and review them. Tune dedup thresholds on the first ~50 drafts.
