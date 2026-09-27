@@ -96,8 +96,8 @@ inside `prefers-reduced-motion: no-preference`.
 ## 6. Components
 
 **Header** (2026-09-27). Cream, blurred, pinned at every width, always one row: logo mark +
-wordmark (wordmark from 640px), a **Topics ▾** dropdown (all topics, two columns, About at the
-foot), **First aid**, About (from 768px), and the search pill (from 768px; an icon below). Eight
+wordmark, a **Topics ▾** dropdown (all topics, two columns, About at the
+foot), and the search pill (from 768px; an icon below). Nothing else — no link appears twice. Eight
 topic links didn't fit beside search even at 1440px — the dropdown scales to any number.
 
 **Home — editorial front page** (2026-09-27, replaced the bento hero). Top to bottom:

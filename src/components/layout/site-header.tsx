@@ -9,15 +9,12 @@ import { TopicsMenu } from "./topics-menu";
 
 type NavCategory = { slug: string; name: string };
 
-const FIRST_AID = "/category/symptoms";
-
 /**
- * One row at every width, pinned while you scroll: brand, Topics dropdown, First aid, About — and
- * the search box from 768px (an icon below that). Topics live in the dropdown so adding one never
- * overflows the row.
+ * One row at every width, pinned while you scroll: brand, the Topics dropdown (every topic, plus
+ * About at its foot), and the search box from 768px (an icon below that). Nothing else in the row,
+ * so no link appears twice and adding a topic never overflows it.
  */
 export function SiteHeader({ categories }: { categories: NavCategory[] }) {
-  const firstAid = categories.some((c) => `/category/${c.slug}` === FIRST_AID);
   return (
     <header className="sticky top-0 z-40 border-b border-line/70 bg-ground/85 backdrop-blur-md">
       <Container className="relative flex h-[4.5rem] items-center gap-2 md:gap-4">
@@ -26,25 +23,11 @@ export function SiteHeader({ categories }: { categories: NavCategory[] }) {
           className="mr-2 flex shrink-0 items-center gap-2.5 font-display text-xl font-semibold tracking-(--tracking-display) text-ink no-underline hover:text-ink"
         >
           <LogoMark className="size-8" />
-          <span className="hidden sm:inline">{siteConfig.name}</span>
+          {siteConfig.name}
         </Link>
 
-        <nav aria-label="Main" className="flex items-center gap-1">
+        <nav aria-label="Main">
           <TopicsMenu categories={categories} />
-          {firstAid && (
-            <Link
-              href={FIRST_AID}
-              className="rounded-full px-3.5 py-2 text-sm font-medium whitespace-nowrap text-ink-muted no-underline hover:bg-surface hover:text-ink"
-            >
-              First aid
-            </Link>
-          )}
-          <Link
-            href="/about"
-            className="hidden rounded-full px-3.5 py-2 text-sm font-medium text-ink-muted no-underline hover:bg-surface hover:text-ink md:block"
-          >
-            About
-          </Link>
         </nav>
 
         <div className="ml-auto">
