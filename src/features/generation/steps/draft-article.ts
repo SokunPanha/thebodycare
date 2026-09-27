@@ -2,14 +2,21 @@ import "server-only";
 
 import type { GenerateContentResponse } from "@google/genai";
 
-import { generateJson } from "@/lib/ai/gemini";
+import { generateJson, generateText } from "@/lib/ai/gemini";
 import { textModels } from "@/lib/ai/models";
 
-import { draftSystemPrompt, draftUserPrompt, type DraftBrief } from "../prompts/v2/draft-article";
+import {
+  draftSystemPrompt,
+  draftUserPrompt,
+  researchSystemPrompt,
+  researchUserPrompt,
+  type DraftBrief,
+} from "../prompts/v3/draft-article";
 import { draftArticleJsonSchema, draftArticleSchema, type DraftArticle } from "../schema";
 
 export type DraftResult = {
   draft: DraftArticle;
+  /** The research call's response — its grounding metadata is where the sources come from. */
   response: GenerateContentResponse;
   costUsd: number;
   tokensIn: number;
@@ -19,24 +26,59 @@ export type DraftResult = {
 
 export type Drafter = (brief: DraftBrief) => Promise<DraftResult>;
 
-/** Drafting (M4.7): Flash with Google Search grounding, parsed through Zod. */
+const chunkCount = (r: GenerateContentResponse) =>
+  r.candidates?.[0]?.groundingMetadata?.groundingChunks?.length ?? 0;
+
+/**
+ * Drafting (M4.7), two calls (prompts/v3): grounded research in plain text, then the structured
+ * article written from those notes, parsed through Zod.
+ */
 export const draftWithGemini: Drafter = async (brief) => {
-  const { data, response, usage, costUsd } = await generateJson({
+  let costUsd = 0;
+  let tokensIn = 0;
+  let tokensOut = 0;
+  let searchQueries = 0;
+  const tally = (r: Awaited<ReturnType<typeof generateText>>) => {
+    costUsd += r.costUsd;
+    tokensIn += r.usage?.promptTokenCount ?? 0;
+    tokensOut += (r.usage?.candidatesTokenCount ?? 0) + (r.usage?.thoughtsTokenCount ?? 0);
+    searchQueries += r.response.candidates?.[0]?.groundingMetadata?.webSearchQueries?.length ?? 0;
+  };
+
+  const researchOnce = () =>
+    generateText({
+      model: textModels.draft,
+      system: researchSystemPrompt,
+      prompt: researchUserPrompt(brief),
+      grounding: true,
+      temperature: 0.3,
+    });
+  // Grounding occasionally comes back empty; one more try is cheaper than losing the topic.
+  let research = await researchOnce();
+  tally(research);
+  if (chunkCount(research.response) === 0) {
+    research = await researchOnce();
+    tally(research);
+  }
+
+  const write = await generateJson({
     model: textModels.draft,
     system: draftSystemPrompt,
-    prompt: draftUserPrompt(brief),
+    prompt: draftUserPrompt(brief, research.data),
     schema: draftArticleSchema,
     jsonSchema: draftArticleJsonSchema,
-    grounding: true,
     temperature: 0.7,
   });
+  tally({ ...write, data: "" });
+
   return {
-    draft: data,
-    response,
+    // The writer had no search: any URL it lists is invented. Sources come from research only.
+    draft: { ...write.data, sources: [] },
+    response: research.response,
     costUsd,
-    tokensIn: usage?.promptTokenCount ?? 0,
-    tokensOut: (usage?.candidatesTokenCount ?? 0) + (usage?.thoughtsTokenCount ?? 0),
-    searchQueries: response.candidates?.[0]?.groundingMetadata?.webSearchQueries?.length ?? 0,
+    tokensIn,
+    tokensOut,
+    searchQueries,
   };
 };
 

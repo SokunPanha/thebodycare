@@ -105,8 +105,9 @@ describe("pgvector", () => {
       insertPost("in_review"),
     ]);
     ids.push(...posts.map((post) => post.id));
-    // target on axis 0; near neighbour mostly axis 0; far neighbour on axis 1; draft identical.
-    const embeddings = [vector(0), vector(0, 1, 0.2), vector(1), vector(0)];
+    // target on axis 700; near neighbour mostly 700; far neighbour on 701; draft identical. High
+    // axes: the dev seed's sample posts use one-hot vectors on the first dozen, which outranked these.
+    const embeddings = [vector(700), vector(700, 701, 0.2), vector(701), vector(700)];
     const { error } = await db.from("post_embeddings").insert(
       posts.map((post, i) => ({
         post_id: post.id,

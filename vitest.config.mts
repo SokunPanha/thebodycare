@@ -8,6 +8,7 @@ export default defineConfig({
   },
   test: {
     include: ["src/**/*.test.ts", "tests/**/*.test.ts"],
+    exclude: ["tests/live/**", "**/node_modules/**"], // billed API calls — `pnpm test:live`
     // Integration tests share one local database; run files serially.
     fileParallelism: false,
     testTimeout: 20_000,

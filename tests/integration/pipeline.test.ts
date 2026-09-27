@@ -118,13 +118,10 @@ beforeEach(async () => {
 
 afterAll(async () => {
   const d = db();
-  const { data: runs } = await d
-    .from("generation_runs")
-    .select("post_id")
-    .gte("created_at", started);
-  const postIds = (runs ?? []).map((r) => r.post_id).filter(Boolean) as string[];
   await d.from("generation_runs").delete().gte("created_at", started);
-  if (postIds.length) await d.from("posts").delete().in("id", postIds);
+  // By creation time, not via generation_runs: beforeEach deletes the runs, and with them the only
+  // link to earlier tests' posts — which then leaked and skewed the pgvector test.
+  await d.from("posts").delete().eq("source", "ai").gte("created_at", started);
   await d.from("topic_queue").delete().gte("created_at", started);
   for (const cell of matrixSnapshot) {
     await d
@@ -167,7 +164,7 @@ describe("pipeline", () => {
     expect(run).toMatchObject({
       status: "success",
       post_id: outcome.postId,
-      prompt_version: "v2/draft-article",
+      prompt_version: "v3/draft-article",
     });
     expect(Number(run!.cost_usd)).toBeGreaterThan(0.002); // draft + guard + grounding + embeddings
     expect(run!.tokens_in).toBe(1000);

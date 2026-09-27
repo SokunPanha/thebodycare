@@ -12,7 +12,7 @@ import { readingTime } from "@/lib/utils/reading-time";
 import { slugify } from "@/lib/utils/slug";
 
 import { COVER_PROMPT_VERSION, coverImageAlt, coverImagePrompt } from "./prompts/v2/cover-image";
-import { DRAFT_PROMPT_VERSION, type DraftBrief } from "./prompts/v2/draft-article";
+import { DRAFT_PROMPT_VERSION, type DraftBrief } from "./prompts/v3/draft-article";
 import {
   cellPriority,
   claimCell,

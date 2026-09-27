@@ -91,6 +91,56 @@ export type GeminiResult<T> = {
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
+ * One plain-text call, retried on transient failures. Used for grounded research: Vertex returns
+ * grounding chunks reliably for free text, but often none once JSON output is requested
+ * (measured 2026-09-27 — see prompts/v3/draft-article.ts).
+ */
+export async function generateText({
+  model,
+  system,
+  prompt,
+  grounding = false,
+  temperature,
+  attempts = 3,
+}: {
+  model: string;
+  system: string;
+  prompt: string;
+  grounding?: boolean;
+  temperature: number;
+  attempts?: number;
+}): Promise<GeminiResult<string>> {
+  let lastError: GeminiError | undefined;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      const response = await gemini().models.generateContent({
+        model,
+        contents: prompt,
+        config: {
+          systemInstruction: system,
+          temperature,
+          ...(grounding ? { tools: [{ googleSearch: {} }] } : {}),
+        },
+      });
+      const usage = response.usageMetadata;
+      const text = response.text?.trim();
+      if (!text) {
+        throw new GeminiError(
+          `Empty response (finish reason: ${response.candidates?.[0]?.finishReason ?? "unknown"})`,
+          false,
+        );
+      }
+      return { data: text, response, usage, costUsd: textCost(model, usage) };
+    } catch (error) {
+      lastError = classify(error);
+      if (!lastError.transient || attempt === attempts) throw lastError;
+      await sleep(2_000 * 2 ** (attempt - 1));
+    }
+  }
+  throw lastError ?? new GeminiError("Gemini call failed.", false);
+}
+
+/**
  * One structured-output call: retried on transient failures, then parsed through Zod
  * (CLAUDE.md non-negotiable 5) — a malformed response throws instead of reaching the database.
  */
