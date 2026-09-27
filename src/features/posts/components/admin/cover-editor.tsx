@@ -58,7 +58,7 @@ export function CoverEditor({
         <p className="text-xs text-ink-muted">
           {hasCover
             ? source === "ai"
-              ? "AI-generated · credited on the article"
+              ? "AI-generated"
               : "Uploaded"
             : "No cover yet — generated art is shown instead"}
         </p>

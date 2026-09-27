@@ -41,11 +41,6 @@ export function ArticleView({ article }: { article: Article }) {
             className="rounded-xl shadow-md"
             eager
           />
-          {post.cover_source === "ai" && (
-            <figcaption className="mt-2 text-center text-xs text-ink-muted">
-              Image: AI-generated
-            </figcaption>
-          )}
         </figure>
       )}
 

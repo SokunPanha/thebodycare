@@ -98,6 +98,7 @@ temperature rather than raise it.
 
 ## 7. Attribution
 
-Every AI-drafted article shows **"AI-assisted · reviewed by [name]"** in the trust bar, with the
-review date. If a post hasn't been read by a human, it says **"AI-generated"** without a reviewer
-name. What it must never do is imply a review that didn't happen.
+Articles carry no per-article AI label (owner's decision, 2026-09-27); the site-wide disclosure
+lives on the Medical Disclaimer page. A reviewed article shows **"Reviewed by [name]"** with the
+review date; an unreviewed one shows no attribution. What it must never do is imply a review that
+didn't happen, or credit a person who didn't write or review it.

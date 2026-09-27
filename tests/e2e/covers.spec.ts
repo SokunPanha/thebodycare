@@ -40,8 +40,6 @@ test("upload a cover in the editor — it replaces the generated art on the live
     const cover = page.getByRole("img", { name: "A calm bedroom at dawn" });
     await expect(cover).toBeVisible();
     await expect(cover).toHaveAttribute("src", /_next\/image\?url=.*covers/);
-    // Uploaded, not AI: no AI credit.
-    await expect(page.getByText("Image: AI-generated")).toHaveCount(0);
 
     await signIn(page, staff);
     await page.goto(`/admin/posts/${post.id}/edit`);

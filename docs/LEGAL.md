@@ -137,8 +137,10 @@ limitation, and whether your jurisdiction imposes anything specific on health pu
 
 ## 8. AI disclosure
 
-Currently: the trust bar says "AI-assisted." That's the right instinct and ahead of most of the
-market.
+Currently (2026-09-27): no per-article AI label — the owner removed it. The disclosure is site-wide,
+on the Medical Disclaimer page ("AI-assisted content"). Revisit before the EU AI Act's Article 50
+transparency duties apply (August 2026 onward for new systems); keeping human review real and named
+is what keeps the site on the right side of them.
 
 Regulation here is moving — the EU AI Act's transparency provisions phase in over the next few years,
 and platform policies change faster than law does. The safe position is the one already chosen: say

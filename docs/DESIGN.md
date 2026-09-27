@@ -88,7 +88,7 @@ inside `prefers-reduced-motion: no-preference`.
   equipment, injury or distress, no text.
 - **Until a post has a photo**, cards show a plain two-tint gradient in its topic's colours —
   deliberately not an illustration. The article page shows no cover at all until there's a photo.
-- AI images are labelled "Image: AI-generated" on the article.
+- AI images carry no caption on the article (removed 2026-09-27); the admin cover editor still shows the source.
 - Photos render through `next/image` in a fixed aspect-ratio box, so they never shift layout.
 
 ---

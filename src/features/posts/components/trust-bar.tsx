@@ -12,17 +12,18 @@ function name(person: Person) {
 }
 
 /**
- * How the piece was made, stated plainly. It must never imply a review that didn't happen:
- * "reviewed by" appears only when a named reviewer exists. (EDITORIAL.md §7, LEGAL.md §8)
+ * Who stands behind the piece. It must never imply a review that didn't happen: "reviewed by"
+ * appears only when a named reviewer exists. No per-article AI label (owner's decision,
+ * 2026-09-27); the site-wide disclosure is on /medical-disclaimer. (EDITORIAL.md §7, LEGAL.md §8)
  */
-function attribution(post: PostWithSources): string {
+function attribution(post: PostWithSources): string | null {
   const reviewer = name(post.reviewer);
   const author = name(post.author);
   switch (post.source) {
     case "ai_reviewed":
-      return reviewer ? `AI-assisted · reviewed by ${reviewer}` : "AI-generated";
+      return reviewer ? `Reviewed by ${reviewer}` : null;
     case "ai":
-      return "AI-generated";
+      return null;
     case "human":
       if (author && reviewer) return `By ${author} · reviewed by ${reviewer}`;
       return author ? `By ${author}` : "Written by our editors";
