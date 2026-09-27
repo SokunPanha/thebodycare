@@ -1,0 +1,9 @@
+# Never upload credentials to Vercel's build — production reads them from Vercel env vars.
+.secrets/
+.env*
+!.env.example
+# Local-only artefacts
+node_modules/
+.next/
+test-results/
+playwright-report/
