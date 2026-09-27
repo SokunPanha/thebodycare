@@ -1,0 +1,47 @@
+{
+  "title": "Why you feel bloated after meals, and when to get it checked",
+  "excerpt": "Feeling full and swollen after eating is very common and usually harmless. Here's what tends to cause it, what helps day to day, and the signs worth raising with a doctor.",
+  "key_points": [
+    "Some bloating after a meal is a normal part of digestion.",
+    "Eating quickly, fizzy drinks and some high-fibre foods are common triggers.",
+    "Smaller meals, eating slowly and a short walk after eating often help."
+  ],
+  "sections": [
+    {
+      "heading": "What bloating is",
+      "body": "Bloating is a feeling of fullness or tightness in your tummy. It usually comes from gas made as gut bacteria break down food, or from air swallowed while eating. It tends to build through the day and ease overnight."
+    },
+    {
+      "heading": "What tends to help",
+      "body": "Eating more slowly, having smaller meals and keeping a short food and symptom diary for two weeks often make patterns easier to spot. Gentle movement after meals, like a ten-minute walk, can help gas move through."
+    },
+    {
+      "heading": "Why it happens to some people more",
+      "body": "Some people's guts are simply more sensitive to stretch and gas. Stress, irregular meals and changes in routine can all make bloating more noticeable, even when nothing is wrong."
+    }
+  ],
+  "when_to_seek_care": "See a GP if bloating lasts three weeks or more, keeps coming back, or comes with unexplained weight loss, blood in your poo, or a change in bowel habits lasting several weeks. Get urgent help if you have severe tummy pain, or you're being sick and can't keep fluids down.",
+  "faq": [
+    {
+      "question": "Is it normal to look pregnant after eating?",
+      "answer": "Visible swelling after a large meal is common and usually settles within a few hours."
+    }
+  ],
+  "seo": {
+    "title": "Bloated after meals? What's normal and when to check",
+    "description": "Why bloating after meals happens, what usually helps, and the specific signs that mean it's worth seeing a doctor."
+  },
+  "sources": [
+    { "url": "https://www.nhs.uk/conditions/bloating/", "title": "Bloating", "publisher": "NHS" },
+    {
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/gas-digestive-tract",
+      "title": "Gas in the digestive tract",
+      "publisher": "NIDDK"
+    },
+    {
+      "url": "https://my.clevelandclinic.org/health/symptoms/bloated-stomach",
+      "title": "Bloated stomach",
+      "publisher": "Cleveland Clinic"
+    }
+  ]
+}

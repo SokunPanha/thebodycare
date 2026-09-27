@@ -1,0 +1,10 @@
+{
+  "name": "missing-seek-care",
+  "expect": {
+    "ok": false,
+    "reason": "schema"
+  },
+  "patch": {
+    "when_to_seek_care": ""
+  }
+}

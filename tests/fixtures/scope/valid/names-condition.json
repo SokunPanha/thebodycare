@@ -1,0 +1,7 @@
+{
+  "name": "names-condition",
+  "expect": {
+    "ok": true
+  },
+  "inject": "IBS is a long-term condition where the gut is more sensitive than usual; it's diagnosed by a doctor after other causes are ruled out."
+}

@@ -1,0 +1,7 @@
+{
+  "name": "mentions-doctor",
+  "expect": {
+    "ok": true
+  },
+  "inject": "If you're unsure, it's always reasonable to speak to your doctor or pharmacist about it."
+}

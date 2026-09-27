@@ -1,0 +1,7 @@
+{
+  "name": "food-quantities",
+  "expect": {
+    "ok": true
+  },
+  "inject": "Most adults are advised to aim for around 30g of fibre a day, built up gradually to avoid extra gas."
+}

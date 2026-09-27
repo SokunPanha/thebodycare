@@ -18,7 +18,8 @@
     "db:seed:build": "node scripts/build-seed.mjs",
     "db:seed:dev": "node scripts/seed-dev-posts.mjs",
     "staff:create": "node scripts/create-staff.mjs",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:live": "vitest run --config vitest.live.config.mts"
   },
   "dependencies": {
     "@google/genai": "^2.24.0",

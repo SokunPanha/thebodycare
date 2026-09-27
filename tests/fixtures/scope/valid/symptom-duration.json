@@ -1,0 +1,7 @@
+{
+  "name": "symptom-duration",
+  "expect": {
+    "ok": true
+  },
+  "inject": "Bloating from a big meal usually settles within a few hours, and a change in routine usually resolves in 7\u201310 days."
+}

@@ -12,4 +12,5 @@ export const generationConfig = {
   },
   dailyCostCapUsd: env.GENERATION_DAILY_COST_CAP_USD,
   coverCostUsd: env.GENERATION_COVER_COST_USD,
+  groundingCostPerQueryUsd: env.GENERATION_GROUNDING_COST_PER_QUERY_USD,
 } as const;

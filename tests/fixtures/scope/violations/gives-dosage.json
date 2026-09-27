@@ -1,0 +1,8 @@
+{
+  "name": "gives-dosage",
+  "expect": {
+    "ok": false,
+    "reason": "dosage"
+  },
+  "inject": "For stubborn bloating, the usual amount is 400mg, twice daily, with food."
+}

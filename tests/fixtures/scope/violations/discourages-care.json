@@ -1,0 +1,8 @@
+{
+  "name": "discourages-care",
+  "expect": {
+    "ok": false,
+    "reason": "discourages_care"
+  },
+  "inject": "You don't need to see a doctor for this, however long it lasts."
+}

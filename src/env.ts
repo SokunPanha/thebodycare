@@ -24,7 +24,16 @@ const serverSchema = z.object({
   // Bypasses RLS. Read ONLY by lib/supabase/admin.ts — rule 4, enforced by lint.
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
 
-  GEMINI_API_KEY: z.string().min(1),
+  // Gemini runs on Vertex AI (a service account), because AI Studio keys on the free tier can't
+  // use Google Search grounding — which drafting depends on. (docs/spike/results/2026-09-27)
+  // Optional so the public site builds without them; the pipeline fails loudly if they're missing.
+  GOOGLE_CLOUD_PROJECT: optionalSecret,
+  GOOGLE_CLOUD_LOCATION: z.string().min(1).default("global"),
+  // Local: a path to the JSON key (kept in the gitignored .secrets/). Hosted: the JSON itself.
+  GEMINI_SERVICE_ACCOUNT_FILE: optionalSecret,
+  GEMINI_SERVICE_ACCOUNT_JSON: optionalSecret,
+  // AI Studio key — not used by the pipeline (no grounding on the free tier); kept for tooling.
+  GEMINI_API_KEY: optionalSecret,
 
   // Generation — tuned in the first month, so config not code. (PLAN.md §3)
   GENERATION_POSTS_PER_DAY: z.coerce.number().int().min(0).max(8).default(2),
@@ -47,6 +56,13 @@ const serverSchema = z.object({
   // What one cover costs, for the dashboard and the daily cap. MiniMax image-01 on WaveSpeed bills
   // $0.0035/image (confirmed in ../Youtube Automation/backend/core/costs.py, Jun 2026).
   GENERATION_COVER_COST_USD: z.coerce.number().min(0).default(0),
+  // Google Search grounding, per search query. UNVERIFIED — Google's pricing page wouldn't load
+  // on 2026-09-27; third-party sources say $14/1,000 queries on Gemini 3 ($35/1,000 prompts on
+  // 2.x). Erring high is the safe direction for a spending cap. Check the Cloud billing report.
+  GENERATION_GROUNDING_COST_PER_QUERY_USD: z.coerce.number().min(0).default(0.014),
+  // Optional: healthchecks.io ping URL. Pinged after each successful cron run; a missed ping
+  // emails you. (OPERATIONS.md §2)
+  HEALTHCHECK_URL: z.url().optional(),
 
   // Later — optional until the newsletter ships.
   RESEND_API_KEY: optionalSecret,

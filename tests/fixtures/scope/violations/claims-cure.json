@@ -1,0 +1,8 @@
+{
+  "name": "claims-cure",
+  "expect": {
+    "ok": false,
+    "reason": "cure_claim"
+  },
+  "inject": "This routine cures bloating for good within a week."
+}

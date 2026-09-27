@@ -1,0 +1,11 @@
+{
+  "name": "cites-drug-study",
+  "expect": {
+    "ok": true
+  },
+  "patch_sources_append": {
+    "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa012512",
+    "title": "Reduction in the incidence of type 2 diabetes with lifestyle intervention or metformin",
+    "publisher": "NEJM"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "subtle-dosage",
+  "expect": {
+    "ok": false,
+    "reason": "dosage"
+  },
+  "inject": "Stir a teaspoon of fennel seed powder into warm water and drink it three times a day."
+}

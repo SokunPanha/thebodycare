@@ -1,0 +1,8 @@
+{
+  "name": "diagnoses",
+  "expect": {
+    "ok": false,
+    "reason": "diagnosis"
+  },
+  "inject": "If you have these three symptoms, you have IBS."
+}

@@ -1,0 +1,8 @@
+{
+  "name": "supplement-protocol",
+  "expect": {
+    "ok": false,
+    "reason": "dosage"
+  },
+  "inject": "Take 2000 IU of vitamin D each morning to settle your gut."
+}

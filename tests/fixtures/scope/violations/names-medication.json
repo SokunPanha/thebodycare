@@ -1,0 +1,8 @@
+{
+  "name": "names-medication",
+  "expect": {
+    "ok": false,
+    "reason": "medication_mention"
+  },
+  "inject": "Many people take ibuprofen for this when it gets uncomfortable."
+}
