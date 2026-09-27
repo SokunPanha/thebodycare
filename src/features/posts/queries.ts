@@ -1,9 +1,15 @@
 import "server-only";
 
-import type { QueryData } from "@supabase/supabase-js";
+import { randomUUID } from "node:crypto";
+
+import { imageSize } from "image-size";
+
+import type { QueryData, SupabaseClient } from "@supabase/supabase-js";
 
 import { requireStaff } from "@/features/auth";
+import type { Database } from "@/lib/supabase/database.types";
 import { createPublicClient, createSessionClient } from "@/lib/supabase/server";
+import { COVERS_BUCKET } from "@/lib/supabase/storage";
 
 // Reads for the public site. The anon client means RLS guarantees published-only —
 // the explicit status filters below make intent clear and let the partial index be used.
@@ -313,4 +319,77 @@ export async function countPostsWithoutCover(): Promise<number> {
     .neq("status", "archived");
   if (error) throw error;
   return count ?? 0;
+}
+
+// ---------------------------------------------------------------------------
+// Covers. The one write in this file, and deliberately here rather than in actions.ts: every
+// export of a "use server" file becomes a public endpoint, and this takes a database client —
+// the editor's session client (actions.ts) or the pipeline's service-role client (M4).
+// ---------------------------------------------------------------------------
+
+const COVER_TYPES: Record<string, string> = {
+  jpg: "image/jpeg",
+  png: "image/png",
+  webp: "image/webp",
+  avif: "image/avif",
+};
+
+/**
+ * Stores bytes as the post's cover: upload → point the post at it → delete the old file. The new
+ * file goes up first and the old one comes down last, so a failure at any step leaves the post
+ * with a working cover — never a broken one.
+ */
+export async function saveCover(
+  db: SupabaseClient<Database>,
+  postId: string,
+  bytes: Buffer,
+  { alt, source, minWidth = 0 }: { alt: string; source: "ai" | "upload"; minWidth?: number },
+): Promise<{ error: string | null; status?: PostStatus }> {
+  let size: ReturnType<typeof imageSize>;
+  try {
+    size = imageSize(bytes);
+  } catch {
+    return { error: "That file isn't a readable image." };
+  }
+  const contentType = size.type ? COVER_TYPES[size.type] : undefined;
+  if (!contentType || !size.width || !size.height) {
+    return { error: "Use a JPEG, PNG, WebP or AVIF image." };
+  }
+  if (size.width < minWidth) {
+    return { error: `Covers need to be at least ${minWidth}px wide (this is ${size.width}px).` };
+  }
+
+  const { data: post, error: readError } = await db
+    .from("posts")
+    .select("cover_path, status")
+    .eq("id", postId)
+    .single();
+  if (readError) return { error: readError.message };
+
+  const path = `${postId}/${randomUUID()}.${size.type}`;
+  const storage = db.storage.from(COVERS_BUCKET);
+  const { error: uploadError } = await storage.upload(path, bytes, {
+    contentType,
+    cacheControl: "31536000", // a path is never reused, so the file can be cached forever
+    upsert: false,
+  });
+  if (uploadError) return { error: uploadError.message };
+
+  const { error: updateError } = await db
+    .from("posts")
+    .update({
+      cover_path: path,
+      cover_alt: alt,
+      cover_width: size.width,
+      cover_height: size.height,
+      cover_source: source,
+    })
+    .eq("id", postId);
+  if (updateError) {
+    await storage.remove([path]);
+    return { error: updateError.message };
+  }
+
+  if (post.cover_path) await storage.remove([post.cover_path]);
+  return { error: null, status: post.status };
 }

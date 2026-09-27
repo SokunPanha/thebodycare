@@ -9,3 +9,4 @@ export {
   type GuardResult,
   type ScopeVerdict,
 } from "./steps/guard-scope";
+export { defaultDeps, runPipeline, type ArticleOutcome, type PipelineDeps } from "./pipeline";

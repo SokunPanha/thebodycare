@@ -473,7 +473,25 @@ export type Database = {
           slug: string
         }[]
       }
+      claim_next_topic_cell: {
+        Args: never
+        Returns: {
+          angle: string
+          audience: string
+          category_id: string
+          category_name: string
+          category_slug: string
+          format: string
+          id: string
+          subtopic: string
+          target_query: string
+        }[]
+      }
       dashboard_stats: { Args: never; Returns: Json }
+      exact_duplicate: {
+        Args: { p_slug: string; p_title: string }
+        Returns: string
+      }
       match_posts: {
         Args: {
           exclude_post_id?: string
@@ -483,6 +501,28 @@ export type Database = {
         Returns: {
           post_id: string
           similarity: number
+        }[]
+      }
+      nearest_content: {
+        Args: {
+          include_topics?: boolean
+          match_count?: number
+          query_embedding: string
+        }
+        Returns: {
+          excerpt: string
+          id: string
+          kind: string
+          similarity: number
+          slug: string
+          title: string
+        }[]
+      }
+      persist_draft: {
+        Args: { p: Json }
+        Returns: {
+          post_id: string
+          slug: string
         }[]
       }
       reject_post: {
@@ -504,6 +544,11 @@ export type Database = {
           total: number
         }[]
       }
+      spend_today_usd: { Args: never; Returns: number }
+      start_generation_run: {
+        Args: { p_model: string; p_prompt_version: string }
+        Returns: string
+      }
       topic_matrix_coverage: {
         Args: never
         Returns: {
@@ -515,6 +560,7 @@ export type Database = {
           total: number
         }[]
       }
+      unique_post_slug: { Args: { p_base: string }; Returns: string }
     }
     Enums: {
       matrix_status: "open" | "queued" | "drafted" | "published" | "exhausted"

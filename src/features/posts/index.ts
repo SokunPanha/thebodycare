@@ -43,6 +43,7 @@ export {
   listRelatedPosts,
   listReviewQueue,
   POSTS_PAGE_SIZE,
+  saveCover,
   searchPosts,
   SITEMAP_CHUNK,
   type Page,

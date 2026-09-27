@@ -1,8 +1,5 @@
 "use server";
 
-import { randomUUID } from "node:crypto";
-
-import { imageSize } from "image-size";
 import { revalidatePath, updateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
@@ -22,6 +19,7 @@ import { CONTENT_TAG, createSessionClient } from "@/lib/supabase/server";
 import { COVERS_BUCKET } from "@/lib/supabase/storage";
 import { readingTime } from "@/lib/utils/reading-time";
 
+import { saveCover } from "./queries";
 import { postEditSchema } from "./schema";
 
 // Admin writes. Every action calls requireStaff() itself: a server action is a public POST
@@ -117,74 +115,19 @@ export async function previewMarkdown(markdown: string): Promise<string> {
 // Covers
 // ---------------------------------------------------------------------------
 
-const COVER_TYPES: Record<string, string> = {
-  jpg: "image/jpeg",
-  png: "image/png",
-  webp: "image/webp",
-  avif: "image/avif",
-};
 const MIN_COVER_WIDTH = 1200;
 
 export type CoverState = { error: string | null; done?: boolean };
 
-/**
- * Stores bytes as the post's cover: upload → point the post at it → delete the old file.
- * The new file is uploaded first and the old one deleted last, so a failure at any step leaves
- * the post with a working cover — never a broken one.
- */
+/** Saves a cover as the signed-in editor (RLS applies), then refreshes the pages that show it. */
 async function storeCover(
   postId: string,
   bytes: Buffer,
-  { alt, source, minWidth = 0 }: { alt: string; source: "ai" | "upload"; minWidth?: number },
+  options: { alt: string; source: "ai" | "upload"; minWidth?: number },
 ): Promise<CoverState> {
-  let size: ReturnType<typeof imageSize>;
-  try {
-    size = imageSize(bytes);
-  } catch {
-    return { error: "That file isn't a readable image." };
-  }
-  const contentType = size.type ? COVER_TYPES[size.type] : undefined;
-  if (!contentType || !size.width || !size.height) {
-    return { error: "Use a JPEG, PNG, WebP or AVIF image." };
-  }
-  if (size.width < minWidth) {
-    return { error: `Covers need to be at least ${minWidth}px wide (this is ${size.width}px).` };
-  }
-
-  const supabase = await createSessionClient();
-  const { data: post, error: readError } = await supabase
-    .from("posts")
-    .select("cover_path, status")
-    .eq("id", postId)
-    .single();
-  if (readError) return { error: readError.message };
-
-  const path = `${postId}/${randomUUID()}.${size.type}`;
-  const storage = supabase.storage.from(COVERS_BUCKET);
-  const { error: uploadError } = await storage.upload(path, bytes, {
-    contentType,
-    cacheControl: "31536000", // a path is never reused, so the file can be cached forever
-    upsert: false,
-  });
-  if (uploadError) return { error: uploadError.message };
-
-  const { error: updateError } = await supabase
-    .from("posts")
-    .update({
-      cover_path: path,
-      cover_alt: alt,
-      cover_width: size.width,
-      cover_height: size.height,
-      cover_source: source,
-    })
-    .eq("id", postId);
-  if (updateError) {
-    await storage.remove([path]);
-    return { error: updateError.message };
-  }
-
-  if (post.cover_path) await storage.remove([post.cover_path]);
-  if (post.status === "published") revalidateSite();
+  const result = await saveCover(await createSessionClient(), postId, bytes, options);
+  if (result.error) return { error: result.error };
+  if (result.status === "published") revalidateSite();
   revalidatePath(`/admin/posts/${postId}/edit`);
   revalidatePath(`/admin/review/${postId}`);
   return { error: null, done: true };
