@@ -8,19 +8,16 @@ everything already published, scope-checked, and approved by a human before goin
 
 ---
 
-## ▶ Status: M1–M3, M5, M6.1–6.4 done (+ covers, search, redesign) — next: M4 (needs spike results)
+## ▶ Status: M1–M5 + M6.1–6.4 done — the pipeline runs end to end. Next: launch (rest of M6)
 
-**Before M4 is written, the user should run `docs/spike/README.md`** — a 45-minute, no-code
-validation in AI Studio that Gemini + Search grounding actually produces publishable, in-scope,
-well-cited health content. M4 is two sessions built on that assumption. If the spike comes back red,
-M4's design changes (human-written pillars, AI clusters only). **Ask for the spike results before
-starting M4.**
+Spike run 2026-09-27 (`docs/spike/results/2026-09-27/RESULTS.md`) → amber, accepted: build M4 with
+sources taken from grounding, never trusted from model text. **M4 is built and verified live:**
+a real cron run produced a complete draft (3 live authority sources, scope pass, AI cover) in 65s
+for $0.056.
 
-**Next:** M4 needs the spike results and a real `GEMINI_API_KEY` (one exists in
-`../Youtube Automation/backend/.env` — copy it only if the user says so). Remaining M6 (analytics,
-Sentry/backups, Lighthouse, deploy, Search Console) needs the hosted Supabase project and domain.
-**M4 should add an automated cover check** (vision classifier on each generated cover): on the first
-24 v2 covers, ~1 in 5 broke an exclusion (distress poses, bottles that read as medication).
+**Next (needs the user):** hosted Supabase project, domain, Vercel deploy + env (incl.
+`GEMINI_SERVICE_ACCOUNT_JSON`), Search Console, cookieless analytics, Sentry/backups (M6.5–6.9).
+Then generate 15–20 real posts and review them. Tune dedup thresholds on the first ~50 drafts.
 
 **M4 must honour two contracts the review screen already reads:** `generation_runs.scope_verdict`
 must match `scopeVerdictSchema` in `features/posts/schema.ts`, and each draft needs a
@@ -134,6 +131,7 @@ pnpm typecheck        # next typegen && tsc — typegen provides LayoutProps/Pag
 pnpm lint             # eslint, zero warnings allowed
 pnpm format           # prettier (Markdown is excluded on purpose)
 pnpm test             # vitest — integration tests need `pnpm db:start` first
+pnpm test:live        # scope guard vs real Gemini on Vertex (billed, a few cents)
 pnpm test:e2e         # playwright: builds, starts on :3200, runs E3/E4/E5 against local Supabase
 pnpm db:start         # local Supabase (Docker). Applies migrations + seed on first start
 pnpm db:reset         # re-apply all migrations + seed.sql from scratch
@@ -145,6 +143,25 @@ pnpm db:seed:build    # topic-matrix.csv → supabase/seed.sql
 (generated, weighted title > standfirst > body) + `search_posts()` (migration 0009). `/search` is
 dynamic and `noindex, follow`. Header: single row with search box only from 1280px (measured — all
 seven topics + a search box don't fit narrower); below that, a search icon and topics on their own row.
+
+**Generation pipeline (M4)** — `features/generation/pipeline.ts`, entry `GET /api/cron/generate`
+(Bearer `CRON_SECRET`), daily via `vercel.json` (Hobby allows one cron run a day, so one call drafts
+`GENERATION_POSTS_PER_DAY` articles in sequence). Things the real runs taught:
+- **Gemini runs on Vertex AI** with a service account (`.secrets/` locally, gitignored;
+  `GEMINI_SERVICE_ACCOUNT_JSON` when hosted). AI Studio's free tier can't use Search grounding.
+  Vertex 429s ("resource exhausted") are transient capacity — `generateJson` retries them.
+- **Sources:** grounding pages first, then the model's own suggestions — each kept only if on the
+  allowlist (`config/sources.ts`, data) AND the page loads. Grounding is topic-dependent (some
+  topics search but return zero chunks), so it can't be the only source. `insufficient_sources`
+  rejections list every offered domain and why it was dropped — use them to tune the allowlist.
+- **Prompts in use:** `v2/draft-article`, `v1/guard-scope`, `v2/cover-image`. v1 draft is kept for
+  traceability (rule 7).
+- The DB side is migration 0011 (service role only): run lock, atomic cell claim (SKIP LOCKED),
+  `nearest_content`, and `persist_draft` — one transaction, no partial posts.
+- The pipeline takes the admin client as a parameter (rule 4) and all its deps are injectable;
+  `tests/integration/pipeline.test.ts` runs G1–G10 with a fake model.
+- `pnpm test:live` runs the scope-guard fixtures against real Gemini (a few cents). It is not part
+  of `pnpm test`. Run it whenever `prompts/*/guard-scope` or EDITORIAL.md changes.
 
 **Covers:** `posts.cover_*` + the public `covers` bucket (migration 0008). `PostCover` renders the
 photo or falls back to `CoverPlaceholder` (plain tint gradient). Images: MiniMax `image-01` **via

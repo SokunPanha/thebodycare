@@ -15,15 +15,16 @@ function vector(axis: number, blendAxis = axis, blend = 0) {
 }
 
 describe("seed", () => {
-  it("loads 7 categories and 203 open matrix cells", async () => {
+  it("loads 7 categories and 203 matrix cells", async () => {
+    // Every cell, whatever its status: once the pipeline has run locally, cells move from open
+    // to queued / drafted / exhausted — that's the matrix working, not a broken seed.
     const db = service();
     const { count: categories } = await db
       .from("categories")
       .select("*", { count: "exact", head: true });
     const { count: cells } = await db
       .from("topic_matrix")
-      .select("*", { count: "exact", head: true })
-      .eq("status", "open");
+      .select("*", { count: "exact", head: true });
     expect(categories).toBe(7);
     expect(cells).toBe(203);
   });
