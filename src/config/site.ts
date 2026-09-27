@@ -13,6 +13,8 @@ export const siteConfig = {
     country: "Cambodia",
   },
   contactEmail: "hello@thebodycue.com",
+  // The house byline on AI-drafted articles — a real team page, never an invented person.
+  editorialTeam: { name: "The Body Cue Editorial Team", path: "/editorial-team" },
   // The date the legal pages were last materially changed. Update with the copy.
   legalUpdatedAt: "2026-09-24",
 } as const;

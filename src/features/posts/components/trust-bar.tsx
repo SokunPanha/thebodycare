@@ -1,5 +1,7 @@
-import { Fragment } from "react";
+import Link from "next/link";
+import { Fragment, type ReactNode } from "react";
 
+import { siteConfig } from "@/config/site";
 import { formatDate } from "@/lib/utils/format-date";
 
 import type { PostWithSources } from "../queries";
@@ -11,23 +13,34 @@ function name(person: Person) {
   return person.credentials ? `${person.display_name}, ${person.credentials}` : person.display_name;
 }
 
+const team = siteConfig.editorialTeam;
+
 /**
- * Who stands behind the piece. It must never imply a review that didn't happen: "reviewed by"
- * appears only when a named reviewer exists. No per-article AI label (owner's decision,
- * 2026-09-27); the site-wide disclosure is on /medical-disclaimer. (EDITORIAL.md §7, LEGAL.md §8)
+ * Who stands behind the piece. AI-drafted posts carry the house byline — a real team page, never an
+ * invented person — and "reviewed by" appears only when a named reviewer exists. No per-article AI
+ * label (owner's decision, 2026-09-27); the disclosure is on the team page and /medical-disclaimer.
+ * (EDITORIAL.md §7, LEGAL.md §8)
  */
-function attribution(post: PostWithSources): string | null {
+function attribution(post: PostWithSources): ReactNode {
   const reviewer = name(post.reviewer);
   const author = name(post.author);
-  switch (post.source) {
-    case "ai_reviewed":
-      return reviewer ? `Reviewed by ${reviewer}` : null;
-    case "ai":
-      return null;
-    case "human":
-      if (author && reviewer) return `By ${author} · reviewed by ${reviewer}`;
-      return author ? `By ${author}` : "Written by our editors";
+  if (post.source === "human") {
+    if (author && reviewer) return `By ${author} · reviewed by ${reviewer}`;
+    return author ? `By ${author}` : "Written by our editors";
   }
+  const byline = (
+    <>
+      By <Link href={team.path}>{team.name}</Link>
+    </>
+  );
+  // "ai" posts are never shown a reviewer, even if one is set: they skipped human review.
+  return post.source === "ai_reviewed" && reviewer ? (
+    <>
+      {byline} · reviewed by {reviewer}
+    </>
+  ) : (
+    byline
+  );
 }
 
 // Quiet by design: findable, not loud. Hairline above and below. (DESIGN.md §7)
@@ -49,7 +62,7 @@ export function TrustBar({ post }: { post: PostWithSources }) {
   return (
     <p className="tabular rounded-lg bg-surface px-5 py-4 text-xs text-ink-muted shadow-sm">
       {parts.map((part, i) => (
-        <Fragment key={part}>
+        <Fragment key={i}>
           {i > 0 && <span aria-hidden="true"> · </span>}
           <span className="whitespace-nowrap">{part}</span>
         </Fragment>

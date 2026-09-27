@@ -9,6 +9,7 @@ type NavCategory = { slug: string; name: string };
 
 const pages = [
   { href: "/about", label: "About" },
+  { href: "/editorial-team", label: "Editorial team" },
   { href: "/contact", label: "Contact" },
   { href: "/medical-disclaimer", label: "Medical disclaimer" },
   { href: "/privacy", label: "Privacy" },

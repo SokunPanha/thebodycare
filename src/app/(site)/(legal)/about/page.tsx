@@ -44,9 +44,12 @@ export default function AboutPage() {
           both automatically and by a person.
         </li>
         <li>
-          <strong>The byline tells you exactly what happened.</strong> An article marked
-          &ldquo;reviewed by&rdquo; names the person who reviewed it. If an article hasn&rsquo;t had
-          a named human review, it says so. We never imply a review that didn&rsquo;t happen.
+          <strong>
+            Articles are published by{" "}
+            <Link href="/editorial-team">{siteConfig.editorialTeam.name}</Link>.
+          </strong>{" "}
+          An article marked &ldquo;reviewed by&rdquo; names the person who reviewed it. We never
+          imply a review that didn&rsquo;t happen.
         </li>
         <li>
           <strong>Every article ends with &ldquo;When to seek care&rdquo;</strong> — specific signs
