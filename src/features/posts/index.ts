@@ -3,7 +3,7 @@
 export {
   approvePost,
   generateAiCover,
-  generateMissingCovers,
+  generateNextMissingCover,
   rejectPost,
   removeCover,
   updatePost,

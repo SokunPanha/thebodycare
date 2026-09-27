@@ -12,7 +12,10 @@ import { imageModels } from "./models";
 
 const BASE = "https://api.wavespeed.ai/api/v3";
 const POLL_INTERVAL_MS = 2_000;
-const POLL_TIMEOUT_MS = 120_000;
+// Some predictions take minutes; ../Youtube Automation waits 300s. A prediction we stop waiting for
+// may still finish — and bill — on WaveSpeed's side, so be patient. One cover per server call
+// keeps this inside the 300s function limit.
+const POLL_TIMEOUT_MS = 240_000;
 
 // WaveSpeed sizes are "W*H". 16:9 matches the article cover and crops cleanly to the 16:10 cards.
 const SIZES = { "16:9": "1344*768", "1:1": "1024*1024", "4:3": "1152*896" } as const;

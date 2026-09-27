@@ -6,7 +6,7 @@ import { requireStaff, staffMetadata } from "@/features/auth";
 import {
   BulkCoverButton,
   countPostsWithoutCover,
-  generateMissingCovers,
+  generateNextMissingCover,
   listPostsForStaff,
   StaffPostList,
   type PostStatus,
@@ -15,7 +15,7 @@ import { isImageGenerationConfigured } from "@/lib/ai/image";
 
 export const generateMetadata = () => staffMetadata("Posts");
 
-// "Generate missing covers" runs up to five image generations in one action.
+// "Generate missing covers" runs one image per action call; a slow one can take ~4 minutes.
 export const maxDuration = 300;
 
 const filters: { status?: PostStatus; label: string }[] = [
@@ -55,7 +55,7 @@ export default async function PostsPage({ searchParams }: PageProps<"/admin/post
       <BulkCoverButton
         missing={missingCovers}
         aiEnabled={isImageGenerationConfigured()}
-        action={generateMissingCovers}
+        generateNext={generateNextMissingCover}
       />
       <nav aria-label="Filter by status" className="flex flex-wrap gap-2">
         {filters.map((filter) => {

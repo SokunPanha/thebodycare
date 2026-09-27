@@ -272,45 +272,43 @@ export async function generateAiCover(postId: string, _previous: CoverState): Pr
   return createAiCover(id);
 }
 
-export type BulkCoverState = { error: string | null; done?: number; failed?: number };
+export type NextCoverResult = { remaining: number; title?: string; error?: string };
 
-// Each image takes 10–30s; five per click stays inside one server function's time limit.
-const COVERS_PER_BATCH = 5;
-
-/** Fills in covers for posts that don't have one, newest first, a batch at a time. */
-export async function generateMissingCovers(_previous: BulkCoverState): Promise<BulkCoverState> {
+/**
+ * Generates the cover for the newest post that lacks one — one per call, so each call fits inside
+ * a server function's time limit however slow the image service is. The admin page calls it in a
+ * loop and shows progress. Returns how many posts still need a cover afterwards.
+ */
+export async function generateNextMissingCover(): Promise<NextCoverResult> {
   await requireStaff();
   if (!isImageGenerationConfigured()) {
     return {
-      error:
-        "Image generation isn't set up — add WAVESPEED_API_KEY (or MINIMAX_API_KEY) to the environment.",
+      remaining: 0,
+      error: "Image generation isn't set up — add WAVESPEED_API_KEY to the environment.",
     };
   }
 
   const supabase = await createSessionClient();
-  const { data: posts, error } = await supabase
-    .from("posts")
-    .select("id")
-    .is("cover_path", null)
-    .neq("status", "archived")
-    .order("created_at", { ascending: false })
-    .limit(COVERS_PER_BATCH);
-  if (error) return { error: error.message };
+  const missing = () =>
+    supabase
+      .from("posts")
+      .select("id, title", { count: "exact" })
+      .is("cover_path", null)
+      .neq("status", "archived")
+      .order("created_at", { ascending: false })
+      .limit(1);
 
-  let done = 0;
-  const failures: string[] = [];
-  // One at a time: parallel requests would trip MiniMax's rate limit (status 1002).
-  for (const post of posts) {
-    const result = await createAiCover(post.id);
-    if (result.error) failures.push(result.error);
-    else done++;
-  }
+  const { data, count, error } = await missing();
+  if (error) return { remaining: 0, error: error.message };
+  const post = data[0];
+  if (!post) return { remaining: 0 };
+
+  const result = await createAiCover(post.id);
+  const after = await missing();
   return {
-    error: failures.length
-      ? `${failures.length} failed: ${[...new Set(failures)].join(" ")}`
-      : null,
-    done,
-    failed: failures.length,
+    remaining: after.count ?? Math.max(0, (count ?? 1) - 1),
+    title: post.title,
+    ...(result.error ? { error: result.error } : {}),
   };
 }
 
