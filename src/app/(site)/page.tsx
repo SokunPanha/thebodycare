@@ -4,8 +4,15 @@ import Link from "next/link";
 import { Container, SearchForm } from "@/components/layout";
 import { JsonLd } from "@/components/seo-json-ld";
 import { siteConfig } from "@/config/site";
-import { FeatureCard, listPublished, PostCard, PostIndex } from "@/features/posts";
-import { listCategoriesWithCounts, TopicGrid } from "@/features/taxonomy";
+import {
+  FeatureCard,
+  FirstAidBand,
+  HeadlineList,
+  latestByTopic,
+  listPublished,
+  TopicSection,
+} from "@/features/posts";
+import { listCategoriesWithCounts, TopicRow } from "@/features/taxonomy";
 import { websiteGraph } from "@/lib/seo/json-ld";
 import { pageMetadata } from "@/lib/seo/metadata";
 
@@ -15,6 +22,8 @@ export const metadata: Metadata = {
   ...pageMetadata({ title: siteConfig.name, description: siteConfig.description, path: "/" }),
   title: { absolute: `${siteConfig.name} — understand what your body is telling you` },
 };
+
+const FIRST_AID_SLUG = "symptoms";
 
 const principles = [
   {
@@ -31,120 +40,100 @@ const principles = [
   },
 ] as const;
 
+// Editorial front page: top stories, topics, first aid, then a row per topic.
 export default async function HomePage() {
-  const [{ items }, categories] = await Promise.all([listPublished(), listCategoriesWithCounts()]);
-  const [lead, feature, ...rest] = items;
-  const grid = rest.slice(0, 4);
-  const more = rest.slice(4, 10);
+  const [{ items }, categories] = await Promise.all([
+    listPublished({ pageSize: 60 }),
+    listCategoriesWithCounts(),
+  ]);
+  const [lead, ...others] = items;
+  const latest = others.slice(0, 4);
+  const top = lead ? [lead, ...latest] : [];
+  const topics = latestByTopic(items, categories, { exclude: top });
+  const firstAid = categories.find((c) => c.slug === FIRST_AID_SLUG);
+  const firstAidPosts = items.filter((p) => p.category.slug === FIRST_AID_SLUG).slice(0, 4);
 
   return (
     <>
       <JsonLd data={websiteGraph()} />
 
-      {/* Hero: soft blobs behind, search front and centre, the newest story beside it. */}
-      <section className="relative overflow-hidden">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-32 -left-24 size-[28rem] rounded-full bg-tint-sage opacity-80 blur-3xl" />
-          <div className="absolute top-10 right-[-6rem] size-[26rem] rounded-full bg-tint-peach opacity-80 blur-3xl" />
-          <div className="absolute bottom-[-10rem] left-1/3 size-[24rem] rounded-full bg-tint-sky opacity-70 blur-3xl" />
-        </div>
-        <Container className="relative grid items-center gap-10 py-14 md:py-20 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
+      <Container className="pt-8 md:pt-12">
+        {/* Masthead line — compact, so the stories lead. The big search is phones only: from
+            768px the header's search box is on screen, and two search boxes read as a mistake. */}
+        <div className="flex flex-col gap-5 border-b border-line pb-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="inline-block rounded-full bg-surface/80 px-4 py-1.5 text-xs font-semibold text-primary shadow-sm">
+            <p className="text-xs font-semibold tracking-wide text-primary uppercase">
               Everyday health, explained
             </p>
-            <h1 className="mt-5 text-3xl md:text-4xl">Understand what your body is telling you.</h1>
-            <p className="mt-5 max-w-xl text-lg text-ink-muted">{siteConfig.description}</p>
-            <div className="mt-8 max-w-xl">
-              <SearchForm size="lg" />
-            </div>
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <li key={category.slug}>
-                  <Link
-                    href={`/category/${category.slug}`}
-                    className="inline-block rounded-full bg-surface/80 px-4 py-1.5 text-sm font-medium text-ink no-underline shadow-sm hover:bg-surface hover:text-primary"
-                  >
-                    {category.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <h1 className="mt-2 text-2xl md:text-3xl">Understand what your body is telling you.</h1>
           </div>
-          {lead ? (
-            <FeatureCard post={lead} eager size="xl" className="h-[26rem] md:h-[30rem]" />
-          ) : (
-            <p className="rounded-xl bg-surface p-10 text-lg text-ink-muted shadow-sm">
-              New articles are on the way.
-            </p>
-          )}
-        </Container>
-      </section>
+          <p className="hidden max-w-sm text-ink-muted md:block">{siteConfig.description}</p>
+          <div className="w-full md:hidden">
+            <SearchForm size="lg" />
+          </div>
+        </div>
+      </Container>
 
-      <Container className="space-y-20 pt-6">
-        {(feature || grid.length > 0) && (
-          <section aria-labelledby="latest">
-            <div className="flex items-end justify-between gap-4">
-              <h2 id="latest" className="text-2xl">
-                Latest reads
-              </h2>
-              <Link href="/search" className="text-sm font-semibold no-underline">
-                Search all articles →
-              </Link>
-            </div>
-            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {feature && <FeatureCard post={feature} className="md:col-span-2 lg:row-span-2" />}
-              {grid.map((post) => (
-                <PostCard key={post.id} post={post} />
-              ))}
-            </div>
+      <Container className="space-y-16 pt-8 md:space-y-20">
+        {lead ? (
+          <section
+            aria-label="Top stories"
+            className={`grid gap-8 ${latest.length ? "lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]" : ""}`}
+          >
+            <FeatureCard post={lead} eager size="xl" className="h-[24rem] md:h-[32rem]" />
+            {latest.length > 0 && (
+              <div>
+                <h2 className="mb-4 text-xs font-semibold tracking-wide text-ink-muted uppercase">
+                  Latest
+                </h2>
+                <HeadlineList posts={latest} />
+              </div>
+            )}
           </section>
+        ) : (
+          <p className="rounded-xl bg-surface p-10 text-lg text-ink-muted shadow-sm">
+            New articles are on the way.
+          </p>
         )}
 
         <section aria-labelledby="topics">
-          <h2 id="topics" className="text-2xl">
-            Explore by topic
+          <h2 id="topics" className="sr-only">
+            Browse by topic
           </h2>
-          <p className="mt-2 text-ink-muted">
-            Plain-language guides, grouped the way you&rsquo;d look for them.
-          </p>
-          <div className="mt-8">
-            <TopicGrid categories={categories} />
-          </div>
+          <TopicRow categories={categories} />
         </section>
 
-        {more.length > 0 && (
-          <section aria-labelledby="more" className="max-w-4xl">
-            <h2 id="more" className="text-2xl">
-              More to read
-            </h2>
-            <div className="mt-6">
-              <PostIndex posts={more} />
-            </div>
-          </section>
-        )}
+        {firstAid && <FirstAidBand posts={firstAidPosts} topicSlug={firstAid.slug} />}
+
+        {topics.map(({ topic, posts }) => (
+          <TopicSection key={topic.slug} topic={topic} posts={posts} />
+        ))}
 
         <section aria-labelledby="how" className="rounded-xl bg-primary-wash p-8 md:p-12">
-          <h2 id="how" className="text-2xl">
-            How we write
-          </h2>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h2 id="how" className="text-2xl">
+              How we write
+            </h2>
+            <Link href="/editorial-team" className="text-sm font-semibold no-underline">
+              How articles are made <span aria-hidden="true">→</span>
+            </Link>
+          </div>
           <ul className="mt-8 grid gap-8 md:grid-cols-3">
             {principles.map((principle, i) => (
-              <li key={principle.title}>
+              <li key={principle.title} className="flex gap-4">
                 <span
                   aria-hidden="true"
-                  className="flex size-10 items-center justify-center rounded-full bg-surface font-display text-lg font-semibold text-primary shadow-sm"
+                  className="flex size-10 shrink-0 items-center justify-center rounded-full bg-surface font-display text-lg font-semibold text-primary shadow-sm"
                 >
                   {i + 1}
                 </span>
-                <p className="mt-4 font-semibold">{principle.title}</p>
-                <p className="mt-1 text-sm text-ink-muted">{principle.body}</p>
+                <div>
+                  <p className="font-semibold">{principle.title}</p>
+                  <p className="mt-1 text-sm text-ink-muted">{principle.body}</p>
+                </div>
               </li>
             ))}
           </ul>
-          <p className="mt-8 text-sm font-semibold">
-            <Link href="/about">How articles are made →</Link>
-          </p>
         </section>
       </Container>
     </>

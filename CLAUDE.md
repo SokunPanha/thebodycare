@@ -104,7 +104,8 @@ Direction **Soft wellness** (2026-09-26 — replaced "Daylight"). Full spec in `
 - **Terracotta is semantic only** — the "when to seek care" block, nowhere else
 - Outfit (display) + Figtree (body), self-hosted via `next/font/google`; body **18px**, measure 68ch
 - **Real photo covers** (AI via MiniMax, or uploaded); a plain tint placeholder until then — no
-  illustrations. Bento home, rounded 16–32px cards, warm shadows
+  illustrations. Editorial front page (top stories + latest list, topic strip, first-aid band, a row
+  per topic), Topics dropdown in the header; rounded 16–32px cards, warm shadows
 - Every text colour pair is AA in both themes — recompute contrast when changing a colour
 
 ---

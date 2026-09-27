@@ -26,10 +26,14 @@ export { ReviewQueue } from "./components/admin/review-queue";
 export { StaffPostList } from "./components/admin/staff-post-list";
 export { ArticleView } from "./components/article-view";
 export { FeatureCard } from "./components/feature-card";
+export { FirstAidBand } from "./components/first-aid-band";
+export { HeadlineList } from "./components/headline-list";
 export { PostCard } from "./components/post-card";
 export { PostCover } from "./components/post-cover";
 export { PostIndex } from "./components/post-index";
 export { TopicPill } from "./components/topic-pill";
+export { TopicSection } from "./components/topic-section";
+export { latestByTopic } from "./front";
 export {
   countPostsWithoutCover,
   countPublishedPosts,

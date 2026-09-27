@@ -62,7 +62,7 @@ export function ArticleView({ article }: { article: Article }) {
         <aside className="hidden lg:block">
           <TableOfContents
             headings={article.headings}
-            className="sticky top-8 rounded-lg bg-surface p-5 shadow-sm xl:top-28"
+            className="sticky top-28 rounded-lg bg-surface p-5 shadow-sm"
           />
         </aside>
       </div>

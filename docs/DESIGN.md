@@ -95,14 +95,21 @@ inside `prefers-reduced-motion: no-preference`.
 
 ## 6. Components
 
-**Header.** Cream, blurred, logo mark + wordmark, topic pills (active pill is white with a shadow),
-search pill, About. One row pinned from 1280px; below that, a search icon and topics on their own
-scrolling row (widths measured, not guessed).
+**Header** (2026-09-27). Cream, blurred, pinned at every width, always one row: logo mark +
+wordmark (wordmark from 640px), a **Topics ▾** dropdown (all topics, two columns, About at the
+foot), **First aid**, About (from 768px), and the search pill (from 768px; an icon below). Eight
+topic links didn't fit beside search even at 1440px — the dropdown scales to any number.
 
-**Home.** Hero with soft blurred tint blobs: headline, standfirst, large search pill, topic chips —
-and the newest article as a big photo feature card. Then "Latest reads" as a bento grid (one 2×2
-feature card + four photo cards), "Explore by topic" tint tiles, "More to read" list, and the
-"How we write" panel.
+**Home — editorial front page** (2026-09-27, replaced the bento hero). Top to bottom:
+1. Masthead line — eyebrow, the h1, the site description; a large search pill on phones only (from 768px the header search is on screen — never two search boxes at once).
+2. Top stories — the newest article as a big photo feature card, beside a hairline-separated
+   "Latest" list of the next four (square thumb, topic, headline, read time). One post → full width.
+3. Topic strip — a tinted circle with a line icon per topic, all eight in a row on wide screens.
+4. "Need help now?" — sky band with first-aid quick links and the emergency line. The emergency
+   line is the one coral text on the home page: it *is* the seek-care semantic.
+5. A row per topic — heading, "See all →", up to three photo cards; posts already shown above
+   aren't repeated, and topics with nothing new are skipped.
+6. "How we write" panel.
 
 **Feature card.** Photo fills the card; headline, pill and excerpt sit on a dark scrim in white. On a
 placeholder the text stays ink.

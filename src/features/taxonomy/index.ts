@@ -3,6 +3,8 @@
 export { MatrixCells } from "./components/matrix-cells";
 export { MatrixCoverage } from "./components/matrix-coverage";
 export { TopicGrid } from "./components/topic-grid";
+export { TopicIcon } from "./components/topic-icon";
+export { TopicRow } from "./components/topic-row";
 export {
   getCategoryBySlug,
   listCategories,
