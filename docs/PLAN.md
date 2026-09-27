@@ -216,6 +216,29 @@ authenticated users and readable when `visible`; subscribers insert-only from th
 
 ---
 
+## 6a. Multi-language (schema ready since 2026-09-27, migration 0012)
+
+Content is English only today, but the schema is multi-language so adding one is data, not a
+redesign.
+
+| Table | How it carries language |
+|---|---|
+| `locales` | One row per language (`code` BCP 47, `name`, `native_name`, `is_default`, `enabled`). `en` is the default. A language stays `enabled = false` until it has content. |
+| `posts` | `locale` + `translation_group_id` — translations of one article share a group, one row per locale. Slugs stay globally unique; the URL will carry the locale (`/km/posts/…`). |
+| `categories` | The base row is the default locale; `category_translations (category_id, locale, name, description)` holds the rest. Category slugs are shared across languages. |
+| `topic_matrix`, `topic_queue` | `locale` — a target query is a phrase in one language. Unique per `(locale, target_query)`. |
+
+**Behaviour.** Search uses each row's own text-search rules (`search_config(locale)`: English
+stemming for `en`, a stemmer where Postgres has one, plain word matching otherwise — Khmer, Thai,
+Vietnamese). Search, dedup (`nearest_content`, `exact_duplicate`) and related posts stay within one
+language: a translation is never a duplicate. The pipeline only claims cells in enabled languages.
+Every function defaults `p_locale` to `'en'`, so today's callers are unchanged.
+
+**To add a language:** insert a `locales` row (disabled), add `category_translations`, seed matrix
+cells in that language, then build the app side — locale-prefixed routes, `hreflang` alternates,
+UI strings, a drafting prompt version for the language, trusted sources in that language — and
+enable it. For a language without word spaces (Khmer, Thai) plan a better search than `simple`.
+
 ## 7. The dedup system
 
 Four gates. A candidate must clear all four.

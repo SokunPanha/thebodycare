@@ -250,4 +250,4 @@ from (values
   ('Symptoms & First Aid', 'sunburn', 'is-this-normal', 'adults', 'is-it-normal', 'when is sunburn bad enough to see a doctor', 2)
 ) as v (category, subtopic, angle, audience, format, target_query, priority)
 join public.categories c on c.name = v.category
-on conflict (target_query) do nothing;
+on conflict (locale, target_query) do nothing;

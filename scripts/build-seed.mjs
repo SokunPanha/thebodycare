@@ -73,7 +73,7 @@ from (values
 ${matrixValues}
 ) as v (category, subtopic, angle, audience, format, target_query, priority)
 join public.categories c on c.name = v.category
-on conflict (target_query) do nothing;
+on conflict (locale, target_query) do nothing;
 `;
 
 writeFileSync(OUT_PATH, output);

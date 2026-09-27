@@ -36,6 +36,42 @@ export type Database = {
         }
         Relationships: []
       }
+      category_translations: {
+        Row: {
+          category_id: string
+          description: string
+          locale: string
+          name: string
+        }
+        Insert: {
+          category_id: string
+          description: string
+          locale: string
+          name: string
+        }
+        Update: {
+          category_id?: string
+          description?: string
+          locale?: string
+          name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "category_translations_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "categories"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "category_translations_locale_fkey"
+            columns: ["locale"]
+            isOneToOne: false
+            referencedRelation: "locales"
+            referencedColumns: ["code"]
+          },
+        ]
+      }
       generation_runs: {
         Row: {
           cost_usd: number
@@ -104,6 +140,36 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      locales: {
+        Row: {
+          code: string
+          created_at: string
+          enabled: boolean
+          is_default: boolean
+          name: string
+          native_name: string
+          sort_order: number
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          enabled?: boolean
+          is_default?: boolean
+          name: string
+          native_name: string
+          sort_order?: number
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          enabled?: boolean
+          is_default?: boolean
+          name?: string
+          native_name?: string
+          sort_order?: number
+        }
+        Relationships: []
       }
       post_embeddings: {
         Row: {
@@ -228,6 +294,7 @@ export type Database = {
           faq: Json
           id: string
           key_points: string[]
+          locale: string
           next_review_at: string | null
           published_at: string | null
           reading_time_min: number
@@ -241,6 +308,7 @@ export type Database = {
           source: Database["public"]["Enums"]["post_source"]
           status: Database["public"]["Enums"]["post_status"]
           title: string
+          translation_group_id: string
           updated_at: string
           when_to_seek_care: string
         }
@@ -258,6 +326,7 @@ export type Database = {
           faq?: Json
           id?: string
           key_points: string[]
+          locale?: string
           next_review_at?: string | null
           published_at?: string | null
           reading_time_min?: number
@@ -271,6 +340,7 @@ export type Database = {
           source?: Database["public"]["Enums"]["post_source"]
           status?: Database["public"]["Enums"]["post_status"]
           title: string
+          translation_group_id?: string
           updated_at?: string
           when_to_seek_care: string
         }
@@ -288,6 +358,7 @@ export type Database = {
           faq?: Json
           id?: string
           key_points?: string[]
+          locale?: string
           next_review_at?: string | null
           published_at?: string | null
           reading_time_min?: number
@@ -301,6 +372,7 @@ export type Database = {
           source?: Database["public"]["Enums"]["post_source"]
           status?: Database["public"]["Enums"]["post_status"]
           title?: string
+          translation_group_id?: string
           updated_at?: string
           when_to_seek_care?: string
         }
@@ -318,6 +390,13 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "categories"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "posts_locale_fkey"
+            columns: ["locale"]
+            isOneToOne: false
+            referencedRelation: "locales"
+            referencedColumns: ["code"]
           },
           {
             foreignKeyName: "posts_reviewer_id_fkey"
@@ -367,6 +446,7 @@ export type Database = {
           embedding: string | null
           format: string
           id: string
+          locale: string
           performance_score: number
           priority: number
           status: Database["public"]["Enums"]["matrix_status"]
@@ -382,6 +462,7 @@ export type Database = {
           embedding?: string | null
           format: string
           id?: string
+          locale?: string
           performance_score?: number
           priority?: number
           status?: Database["public"]["Enums"]["matrix_status"]
@@ -397,6 +478,7 @@ export type Database = {
           embedding?: string | null
           format?: string
           id?: string
+          locale?: string
           performance_score?: number
           priority?: number
           status?: Database["public"]["Enums"]["matrix_status"]
@@ -412,6 +494,13 @@ export type Database = {
             referencedRelation: "categories"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "topic_matrix_locale_fkey"
+            columns: ["locale"]
+            isOneToOne: false
+            referencedRelation: "locales"
+            referencedColumns: ["code"]
+          },
         ]
       }
       topic_queue: {
@@ -420,6 +509,7 @@ export type Database = {
           dedup_score: number | null
           embedding: string | null
           id: string
+          locale: string
           matrix_id: string | null
           reject_reason: string | null
           status: Database["public"]["Enums"]["topic_status"]
@@ -432,6 +522,7 @@ export type Database = {
           dedup_score?: number | null
           embedding?: string | null
           id?: string
+          locale?: string
           matrix_id?: string | null
           reject_reason?: string | null
           status?: Database["public"]["Enums"]["topic_status"]
@@ -444,6 +535,7 @@ export type Database = {
           dedup_score?: number | null
           embedding?: string | null
           id?: string
+          locale?: string
           matrix_id?: string | null
           reject_reason?: string | null
           status?: Database["public"]["Enums"]["topic_status"]
@@ -452,6 +544,13 @@ export type Database = {
           updated_at?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "topic_queue_locale_fkey"
+            columns: ["locale"]
+            isOneToOne: false
+            referencedRelation: "locales"
+            referencedColumns: ["code"]
+          },
           {
             foreignKeyName: "topic_queue_matrix_id_fkey"
             columns: ["matrix_id"]
@@ -483,19 +582,21 @@ export type Database = {
           category_slug: string
           format: string
           id: string
+          locale: string
           subtopic: string
           target_query: string
         }[]
       }
       dashboard_stats: { Args: never; Returns: Json }
       exact_duplicate: {
-        Args: { p_slug: string; p_title: string }
+        Args: { p_locale?: string; p_slug: string; p_title: string }
         Returns: string
       }
       match_posts: {
         Args: {
           exclude_post_id?: string
           match_count?: number
+          p_locale?: string
           query_embedding: string
         }
         Returns: {
@@ -507,6 +608,7 @@ export type Database = {
         Args: {
           include_topics?: boolean
           match_count?: number
+          p_locale?: string
           query_embedding: string
         }
         Returns: {
@@ -536,8 +638,14 @@ export type Database = {
           similarity: number
         }[]
       }
+      search_config: { Args: { p_locale: string }; Returns: unknown }
       search_posts: {
-        Args: { match_limit?: number; match_offset?: number; query: string }
+        Args: {
+          match_limit?: number
+          match_offset?: number
+          p_locale?: string
+          query: string
+        }
         Returns: {
           post_id: string
           rank: number
