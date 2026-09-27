@@ -167,7 +167,7 @@ describe("pipeline", () => {
     expect(run).toMatchObject({
       status: "success",
       post_id: outcome.postId,
-      prompt_version: "v1/draft-article",
+      prompt_version: "v2/draft-article",
     });
     expect(Number(run!.cost_usd)).toBeGreaterThan(0.002); // draft + guard + grounding + embeddings
     expect(run!.tokens_in).toBe(1000);

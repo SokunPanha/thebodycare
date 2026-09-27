@@ -56,9 +56,22 @@ function cleanTitle(title: string | null, publisher: string, url: string): strin
  * The grounding chunks, resolved to real pages, filtered to trusted publishers that load, ranked by
  * how many passages of the article each one supports.
  */
+/** Why each grounding page was kept or dropped — surfaced in the rejection reason so the
+ *  allowlist can be tuned from the admin screen. */
+export type SourceNote = {
+  domain: string;
+  outcome: "kept" | "untrusted" | "dead" | "duplicate";
+  /** grounding = Google's search record; suggested = the model's own list (verified here). */
+  via: "grounding" | "suggested";
+};
+
 export async function collectSources(
   response: GenerateContentResponse,
-  { check = checkPage }: { check?: PageCheck } = {},
+  {
+    check = checkPage,
+    notes,
+    suggested = [],
+  }: { check?: PageCheck; notes?: SourceNote[]; suggested?: Source[] } = {},
 ): Promise<Source[]> {
   const grounding = response.candidates?.[0]?.groundingMetadata;
   const chunks = grounding?.groundingChunks ?? [];
@@ -73,7 +86,12 @@ export async function collectSources(
     .map((chunk, index) => ({ chunk, index, support: supportCount.get(index) ?? 0 }))
     .filter(({ chunk }) => chunk.web?.uri)
     // Cheap pre-filter on the domain Google reports, before any network call.
-    .filter(({ chunk }) => trustedPublisher(chunk.web?.domain ?? chunk.web?.title ?? "") !== null)
+    .filter(({ chunk }) => {
+      const domain = chunk.web?.domain ?? chunk.web?.title ?? "";
+      const trusted = trustedPublisher(domain) !== null;
+      if (!trusted) notes?.push({ domain, outcome: "untrusted", via: "grounding" });
+      return trusted;
+    })
     .sort((a, b) => b.support - a.support);
 
   const sources: Source[] = [];
@@ -82,12 +100,63 @@ export async function collectSources(
     if (sources.length >= MAX_SOURCES) break;
     // Vertex grounding URIs are redirects (vertexaisearch…/grounding-api-redirect/…) — resolve them.
     const page = await check(chunk.web!.uri!);
-    if (page.status < 200 || page.status >= 400) continue;
+    const domain = chunk.web?.domain ?? "?";
+    if (page.status < 200 || page.status >= 400) {
+      notes?.push({ domain, outcome: "dead", via: "grounding" });
+      continue;
+    }
     const url = page.url.split("#")[0]!;
     const publisher = trustedPublisher(new URL(url).hostname);
-    if (!publisher || seen.has(url)) continue; // the redirect may land somewhere untrusted
+    if (!publisher) {
+      notes?.push({ domain: new URL(url).hostname, outcome: "untrusted", via: "grounding" }); // redirect landed elsewhere
+      continue;
+    }
+    if (seen.has(url)) {
+      notes?.push({ domain, outcome: "duplicate", via: "grounding" });
+      continue;
+    }
     seen.add(url);
+    notes?.push({ domain, outcome: "kept", via: "grounding" });
     sources.push({ url, publisher, title: cleanTitle(page.title, publisher, url) });
+  }
+
+  // Then the model's own suggestions — some topics ground on nothing (mouth ulcers: 2 searches,
+  // 0 chunks). Kept only if trusted AND live: the spike's bad citations were invented paths on
+  // real domains, and a live check removes exactly those.
+  for (const suggestion of suggested) {
+    if (sources.length >= MAX_SOURCES) break;
+    let host: string;
+    try {
+      host = new URL(suggestion.url).hostname;
+    } catch {
+      continue;
+    }
+    if (!trustedPublisher(host)) {
+      notes?.push({ domain: host, outcome: "untrusted", via: "suggested" });
+      continue;
+    }
+    const page = await check(suggestion.url);
+    if (page.status < 200 || page.status >= 400) {
+      notes?.push({ domain: host, outcome: "dead", via: "suggested" });
+      continue;
+    }
+    const url = page.url.split("#")[0]!;
+    const publisher = trustedPublisher(new URL(url).hostname);
+    if (!publisher || seen.has(url)) {
+      notes?.push({
+        domain: host,
+        outcome: publisher ? "duplicate" : "untrusted",
+        via: "suggested",
+      });
+      continue;
+    }
+    seen.add(url);
+    notes?.push({ domain: host, outcome: "kept", via: "suggested" });
+    sources.push({
+      url,
+      publisher,
+      title: page.title ? cleanTitle(page.title, publisher, url) : suggestion.title,
+    });
   }
   return sources;
 }

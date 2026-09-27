@@ -86,6 +86,41 @@ describe("collectSources", () => {
     ).toEqual([]);
   });
 
+  it("tops up from the model's suggestions — trusted and live only", async () => {
+    const empty = {
+      candidates: [{ groundingMetadata: { webSearchQueries: ["q"] } }],
+    } as unknown as GenerateContentResponse;
+    const suggested = [
+      {
+        url: "https://www.nhs.uk/conditions/mouth-ulcers/",
+        title: "Mouth ulcers",
+        publisher: "NHS",
+      },
+      { url: "https://www.nhs.uk/invented/path", title: "Made up", publisher: "NHS" }, // 404
+      { url: "https://supplements.example/ulcers", title: "Buy", publisher: "Shop" }, // untrusted
+    ];
+    const live = vi.fn(async (url: string) =>
+      url.includes("mouth-ulcers")
+        ? { url, status: 200, title: "Mouth ulcers - NHS" }
+        : { url, status: 404, title: null },
+    );
+    const notes: import("./collect-sources").SourceNote[] = [];
+    const sources = await collectSources(empty, { check: live, suggested, notes });
+    expect(sources).toEqual([
+      {
+        url: "https://www.nhs.uk/conditions/mouth-ulcers/",
+        publisher: "NHS",
+        title: "Mouth ulcers",
+      },
+    ]);
+    expect(live).not.toHaveBeenCalledWith("https://supplements.example/ulcers");
+    expect(notes.map((n) => `${n.via}:${n.outcome}`)).toEqual([
+      "suggested:kept",
+      "suggested:dead",
+      "suggested:untrusted",
+    ]);
+  });
+
   it("returns nothing when there's no grounding", async () => {
     expect(
       await collectSources({ candidates: [{}] } as GenerateContentResponse, { check }),

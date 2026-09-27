@@ -12,7 +12,7 @@ import { readingTime } from "@/lib/utils/reading-time";
 import { slugify } from "@/lib/utils/slug";
 
 import { COVER_PROMPT_VERSION, coverImageAlt, coverImagePrompt } from "./prompts/v2/cover-image";
-import { DRAFT_PROMPT_VERSION, type DraftBrief } from "./prompts/v1/draft-article";
+import { DRAFT_PROMPT_VERSION, type DraftBrief } from "./prompts/v2/draft-article";
 import {
   cellPriority,
   claimCell,
@@ -32,7 +32,12 @@ import {
 } from "./queries";
 import type { SourcedDraft } from "./schema";
 import { decideSemantic, describeRejection, type DedupVerdict } from "./steps/check-duplicate";
-import { checkPage, collectSources, type PageCheck } from "./steps/collect-sources";
+import {
+  checkPage,
+  collectSources,
+  type PageCheck,
+  type SourceNote,
+} from "./steps/collect-sources";
 import { bodyMarkdown, draftWithGemini, withKnownLinks, type Drafter } from "./steps/draft-article";
 import { guardScope, type GuardResult } from "./steps/guard-scope";
 
@@ -235,6 +240,7 @@ async function runOne(
       related: related.map((p) => ({ title: p.title, slug: p.slug })),
     };
     const allowedSlugs = new Set(related.map((p) => p.slug));
+    let sourceNotes: SourceNote[] = [];
 
     const draftOnce = async (avoid?: DraftBrief["avoid"]) => {
       meter.assert(step);
@@ -249,7 +255,13 @@ async function runOne(
         result.tokensOut,
       );
       step = "collect-sources";
-      const sources = await collectSources(result.response, { check: deps.checkPage });
+      const notes: SourceNote[] = [];
+      const sources = await collectSources(result.response, {
+        check: deps.checkPage,
+        notes,
+        suggested: result.draft.sources,
+      });
+      sourceNotes = notes;
       const draft: SourcedDraft = { ...withKnownLinks(result.draft, allowedSlugs), sources };
       step = "check-duplicate";
       meter.assert(step);
@@ -298,11 +310,14 @@ async function runOne(
     const guard = await deps.guard(attempt.draft);
     meter.add(guard.costUsd);
     if (!guard.ok) {
-      const reason =
-        `Scope guard: ${guard.reason} — ${guard.verdict.violations[0]?.excerpt ?? ""}`.slice(
-          0,
-          500,
-        );
+      // For too few sources, say what grounding offered and why each was dropped — that's what
+      // tells an editor whether to extend the allowlist (config/sources.ts).
+      const offered = sourceNotes.map((n) => `${n.domain} (${n.via} ${n.outcome})`).join(", ");
+      const detail =
+        guard.reason === "insufficient_sources"
+          ? `${guard.verdict.violations[0]?.excerpt ?? ""}; grounding offered: ${offered || "nothing"}`
+          : (guard.verdict.violations[0]?.excerpt ?? "");
+      const reason = `Scope guard: ${guard.reason} — ${detail}`.slice(0, 1000);
       await rejectTopic(db, topicId, reason);
       // Leave the cell in play but further back: a different draft may pass; a repeat offender sinks.
       await releaseCell(db, cell.id, "open", Math.min(5, (await cellPriority(db, cell.id)) + 1));

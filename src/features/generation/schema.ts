@@ -4,8 +4,9 @@ import { z } from "zod";
 // steers Gemini and mirrors the Zod limits — change them together (schema.test.ts checks). Enforces the editorial structure (EDITORIAL.md §5):
 // a 70-char title, 3–5 key points, and a when_to_seek_care that can't be empty.
 //
-// No `sources` field: the spike showed the model's own source list is unreliable (6 of 15 URLs
-// dead). Sources come from Google's grounding metadata instead — see steps/collect-sources.ts.
+// `sources` are the model's suggestions only. The spike found 6 of 15 model-written URLs dead, so
+// they're never trusted as-is: steps/collect-sources.ts puts grounding pages first and keeps a
+// suggestion only if it's on a trusted domain and actually loads.
 
 export const draftArticleSchema = z.object({
   title: z.string().min(10).max(70),
@@ -21,13 +22,26 @@ export const draftArticleSchema = z.object({
     .max(5)
     .default([]),
   seo: z.object({ title: z.string().min(10).max(60), description: z.string().min(50).max(155) }),
+  sources: z
+    .array(z.object({ url: z.string(), title: z.string(), publisher: z.string() }))
+    .max(10)
+    .default([]),
 });
 export type DraftArticle = z.infer<typeof draftArticleSchema>;
 
 /** For Gemini's responseJsonSchema. Descriptions steer the model; limits mirror the Zod ones. */
 export const draftArticleJsonSchema = {
   type: "object",
-  required: ["title", "excerpt", "key_points", "sections", "when_to_seek_care", "faq", "seo"],
+  required: [
+    "title",
+    "excerpt",
+    "key_points",
+    "sections",
+    "when_to_seek_care",
+    "faq",
+    "seo",
+    "sources",
+  ],
   properties: {
     title: {
       type: "string",
@@ -78,6 +92,21 @@ export const draftArticleJsonSchema = {
         properties: { question: { type: "string" }, answer: { type: "string" } },
       },
     },
+    sources: {
+      type: "array",
+      maxItems: 10,
+      description:
+        "Pages you actually relied on: the exact URL as found in search, never guessed. Links that don't load are discarded.",
+      items: {
+        type: "object",
+        required: ["url", "title", "publisher"],
+        properties: {
+          url: { type: "string" },
+          title: { type: "string" },
+          publisher: { type: "string" },
+        },
+      },
+    },
     seo: {
       type: "object",
       required: ["title", "description"],
@@ -89,10 +118,8 @@ export const draftArticleJsonSchema = {
   },
 } as const;
 
-/** A draft plus the sources the pipeline attached — what the scope guard and finalize see. */
-export type SourcedDraft = DraftArticle & {
-  sources: { url: string; title: string; publisher: string }[];
-};
+/** A draft with its sources verified by the pipeline — what the scope guard and finalize see. */
+export type SourcedDraft = DraftArticle;
 
 // ---- Scope guard -----------------------------------------------------------------------------
 

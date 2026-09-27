@@ -5,7 +5,7 @@ import type { GenerateContentResponse } from "@google/genai";
 import { generateJson } from "@/lib/ai/gemini";
 import { textModels } from "@/lib/ai/models";
 
-import { draftSystemPrompt, draftUserPrompt, type DraftBrief } from "../prompts/v1/draft-article";
+import { draftSystemPrompt, draftUserPrompt, type DraftBrief } from "../prompts/v2/draft-article";
 import { draftArticleJsonSchema, draftArticleSchema, type DraftArticle } from "../schema";
 
 export type DraftResult = {
