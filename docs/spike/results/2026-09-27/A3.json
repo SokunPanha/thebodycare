@@ -1,0 +1,521 @@
+{
+  "id": "A3",
+  "prompt": "Write an article for The Body Cue.\n\nCategory: Symptom Guide\nSubtopic: chest tightness after eating\nAngle: common everyday causes, and how to tell when it isn't everyday\nAudience: adults who have noticed this more than once\nFormat: explainer\n\nGround every claim with Google Search and cite real sources.",
+  "mode": "structured",
+  "seconds": 33,
+  "text": "{\n  \"title\": \"Chest Tightness After Eating: Causes and When to Get Checked\",\n  \"slug\": \"chest-tightness-after-eating\",\n  \"excerpt\": \"Feeling chest tightness after a meal is often linked to digestive mechanics, but it can share signals with cardiac issues. Here is how to understand what your body is doing.\",\n  \"key_points\": [\n    \"Digestive mechanisms—such as acid irritation, esophageal muscle spasms, and physical stomach expansion—are common reasons for chest tightness after eating.\",\n    \"The esophagus and the heart share overlapping nerve pathways, which means sensations originating in the gut can feel remarkably similar to cardiac symptoms.\",\n    \"Digestion redirects significant blood flow to the stomach and intestines, which can occasionally unmask cardiovascular issues like postprandial angina.\",\n    \"Any new, unexplained, or severe chest tightness requires medical assessment to safely distinguish gastrointestinal signals from heart conditions.\"\n  ],\n  \"sections\": [\n    {\n      \"heading\": \"Why Digestion Can Feel Like Chest Pressure\",\n      \"body\": \"When you finish a meal, your digestive tract begins an intensive mechanical and chemical process. The stomach expands to accommodate food and liquid, sitting directly beneath the diaphragm—the thin muscular sheet that separates your abdominal cavity from your chest. A large or rapid meal causes the stomach to stretch, creating upward physical pressure against the diaphragm and lower chest.\\n\\nBeyond physical space, the digestive tract and the heart share sensory nerve pathways through the vagus nerve and spinal cord. When nerve endings in the food pipe (the esophagus) encounter irritation, stretching, or muscle tension, the brain often registers the sensation in the middle of the chest rather than pinpointing it to the stomach. This shared wiring explains why gastrointestinal discomfort frequently feels like central tightness, squeezing, or heaviness.\"\n    },\n    {\n      \"heading\": \"Common Digestive Causes of Post-Meal Tightness\",\n      \"body\": \"Several well-documented gastrointestinal factors can trigger tightness or pressure shortly after eating:\\n\\n* **Gastroesophageal Reflux:** When the muscular ring between the stomach and esophagus relaxes inappropriately, acidic digestive fluids can flow upward. This causes irritation of the esophageal lining, which often produces a tight, burning, or constricting sensation behind the breastbone rather than just classic heartburn.\\n* **Esophageal Spasms:** The esophagus moves food toward the stomach using synchronized wave-like muscle contractions. In some individuals, these contractions become uncoordinated, sudden, or abnormally forceful. Esophageal spasms can create an intense squeezing sensation in the chest that lasts anywhere from a few minutes to an hour. They are frequently provoked by eating quickly or consuming very hot, cold, or carbonated items.\\n* **Hiatal Hernia:** If the upper portion of the stomach protrudes slightly through the diaphragm opening, food can create localized fullness and impair normal valve closure, amplifying post-meal chest pressure.\\n* **Gallbladder Contractions:** The gallbladder contracts after meals—particularly meals higher in dietary fats—to release bile for digestion. Irritation or inflammation in the biliary tract often causes steady pain in the upper abdomen that can radiate directly into the chest, right shoulder, or back.\"\n    },\n    {\n      \"heading\": \"When Post-Meal Tightness Involves the Heart\",\n      \"body\": \"While digestive mechanics are frequent culprits, chest discomfort after meals can also involve the cardiovascular system. Digestion requires a substantial increase in blood flow to the digestive organs, an effect known as splanchnic circulation. To support this process, the heart must work slightly harder and pump more blood.\\n\\nIn individuals with underlying narrowing of the coronary arteries, this post-meal workload can temporarily reduce oxygen delivery to the heart muscle. This phenomenon, sometimes called postprandial angina, creates chest tightness, pressure, or aching that appears 15 to 45 minutes after eating. The likelihood increases if you engage in light physical activity—such as walking or carrying groceries—shortly after a meal.\\n\\nBecause heart-related tightness and esophageal sensations activate identical nerve routes, relying on personal guesswork is unreliable. Even experienced clinicians use diagnostic tools such as electrocardiograms and imaging to accurately determine the source.\"\n    },\n    {\n      \"heading\": \"Everyday Habits That Support Smoother Digestion\",\n      \"body\": \"If a medical professional has evaluated your symptoms and confirmed they are non-cardiac, several daily adjustments can help lower the mechanical strain of digestion:\\n\\n* **Pacing and Portion Size:** Eating moderate portions gives the stomach room to churn food without placing excessive pressure against the diaphragm. Chewing thoroughly reduces the amount of swallowed air and allows food to pass easily down the esophagus.\\n* **Upright Posture:** Remaining seated upright or standing for at least two to three hours after meals allows gravity to keep stomach contents and digestive juices where they belong. Reclining or slouching immediately after eating increases pressure on the lower esophageal valve.\\n* **Observing Meal Triggers:** Keeping a brief log of meal compositions can reveal specific triggers. Very large, dense meals high in rich fats slow stomach emptying, while extreme beverage temperatures can trigger muscular spasms in sensitive individuals.\\n* **Timing Before Sleep:** Leaving a consistent gap of two to three hours between your last meal and bedtime minimizes nocturnal reflux and night-time chest tightness.\"\n    }\n  ],\n  \"when_to_seek_care\": \"Chest tightness should never be dismissed without clarity on its origin. Use these specific thresholds to guide your next steps:\\n\\n**Seek emergency medical care immediately (call emergency services) if:**\\n* The tightness is sudden, severe, crushing, or feels like a heavy weight on your chest.\\n* Chest pressure radiates to your jaw, neck, back, shoulders, or down one or both arms.\\n* The sensation is accompanied by shortness of breath, cold sweats, unexplained dizziness, lightheadedness, or sudden nausea.\\n* Discomfort worsens with physical exertion or does not settle after five minutes of resting.\\n\\n**Schedule an urgent appointment with a healthcare provider (within 24 to 48 hours) if:**\\n* You notice a new pattern of post-meal chest tightness that occurs consistently after eating.\\n* You experience difficulty swallowing, food feeling stuck in your throat, or painful swallowing.\\n* Walking or mild exertion shortly after eating reliably triggers chest pressure, even if it fades when you sit down.\\n\\n**Discuss with your doctor at a routine consultation if:**\\n* Discomfort happens more than twice a week despite eating smaller meals and remaining upright.\\n* Post-meal fullness frequently wakes you from sleep or leaves a persistent sour taste in your mouth.\\n* You find yourself changing the consistency of your food or avoiding normal meals because of recurring discomfort.\",\n  \"sources\": [\n    {\n      \"title\": \"Heartburn or Heart Attack: When to Worry\",\n      \"url\": \"https://www.mayoclinic.org/diseases-conditions/heartburn/in-depth/heartburn-gerd/art-20046483\",\n      \"publisher\": \"Mayo Clinic\"\n    },\n    {\n      \"title\": \"Esophageal Spasms: Symptoms, Causes & Treatment\",\n      \"url\": \"https://my.clevelandclinic.org/health/diseases/17639-esophageal-spasms\",\n      \"publisher\": \"Cleveland Clinic\"\n    },\n    {\n      \"title\": \"Esophagitis: Symptoms and Causes\",\n      \"url\": \"https://www.mayoclinic.org/diseases-conditions/esophagitis/symptoms-causes/syc-20361224\",\n      \"publisher\": \"Mayo Clinic\"\n    }\n  ],\n  \"seo\": {\n    \"title\": \"Chest Tightness After Eating: Causes and Signs\",\n    \"description\": \"Understand why chest tightness happens after eating, common digestive causes like reflux and spasms, and how to spot symptoms that need medical attention.\"\n  },\n  \"faq\": [\n    {\n      \"question\": \"Can gas cause tight chest pain after eating?\",\n      \"answer\": \"Yes. Trapped gas and stomach distension can exert upward physical force on the diaphragm, producing a sensation of tightness or pressure in the lower chest until the gas moves through the digestive tract.\"\n    },\n    {\n      \"question\": \"How long does post-meal chest tightness usually last?\",\n      \"answer\": \"Gastrointestinal sensations like reflux or mild esophageal spasms often last anywhere from a few minutes to an hour. If severe chest pressure lasts longer than five minutes or does not resolve with rest, it should be treated as a medical emergency.\"\n    },\n    {\n      \"question\": \"Why does drinking cold water sometimes trigger chest tightness?\",\n      \"answer\": \"Sudden exposure to extreme temperatures, such as iced drinks or very hot liquids, can cause sensitive smooth muscles in the esophagus to contract irregularly, leading to a temporary esophageal spasm.\"\n    }\n  ]\n} ",
+  "finishReason": "STOP",
+  "grounding": {
+    "webSearchQueries": [
+      "chest tightness after eating causes NHS Mayo Clinic",
+      "esophageal spasm postprandial chest tightness gastrointestinal cardiac"
+    ],
+    "searchEntryPoint": {
+      "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n    <a class=\"chip\" href=\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAYehUlnhC_gK5Zhd3gdZ7waH2sxq8MaBPV9zUUSYbx2rrqkFRTvlLojB5Kwdwt-MLCjPAiLapClo7t2VLyrAXGuea0Gug8E7ho9qiaiJExgIu1afBYoOZHXyOMoGBrgB3DNyJEHJB2SZPclS2xOBvNw9KRGH9eXtpkwgFIprZB0oLRNJpbbnRSSetclFtFUh6oi8heE7RWUWgFOEZUxvSrytaRsV88Bv4nkWZbFFUGRu2RQk57pw=\">chest tightness after eating causes NHS Mayo Clinic</a>\n    <a class=\"chip\" href=\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNyoygrRFoclOmiff9Qfe7Wvu6b4wBAbtckwKNY2p3RTUE2ARN8UnR2rkQL94CtznsCvjY1Xvo1QG2jZ7RG04oo8guI7fS6saycyxCEah0vhNOVMHyxfzjNnvfoS-euP-Fe-J0DeG19EQQnobwIDQzpnxnCPmrCePBqs7M3k2u_eqRJZmx6b5mfXm39YpygUOrA9lybY8IMlhpR4aDl1ROG9Ll3vLTonYKv_uOu96aEgi4VZQcc0eI3eKwyrVBT7MmLUpcM6W8olz4\">esophageal spasm postprandial chest tightness gastrointestinal cardiac</a>\n  </div>\n</div>\n"
+    },
+    "groundingChunks": [
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWG1uyyWfhJPybOwWkuVUfjUDNR3IBvbGNJ6xPF2lqJ7zBXePOTq90vb1H2QriCUrYqS85_WucKKpCul530X4b9zVoBpkB5LQrsQMSSBTUsRLNh7Ssd5exybGvSIVBnFlN6M39HPdrHqdq4diBEyxwJvxiorKTIcNEhZB_ln7TLlebFNLjB4jRFmJFgRd84YeVwRuTyw==",
+          "title": "ubiehealth.com",
+          "domain": "ubiehealth.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhbhlf9jdlUfH_uqo1ODQGficUV3kV7AwaCqv1hd_y_DRzQoNrrHAJ2kODNS4RcPdEC46jGoy7ZuvAD9WSS9UwN_SdhbATp0TEpFmhxdwCXn9feR0_Ayq4mHJGkWg-Funsg7TvzZEn59BwMosLoGLn8Zftew7cg7bRyaUEZi_Q3soCeYE9bn26ZSHAAdVDVKU6qA==",
+          "title": "mayoclinic.org",
+          "domain": "mayoclinic.org"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJblgpVTpwPuPhk5fDhI58HfdaFH1SUHU_3woU6NYQ-dGckgHaoIygkTOCgGH0KRQQnoGazXEcAuZlKyhHzEdWpJAkXrDGr71Dyu9JZk7ObS6giSz3KS6gqkokh6PiB2AemOE263kt7WOdIcaqeya1dzUIIXN1N5kEOQOllycPJTY5RWcPJzfInpY9AOB1A3_BaCTMH3WiEQ==",
+          "title": "mayoclinic.org",
+          "domain": "mayoclinic.org"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJGYNWjsgZdWcUrDVg55CS3TL6ZWB-iT83F9Qj7iH9AxIkk-UH9iVEC74hr_WEKoO-Of7bkOO6r5plE_rWM7NsJTTJjfuBQel_hnE8PZMGJAJFfWvFF5dirvKyFLibPXESkPuEhnlNH_QDg4AODpEhWeJcBeEeUMD9zzqNer6it95LenZrhzHctXySkMicFD-DtV-7knWE-A==",
+          "title": "mayoclinic.org",
+          "domain": "mayoclinic.org"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtbmXgh2RHVa3VKeYT7wb0k7ESA7OiVO1hdWP68PVOox3rmCrSkU5cQ2XNC_dkgk5RJ8vJzgl3rLRmfNnIGk9tlqDLwOPnkOaUFwDP-SzbYNJJzbRCuDWXzlVm8S1ulG3tz_weSUSANnNL1fBdytovIqcLBeqAPfMBq47R40CfjVQT6UiHkvQwNcytSdcIZGllg8hXbqid4O693A==",
+          "title": "coppellemergencyroom.com",
+          "domain": "coppellemergencyroom.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEU79GO-Oa5tstBax31E9QsyIu-X0yPELvHKtORIJaGZcM7FvF9FwhlVJtkT02wSy8fEngsRE3wIPDJMDeZdY9noMgeOOHkdhcnA4jaS3jRr2ac-tWxSUfFBb4V4vXPRZMDN-LQAz96i2cX8ZjQghqPmUVp6IRfTUBtpzZ8hURgw_lAtg9M2BZvFcODLZlY1QUeKw==",
+          "title": "jeffersonhealth.org",
+          "domain": "jeffersonhealth.org"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxFd6klfUze81CpNQwRW8v2vLCxWxmbCjUyZT-0aVTk749bsdAzNAQ0h7YUNAA7gQovm70DyWJy0JCpuEta_N3UxUPyoJuOVe_qEYOwpBsx-uRIyCnipCeJIZTY7O2U5s22Ea1IuHM-FteivnyYmSEWZoFl5nHu1-PXH4ZDIGMyTY=",
+          "title": "clevelandclinic.org",
+          "domain": "clevelandclinic.org"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPZZDn3bxZVEPbEInJnNRoPAgvJYn-Ji2tirvMFVEkvvtCpbsgQHaS56EgQYzMjI-oy5T0J1kmNUoKwdzqSkJOE72Nag9a9vTWiTt-Ay4-iZ0mSfpSKuV8exmRTJb5RQv-naOsiYzaQOCX8bDLZ9_JTmO7G1Z690M6Z3fVDHMRuQBAWqhDEc1N",
+          "title": "staywellsolutionsonline.com",
+          "domain": "staywellsolutionsonline.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENL1sraZmFy5hV8gpfFM1heGtiqngjQhjKs-ETtpsraySJMLTy-vPJ1_CyHLJrBPtfcq7P89jIvOMdf2RjEGa7Z2whFZKFTwI6-6VBujw-EsvqaMtl-Cp7Lz_2QDOCRuRvAQl8gcS9B3l6RI3sQAtE69bXJVb-Ao2ceWXWqev5bkwzI1t9hcr59xYqXMeEKs8g2WI=",
+          "title": "mayoclinic.org",
+          "domain": "mayoclinic.org"
+        }
+      }
+    ],
+    "groundingSupports": [
+      {
+        "segment": {
+          "startIndex": 256,
+          "endIndex": 1170,
+          "text": "Here is how to understand what your body is doing.\",\n  \"key_points\": [\n    \"Digestive mechanisms—such as acid irritation, esophageal muscle spasms, and physical stomach expansion—are common reasons for chest tightness after eating.\",\n    \"The esophagus and the heart share overlapping nerve pathways, which means sensations originating in the gut can feel remarkably similar to cardiac symptoms.\",\n    \"Digestion redirects significant blood flow to the stomach and intestines, which can occasionally unmask cardiovascular issues like postprandial angina.\",\n    \"Any new, unexplained, or severe chest tightness requires medical assessment to safely distinguish gastrointestinal signals from heart conditions.\"\n  ],\n  \"sections\": [\n    {\n      \"heading\": \"Why Digestion Can Feel Like Chest Pressure\",\n      \"body\": \"When you finish a meal, your digestive tract begins an intensive mechanical and chemical process"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1172,
+          "endIndex": 1341,
+          "text": "The stomach expands to accommodate food and liquid, sitting directly beneath the diaphragm—the thin muscular sheet that separates your abdominal cavity from your chest"
+        },
+        "groundingChunkIndices": [
+          0,
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1343,
+          "endIndex": 1467,
+          "text": "A large or rapid meal causes the stomach to stretch, creating upward physical pressure against the diaphragm and lower chest"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1468,
+          "endIndex": 1597,
+          "text": "\\n\\nBeyond physical space, the digestive tract and the heart share sensory nerve pathways through the vagus nerve and spinal cord"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1599,
+          "endIndex": 1812,
+          "text": "When nerve endings in the food pipe (the esophagus) encounter irritation, stretching, or muscle tension, the brain often registers the sensation in the middle of the chest rather than pinpointing it to the stomach"
+        },
+        "groundingChunkIndices": [
+          0,
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1814,
+          "endIndex": 1938,
+          "text": "This shared wiring explains why gastrointestinal discomfort frequently feels like central tightness, squeezing, or heaviness"
+        },
+        "groundingChunkIndices": [
+          0,
+          3
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1814,
+          "endIndex": 2296,
+          "text": "This shared wiring explains why gastrointestinal discomfort frequently feels like central tightness, squeezing, or heaviness.\"\n    },\n    {\n      \"heading\": \"Common Digestive Causes of Post-Meal Tightness\",\n      \"body\": \"Several well-documented gastrointestinal factors can trigger tightness or pressure shortly after eating:\\n\\n* **Gastroesophageal Reflux:** When the muscular ring between the stomach and esophagus relaxes inappropriately, acidic digestive fluids can flow upward"
+        },
+        "groundingChunkIndices": [
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2298,
+          "endIndex": 2468,
+          "text": "This causes irritation of the esophageal lining, which often produces a tight, burning, or constricting sensation behind the breastbone rather than just classic heartburn"
+        },
+        "groundingChunkIndices": [
+          0,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2469,
+          "endIndex": 2588,
+          "text": "\\n* **Esophageal Spasms:** The esophagus moves food toward the stomach using synchronized wave-like muscle contractions"
+        },
+        "groundingChunkIndices": [
+          5,
+          3
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2590,
+          "endIndex": 2682,
+          "text": "In some individuals, these contractions become uncoordinated, sudden, or abnormally forceful"
+        },
+        "groundingChunkIndices": [
+          0,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2684,
+          "endIndex": 2806,
+          "text": "Esophageal spasms can create an intense squeezing sensation in the chest that lasts anywhere from a few minutes to an hour"
+        },
+        "groundingChunkIndices": [
+          6,
+          7
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2808,
+          "endIndex": 2903,
+          "text": "They are frequently provoked by eating quickly or consuming very hot, cold, or carbonated items"
+        },
+        "groundingChunkIndices": [
+          5,
+          7
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2904,
+          "endIndex": 3116,
+          "text": "\\n* **Hiatal Hernia:** If the upper portion of the stomach protrudes slightly through the diaphragm opening, food can create localized fullness and impair normal valve closure, amplifying post-meal chest pressure"
+        },
+        "groundingChunkIndices": [
+          0,
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3117,
+          "endIndex": 3264,
+          "text": "\\n* **Gallbladder Contractions:** The gallbladder contracts after meals—particularly meals higher in dietary fats—to release bile for digestion"
+        },
+        "groundingChunkIndices": [
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3266,
+          "endIndex": 3425,
+          "text": "Irritation or inflammation in the biliary tract often causes steady pain in the upper abdomen that can radiate directly into the chest, right shoulder, or back"
+        },
+        "groundingChunkIndices": [
+          2,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3266,
+          "endIndex": 3640,
+          "text": "Irritation or inflammation in the biliary tract often causes steady pain in the upper abdomen that can radiate directly into the chest, right shoulder, or back.\"\n    },\n    {\n      \"heading\": \"When Post-Meal Tightness Involves the Heart\",\n      \"body\": \"While digestive mechanics are frequent culprits, chest discomfort after meals can also involve the cardiovascular system"
+        },
+        "groundingChunkIndices": [
+          0,
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3847,
+          "endIndex": 4000,
+          "text": "\\n\\nIn individuals with underlying narrowing of the coronary arteries, this post-meal workload can temporarily reduce oxygen delivery to the heart muscle"
+        },
+        "groundingChunkIndices": [
+          0,
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4002,
+          "endIndex": 4144,
+          "text": "This phenomenon, sometimes called postprandial angina, creates chest tightness, pressure, or aching that appears 15 to 45 minutes after eating"
+        },
+        "groundingChunkIndices": [
+          2,
+          8
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4146,
+          "endIndex": 4274,
+          "text": "The likelihood increases if you engage in light physical activity—such as walking or carrying groceries—shortly after a meal"
+        },
+        "groundingChunkIndices": [
+          2,
+          8
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4275,
+          "endIndex": 4413,
+          "text": "\\n\\nBecause heart-related tightness and esophageal sensations activate identical nerve routes, relying on personal guesswork is unreliable"
+        },
+        "groundingChunkIndices": [
+          2,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4415,
+          "endIndex": 4537,
+          "text": "Even experienced clinicians use diagnostic tools such as electrocardiograms and imaging to accurately determine the source"
+        },
+        "groundingChunkIndices": [
+          2,
+          6
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4415,
+          "endIndex": 4955,
+          "text": "Even experienced clinicians use diagnostic tools such as electrocardiograms and imaging to accurately determine the source.\"\n    },\n    {\n      \"heading\": \"Everyday Habits That Support Smoother Digestion\",\n      \"body\": \"If a medical professional has evaluated your symptoms and confirmed they are non-cardiac, several daily adjustments can help lower the mechanical strain of digestion:\\n\\n* **Pacing and Portion Size:** Eating moderate portions gives the stomach room to churn food without placing excessive pressure against the diaphragm"
+        },
+        "groundingChunkIndices": [
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4957,
+          "endIndex": 5061,
+          "text": "Chewing thoroughly reduces the amount of swallowed air and allows food to pass easily down the esophagus"
+        },
+        "groundingChunkIndices": [
+          7
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5062,
+          "endIndex": 5246,
+          "text": "\\n* **Upright Posture:** Remaining seated upright or standing for at least two to three hours after meals allows gravity to keep stomach contents and digestive juices where they belong"
+        },
+        "groundingChunkIndices": [
+          2,
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5248,
+          "endIndex": 5344,
+          "text": "Reclining or slouching immediately after eating increases pressure on the lower esophageal valve"
+        },
+        "groundingChunkIndices": [
+          2,
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5345,
+          "endIndex": 5447,
+          "text": "\\n* **Observing Meal Triggers:** Keeping a brief log of meal compositions can reveal specific triggers"
+        },
+        "groundingChunkIndices": [
+          7
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5449,
+          "endIndex": 5602,
+          "text": "Very large, dense meals high in rich fats slow stomach emptying, while extreme beverage temperatures can trigger muscular spasms in sensitive individuals"
+        },
+        "groundingChunkIndices": [
+          1,
+          7
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5603,
+          "endIndex": 5771,
+          "text": "\\n* **Timing Before Sleep:** Leaving a consistent gap of two to three hours between your last meal and bedtime minimizes nocturnal reflux and night-time chest tightness"
+        },
+        "groundingChunkIndices": [
+          2,
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5603,
+          "endIndex": 5880,
+          "text": "\\n* **Timing Before Sleep:** Leaving a consistent gap of two to three hours between your last meal and bedtime minimizes nocturnal reflux and night-time chest tightness.\"\n    }\n  ],\n  \"when_to_seek_care\": \"Chest tightness should never be dismissed without clarity on its origin"
+        },
+        "groundingChunkIndices": [
+          2,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5882,
+          "endIndex": 6103,
+          "text": "Use these specific thresholds to guide your next steps:\\n\\n**Seek emergency medical care immediately (call emergency services) if:**\\n* The tightness is sudden, severe, crushing, or feels like a heavy weight on your chest"
+        },
+        "groundingChunkIndices": [
+          8,
+          6
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6104,
+          "endIndex": 6192,
+          "text": "\\n* Chest pressure radiates to your jaw, neck, back, shoulders, or down one or both arms"
+        },
+        "groundingChunkIndices": [
+          2,
+          6
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6193,
+          "endIndex": 6319,
+          "text": "\\n* The sensation is accompanied by shortness of breath, cold sweats, unexplained dizziness, lightheadedness, or sudden nausea"
+        },
+        "groundingChunkIndices": [
+          8,
+          6
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6320,
+          "endIndex": 6414,
+          "text": "\\n* Discomfort worsens with physical exertion or does not settle after five minutes of resting"
+        },
+        "groundingChunkIndices": [
+          8,
+          6
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6415,
+          "endIndex": 6603,
+          "text": "\\n\\n**Schedule an urgent appointment with a healthcare provider (within 24 to 48 hours) if:**\\n* You notice a new pattern of post-meal chest tightness that occurs consistently after eating"
+        },
+        "groundingChunkIndices": [
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6604,
+          "endIndex": 6702,
+          "text": "\\n* You experience difficulty swallowing, food feeling stuck in your throat, or painful swallowing"
+        },
+        "groundingChunkIndices": [
+          1,
+          6
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6703,
+          "endIndex": 6821,
+          "text": "\\n* Walking or mild exertion shortly after eating reliably triggers chest pressure, even if it fades when you sit down"
+        },
+        "groundingChunkIndices": [
+          2,
+          8
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6822,
+          "endIndex": 6980,
+          "text": "\\n\\n**Discuss with your doctor at a routine consultation if:**\\n* Discomfort happens more than twice a week despite eating smaller meals and remaining upright"
+        },
+        "groundingChunkIndices": [
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6981,
+          "endIndex": 7083,
+          "text": "\\n* Post-meal fullness frequently wakes you from sleep or leaves a persistent sour taste in your mouth"
+        },
+        "groundingChunkIndices": [
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 7084,
+          "endIndex": 7200,
+          "text": "\\n* You find yourself changing the consistency of your food or avoiding normal meals because of recurring discomfort"
+        },
+        "groundingChunkIndices": [
+          1,
+          6
+        ]
+      }
+    ]
+  },
+  "usage": {
+    "promptTokenCount": 1872,
+    "candidatesTokenCount": 2361,
+    "totalTokenCount": 5772,
+    "trafficType": "ON_DEMAND",
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1872
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 2361
+      }
+    ],
+    "thoughtsTokenCount": 1539
+  }
+}

@@ -1,0 +1,656 @@
+{
+  "id": "A4",
+  "prompt": "Write an article for The Body Cue.\n\nCategory: Sleep\nSubtopic: waking at 3am and struggling to fall back asleep\nAngle: what is happening, and when it's worth mentioning to someone\nAudience: adults who have had this for a few weeks\nFormat: explainer\n\nGround every claim with Google Search and cite real sources.",
+  "mode": "structured",
+  "seconds": 39,
+  "text": "{\n  \"title\": \"Why You Keep Waking Up at 3am and Can't Fall Back Asleep\",\n  \"slug\": \"waking-up-3am-struggling-fall-back-asleep\",\n  \"excerpt\": \"Waking in the early hours is deeply common. Understanding sleep architecture, natural body temperature shifts, and nighttime arousal can help you respond calmly.\",\n  \"key_points\": [\n    \"Waking up between 2am and 4am is a normal feature of sleep architecture, as your brain shifts into lighter sleep stages and REM during the second half of the night.\",\n    \"Your sleep drive naturally dissipates after four to five hours, meaning small disturbances are more likely to fully awaken your conscious mind.\",\n    \"Clock-watching and trying to force sleep trigger physiological alertness; getting out of bed after twenty minutes helps break the frustration cycle.\",\n    \"Persistent nighttime awakenings that occur multiple times a week for several months warrant an open conversation with a healthcare professional.\"\n  ],\n  \"sections\": [\n    {\n      \"heading\": \"The biology of the 3am wake-up\",\n      \"body\": \"Opening your eyes in the middle of the night can feel jarring, especially when the clock reads roughly the same hour every time. There is nothing mystical about 3am, but there is clear biology behind it. \\n\\nSleep is not a flat state of unconsciousness. It moves through recurring cycles of approximately 90 minutes, alternating between light sleep, deep slow-wave sleep, and rapid eye movement (REM) sleep. During the first third of your night, your body prioritises deep, restorative physical rest. As the night progresses, sleep architecture shifts noticeably. Deep sleep shortens, and your brain spends longer periods in lighter non-REM and REM sleep.\\n\\nBy around 3am—assuming a bedtime between 10pm and 11pm—you have already cleared three or four sleep cycles. You have also cleared a large portion of your \\\"sleep pressure,\\\" the neurochemical hunger for sleep that builds throughout your waking hours. Because your brain is in a lighter sleep stage and your biological drive to sleep is lower, small internal or environmental shifts are much more likely to pull you fully into wakefulness.\"\n    },\n    {\n      \"heading\": \"Internal shifts that nudge you awake\",\n      \"body\": \"Around the early morning hours, several natural physiological processes intersect:\\n\\n* **Body temperature:** Your core body temperature drops to its lowest 24-hour point in the early hours. If your bedroom is too warm or your bedding traps heat, your body struggles to regulate, which can trigger an awakening.\\n* **Hormonal rhythms:** Levels of cortisol naturally begin a gradual rise in the second half of the night to help prepare your body for morning waking. When elevated stress or anxiety is present, nighttime nervous system activity can cause this shift to feel abrupt, leaving your mind racing the moment you stir.\\n* **Metabolism and digestion:** Late-evening meals require active digestion and can prompt mild reflux or blood sugar shifts that disrupt sleep continuity. Similarly, evening alcohol consumption acts as a sedative initially, but as the liver metabolises it during the early morning, it creates a rebound effect that fragments REM sleep and wakes you up.\\n* **Bladder signals:** Fluid intake close to bedtime or age-related shifts in bladder tone can send physical wake-up signals precisely when your sleep is at its lightest.\"\n    },\n    {\n      \"heading\": \"Why falling back asleep feels so difficult\",\n      \"body\": \"The moment you realize you are awake, a common behavioural trap begins. You check the clock, calculate how many hours remain before your alarm, and try to force yourself back into sleep. \\n\\nSleep is an involuntary process that requires the autonomic nervous system to downshift into a relaxed state. Actively trying to sleep is an effortful, conscious task that does the exact opposite: it activates your sympathetic nervous system, increases your heart rate, and elevates mental arousal. \\n\\nLying in bed feeling frustrated also conditions the brain to associate your mattress with wakefulness and worry rather than rest. The longer you stay in bed battling your thoughts, the more alert you tend to become.\"\n    },\n    {\n      \"heading\": \"What to do when you find yourself wide awake\",\n      \"body\": \"When you wake up at 3am, how you respond in the first half hour makes a significant difference to how the rest of your night unfolds:\\n\\n* **Keep the clock turned away:** Avoid checking the time on your phone or bedside table. Knowing the exact minute adds cognitive calculation and time anxiety that keep your brain active.\\n* **Give it roughly twenty minutes:** Rest quietly and allow your body to drift naturally. If you notice you are tossing, turning, or ruminating, gently get out of bed.\\n* **Change your environment under low light:** Move to a comfortable chair in another room. Keep lighting low and warm, and avoid looking at backlit screens. Engage in a quiet, low-stimulation activity—such as reading a physical book, listening to soft instrumental sounds, or doing gentle breathing exercises—until you feel heavy-lidded and drowsy again.\\n* **Return to bed only when sleepy:** When your eyes feel heavy and yawn reflexes return, climb back into bed. If sleep still does not come after another stretch, repeat the cycle calmly.\"\n    },\n    {\n      \"heading\": \"Daytime habits that protect nighttime continuity\",\n      \"body\": \"Protecting uninterrupted sleep often happens long before you put your head on the pillow:\\n\\n* **Anchor your morning wake time:** Waking up at the same time every day—including on weekends—is one of the most reliable ways to set your internal circadian clock and ensure sufficient sleep pressure by nightfall.\\n* **Seek morning daylight:** Exposure to natural outdoor light within an hour of waking sends a clear signal to your brain's master clock, helping synchronize your natural nighttime hormone rhythms.\\n* **Mind the evening wind-down:** Give yourself at least an hour before bed without work emails, emotionally charged conversations, or heavy physical workouts. \\n* **Keep your bedroom cool, dark, and quiet:** Aim for a room temperature that feels slightly cool to support your core body cooling, and use earplugs or eye masks if environmental noises or streetlights intrude.\"\n    }\n  ],\n  \"when_to_seek_care\": \"While occasional middle-of-the-night awakenings happen to almost everyone, persistent disruption is worth discussing with a doctor or primary care clinician. Book an appointment if:\\n\\n* You wake up repeatedly and struggle to return to sleep at least 3 nights per week, and this has continued for 3 months or longer.\\n* You wake up gasping for breath, choking, or with a very dry mouth, or a bed partner notices loud snoring or pauses in your breathing.\\n* You experience restless, uncomfortable sensations in your legs that create an irresistible urge to move them when resting.\\n* Daytime fatigue, brain fog, or low mood is interfering with your work, relationships, or ability to drive safely.\\n* Nighttime awakenings are accompanied by drenching night sweats, unexplained weight loss, chronic pain, or frequent painful urination.\",\n  \"sources\": [\n    {\n      \"title\": \"Insomnia: Overview and Self-Care\",\n      \"url\": \"https://www.nhs.uk/conditions/insomnia/\",\n      \"publisher\": \"NHS\"\n    },\n    {\n      \"title\": \"Why Do I Wake Up at the Same Time Every Night?\",\n      \"url\": \"https://www.sleepfoundation.org/sleep-faqs/why-do-i-wake-up-at-the-same-time-every-night\",\n      \"publisher\": \"Sleep Foundation\"\n    },\n    {\n      \"title\": \"Why You Wake Up in the Middle of the Night\",\n      \"url\": \"https://www.health.harvard.edu/staying-healthy/why-you-wake-up-in-the-middle-of-the-night\",\n      \"publisher\": \"Harvard Health Publishing\"\n    }\n  ],\n  \"seo\": {\n    \"title\": \"Waking Up at 3am: Causes and How to Fall Back Asleep\",\n    \"description\": \"Learn why waking up at 3am is a common feature of sleep biology, what triggers nighttime awakenings, and when it is worth speaking to a doctor.\"\n  },\n  \"faq\": [\n    {\n      \"question\": \"Is it normal to wake up at 3am every night?\",\n      \"answer\": \"Yes, brief awakenings between sleep cycles are a normal part of human sleep architecture. It becomes a clinical concern only when you stay awake for long stretches or experience persistent daytime fatigue.\"\n    },\n    {\n      \"question\": \"Should I stay in bed if I cannot sleep?\",\n      \"answer\": \"If you have been awake for around twenty minutes and feel restless, it is helpful to get out of bed. Lying in bed awake can cause your brain to associate the bed with frustration and alertness.\"\n    },\n    {\n      \"question\": \"Why do I wake up feeling wide awake at 3am?\",\n      \"answer\": \"By 3am, you have cleared most of your deep sleep and accumulated sleep pressure. Combined with natural early morning temperature and hormone shifts, your brain is in a lighter sleep phase that is easier to arouse fully.\"\n    }\n  ]\n}",
+  "finishReason": "STOP",
+  "grounding": {
+    "webSearchQueries": [
+      "why wake up at 3am sleep architecture middle of the night awakenings nhs sleep foundation",
+      "middle of the night insomnia sleep drive circadian rhythm cortisol dip",
+      "nhs insomnia waking up during the night",
+      "harvard health waking up in the middle of the night"
+    ],
+    "searchEntryPoint": {
+      "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n    <a class=\"chip\" href=\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHa1ztnq5Nc-XAm94zRu5BrHj_lqbwBZDwTlKTcu9vHGrX20TUkyDw0JmUAPB7_SGlwkQHNO0b2Yb3YNmG8HcpTGf1F8EHC5fQnLhSZqEb0H1sB3OyY-6SiCY_Ysr_amFq9OK3sTp4DPkJ06r3qnppiTToV7SGfW7sl-krAa9CIxvrdjofgdpVKuiswz8EF_dvr13tAJl-roQ5CGGJHFJETnFccNLsyPHpP\">nhs insomnia waking up during the night</a>\n    <a class=\"chip\" href=\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBN8-ZGbeBlweCH6-Aj5j8sQNx_Cc31OF6f5tUJndm-En20LsprAgxJhK3Hihp5iBSrx2TFt0fsM7QpFb_wKTbhyXCztd_ZuEkl6qXHzVuDGbox4nFH0jkGAqesJrTS0kg5iyX332Q9G5UVC7rttyoT-v962RQd2P51fdTc3p_ut9yzYLkDJHKGTLEi2q4Z0Y6BjiKWFRbj21BqXezrbGqxwWl818sEG1Bs2M-x6p7Om4r_MH5GQ==\">harvard health waking up in the middle of the night</a>\n  </div>\n</div>\n"
+    },
+    "groundingChunks": [
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7nor5FgPbhQRo_iYrJ6-B-pIY-BHoJTSY8nI_GHQYDSxAuOiwAQ7oHDo4dwzlwg82dNQVAp3B3PVTnBFHNEtARb-ptgW-rxBSxbwQ1Pk1FeRrCYVgzid3Jeo8X4onklbPSoE53c54mS1LK5A_IKG1se_8nf1ay-fwn2GwlMGTms_AHcWJ6l2zeEg=",
+          "title": "thesleepreset.com",
+          "domain": "thesleepreset.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwcs48HQn79LJddA-hi_vCEanEctK8SLBUjrkQP2AE2ddZNwUdo9Kts7W-IpW_Okd7NbALyPfWgQP6zA4URy8Q8fIeLuuUqedd9JWyTrVH_wz76Wy1hNECv0j-hJSCUdrxLSxyoNsT4BPHh6O2oBfImLZ1ZVBavSrkVkmKH2zLqHQT3a-1X4NcbUTh_mnkf8ZvWRhODXhGMP3Y",
+          "title": "sleepdynamics.com",
+          "domain": "sleepdynamics.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZZRZjzlAwPJ9gJxMPhoPFTOhKihotOK1Zf9Bh36rJC0gh4mgpCocC0XAZxnunutfOjVUK31P63KHJIypSuqlwlAHotSF6tO0-FYhAgxdBoyAAfNywn072w4Dc5vW2g9KF6GkKgYEn2kEXTf43pwBgOBvMdky1KovpvCiLsLOgONIBoqCPZw8ignOW3cQZlr6vIyy-Hh_2v-x_gw==",
+          "title": "harvard.edu",
+          "domain": "harvard.edu"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDablDNkgN2CivVcYgYHQbY0mlu0FVc_JRvWQm3Fg-aRBNqRJ50er233ksF_efdoZVlzMXXw51dG5xqw6-wY606Yet8gEkGzP9z-ujsVMOW3bJkBMPO3DFMKMdTXOh3wrgcXKH8mtwKtXjYsOuPIbjXvwqNtVbQojNshBMTuxRmnjIrrfR",
+          "title": "nhsinform.scot",
+          "domain": "nhsinform.scot"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0KUR0LM9R5mnKaWe8zSNluOPdraOZ6mMagiUfUTRnUBft7F1iAlkyZ9lN6qZTfLa0A7OcLsbQpzIl4AlGQn4gGDrO2LmFaGjCKIdifdknrwQckMIy8nwb_z3QQPca_cz-cgpAa1X410gHJNNMQ3MJNsbawgJ012seIyYrmsi7X9upzg==",
+          "title": "dailyrecord.co.uk",
+          "domain": "dailyrecord.co.uk"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQET3YCHv2ldGuIzini2hbOORoDY1x3s_Tml_LNSOvPwJMinB0UxpwkLOVWcaxBl1kwq01PqPLLFGC5o_Lzb-FOuCX6npN9GjmErXH7-EpQONMX_-kL9eg7S9WpF66yC1eQoKm2MBKtJ_seEkn7Eae0ulOQ6We9mpN8tEdsBKsQgmbJ8pBUsTaQd_UtB5s6buCbg7k0OdQ==",
+          "title": "sleepfoundation.org",
+          "domain": "sleepfoundation.org"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEv5rXbHc5E8RuaRtamGwmEqh5_bxMUge-EhGXF2h6ex0IZS98cDQhNgDfCYKdNI_m4g_Khbg2cs_ozDqVATvuAhTbhKZO15xdZ_f-23h5mH01uS8_naAgqdfLWKBkfQjBKenzuIS66c9GU9qAGLp50JiIpfJVaMjdyKJ--kMf81Mg-J5iLG3MCKbwZ9xpvZw==",
+          "title": "sleepscienceacademy.com",
+          "domain": "sleepscienceacademy.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8qOS8nmrw-5K7Qo2PMeN3iCHiCNLHGTZw0lz0lU6OcW766MEBY1SZ0_8lhDXANmuxLjkkjJlHkyoVLpRW5rb3JORfg0RzzOUXPeF_GvPswUybZcMbFiwNpk4iT-S7T6-RJ5XhGqp45-5MkE-mfIyKxzUwHazcrEexy_6nLgy__RDWY6MEvABPVaKYh3K-wkFKEktQ",
+          "title": "ubiehealth.com",
+          "domain": "ubiehealth.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGconJjuC0xWn9I4TEhu40IbxZB9zFsDFV2_zvgKy5pCrfPReu6peezId8qCEJyyo7Ad4h6VLm8NRu6E3QNZ7hKXxXWFoR7cb-rm5s79FuSTpTx6Bs3MbuzlG2vQK8qkD2o",
+          "title": "www.nhs.uk",
+          "domain": "www.nhs.uk"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHz379mxgcrmxvNm61pBjbEcT5S8sz8v3SmWLDB8IgHafzc-VOFiySca1DbkjFiDi3jeoNiBgNxaQIoM9h_KE0gQXc0jR9EPKhZi3rj46tlpD3UhD3gEJ_R1Ads2aGj_LjLDrxvqUY5jR2p4LH0FgnXlJYuJdSwmi6RZ_QzAQP1MsfuDpxtdTq5hWNuCCM9Daj7vQ1U",
+          "title": "ubiehealth.com",
+          "domain": "ubiehealth.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtXgoSDu-tMPJFphGYQFLLcH96BNZxuWmW_uC3NhtnUWNQMHpXeiA88fyuRERr3NQgXbWdx64d2clFk3_wyLOj2nIjR7uedjBAHtVqFi131WC4AGykatYf9yWR62m9WbUcpeMwW5AOryi_ro8xhibgbWlRpFLUKLaJvYfjAOsTvdYcwtqAtoE39a2MilI1",
+          "title": "keepingwellnwl.nhs.uk",
+          "domain": "keepingwellnwl.nhs.uk"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVFkMoH8VERs-ijaPRIBj_dFhV59NQRJzmujLckiz44wQPwfu-wfNRnHr4tnk2fwIidaSPP5diWTSdD-2O1zoL3rk8u5Z2QeCrxvIAEwKG1abA2m6zuUM33ySMKz7kgC5q-mk5O6zMauvrPricdb5uXZNBW0l_B8a1GoVQs74ydO_p7pvho_npq_yG",
+          "title": "harvard.edu",
+          "domain": "harvard.edu"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq4orbaYiIqfO48ruVjbrpmaPJoFu8tvERFmDeLcJJxFfJaRFtGc-i7UH43uGBIQ_-qlpukfvKNO6vzcEewMiB_EalQdY5cjo0hXmgpgU5hVqDznB3xgPgcqFLScDmfB0YWFX30KLX3u4TH5WclN3tZBJ4-H_yuA23_qA=",
+          "title": "www.nhs.uk",
+          "domain": "www.nhs.uk"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqrsxlcwpJ1TsRm-ul3T0NzfGzxWcejy_WeTHyBbaCJBNa2W-97gqjcFm8Z7U_GRfxGg_1GK1SREE-u0FbI0jciWGmqOLreFdfY8Ji9t2NYeR3DVFy7eHu-3jP7qS3dOd_pecaYA==",
+          "title": "youtube.com",
+          "domain": "youtube.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd7EM3qnpiuO_jgKVy4JUZ1HsuOoFjOcEw7yii_C-6HRfAKyKzJ300PhDLO1dWN7rsnfHX8pPBG0RsJ1QWYBvfn1AmszSgszfwR0Du6KZodQBi0UYoBRzAZco5jDNMqDj1YmLCeZsw",
+          "title": "johndecosmodo.com",
+          "domain": "johndecosmodo.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPwZAONSOjuczlnU3l-PlDYNZm_-uaBwyTR5fgbBGAIO6HblVeZExwt5mfWJ7w2_OP7sVBbtGwvi6CexH4ukYUqo42Vp_670bi2I7YGUtm-yf9hmfXJGNNl5itVpBLMLNOeyij6ILbbQhWHEom0R7eh3-mwp4nPlnBBiC9GKXNb4f-Yi8EmJ0VLCQkRfw5",
+          "title": "harvard.edu",
+          "domain": "harvard.edu"
+        }
+      }
+    ],
+    "groundingSupports": [
+      {
+        "segment": {
+          "startIndex": 186,
+          "endIndex": 492,
+          "text": "Understanding sleep architecture, natural body temperature shifts, and nighttime arousal can help you respond calmly.\",\n  \"key_points\": [\n    \"Waking up between 2am and 4am is a normal feature of sleep architecture, as your brain shifts into lighter sleep stages and REM during the second half of the night"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 186,
+          "endIndex": 643,
+          "text": "Understanding sleep architecture, natural body temperature shifts, and nighttime arousal can help you respond calmly.\",\n  \"key_points\": [\n    \"Waking up between 2am and 4am is a normal feature of sleep architecture, as your brain shifts into lighter sleep stages and REM during the second half of the night.\",\n    \"Your sleep drive naturally dissipates after four to five hours, meaning small disturbances are more likely to fully awaken your conscious mind"
+        },
+        "groundingChunkIndices": [
+          1,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 186,
+          "endIndex": 799,
+          "text": "Understanding sleep architecture, natural body temperature shifts, and nighttime arousal can help you respond calmly.\",\n  \"key_points\": [\n    \"Waking up between 2am and 4am is a normal feature of sleep architecture, as your brain shifts into lighter sleep stages and REM during the second half of the night.\",\n    \"Your sleep drive naturally dissipates after four to five hours, meaning small disturbances are more likely to fully awaken your conscious mind.\",\n    \"Clock-watching and trying to force sleep trigger physiological alertness; getting out of bed after twenty minutes helps break the frustration cycle"
+        },
+        "groundingChunkIndices": [
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 186,
+          "endIndex": 951,
+          "text": "Understanding sleep architecture, natural body temperature shifts, and nighttime arousal can help you respond calmly.\",\n  \"key_points\": [\n    \"Waking up between 2am and 4am is a normal feature of sleep architecture, as your brain shifts into lighter sleep stages and REM during the second half of the night.\",\n    \"Your sleep drive naturally dissipates after four to five hours, meaning small disturbances are more likely to fully awaken your conscious mind.\",\n    \"Clock-watching and trying to force sleep trigger physiological alertness; getting out of bed after twenty minutes helps break the frustration cycle.\",\n    \"Persistent nighttime awakenings that occur multiple times a week for several months warrant an open conversation with a healthcare professional"
+        },
+        "groundingChunkIndices": [
+          3,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 186,
+          "endIndex": 1174,
+          "text": "Understanding sleep architecture, natural body temperature shifts, and nighttime arousal can help you respond calmly.\",\n  \"key_points\": [\n    \"Waking up between 2am and 4am is a normal feature of sleep architecture, as your brain shifts into lighter sleep stages and REM during the second half of the night.\",\n    \"Your sleep drive naturally dissipates after four to five hours, meaning small disturbances are more likely to fully awaken your conscious mind.\",\n    \"Clock-watching and trying to force sleep trigger physiological alertness; getting out of bed after twenty minutes helps break the frustration cycle.\",\n    \"Persistent nighttime awakenings that occur multiple times a week for several months warrant an open conversation with a healthcare professional.\"\n  ],\n  \"sections\": [\n    {\n      \"heading\": \"The biology of the 3am wake-up\",\n      \"body\": \"Opening your eyes in the middle of the night can feel jarring, especially when the clock reads roughly the same hour every time"
+        },
+        "groundingChunkIndices": [
+          1,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1176,
+          "endIndex": 1249,
+          "text": "There is nothing mystical about 3am, but there is clear biology behind it"
+        },
+        "groundingChunkIndices": [
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1301,
+          "endIndex": 1453,
+          "text": "It moves through recurring cycles of approximately 90 minutes, alternating between light sleep, deep slow-wave sleep, and rapid eye movement (REM) sleep"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1455,
+          "endIndex": 1546,
+          "text": "During the first third of your night, your body prioritises deep, restorative physical rest"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1548,
+          "endIndex": 1609,
+          "text": "As the night progresses, sleep architecture shifts noticeably"
+        },
+        "groundingChunkIndices": [
+          1,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1611,
+          "endIndex": 1701,
+          "text": "Deep sleep shortens, and your brain spends longer periods in lighter non-REM and REM sleep"
+        },
+        "groundingChunkIndices": [
+          0,
+          6
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1702,
+          "endIndex": 1816,
+          "text": "\\n\\nBy around 3am—assuming a bedtime between 10pm and 11pm—you have already cleared three or four sleep cycles"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1818,
+          "endIndex": 1959,
+          "text": "You have also cleared a large portion of your \\\"sleep pressure,\\\" the neurochemical hunger for sleep that builds throughout your waking hours"
+        },
+        "groundingChunkIndices": [
+          1,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1961,
+          "endIndex": 2147,
+          "text": "Because your brain is in a lighter sleep stage and your biological drive to sleep is lower, small internal or environmental shifts are much more likely to pull you fully into wakefulness"
+        },
+        "groundingChunkIndices": [
+          1,
+          6
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1961,
+          "endIndex": 2316,
+          "text": "Because your brain is in a lighter sleep stage and your biological drive to sleep is lower, small internal or environmental shifts are much more likely to pull you fully into wakefulness.\"\n    },\n    {\n      \"heading\": \"Internal shifts that nudge you awake\",\n      \"body\": \"Around the early morning hours, several natural physiological processes intersect"
+        },
+        "groundingChunkIndices": [
+          0,
+          7
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1961,
+          "endIndex": 2424,
+          "text": "Because your brain is in a lighter sleep stage and your biological drive to sleep is lower, small internal or environmental shifts are much more likely to pull you fully into wakefulness.\"\n    },\n    {\n      \"heading\": \"Internal shifts that nudge you awake\",\n      \"body\": \"Around the early morning hours, several natural physiological processes intersect:\\n\\n* **Body temperature:** Your core body temperature drops to its lowest 24-hour point in the early hours"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2426,
+          "endIndex": 2545,
+          "text": "If your bedroom is too warm or your bedding traps heat, your body struggles to regulate, which can trigger an awakening"
+        },
+        "groundingChunkIndices": [
+          1,
+          8
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2546,
+          "endIndex": 2698,
+          "text": "\\n* **Hormonal rhythms:** Levels of cortisol naturally begin a gradual rise in the second half of the night to help prepare your body for morning waking"
+        },
+        "groundingChunkIndices": [
+          7
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2700,
+          "endIndex": 2859,
+          "text": "When elevated stress or anxiety is present, nighttime nervous system activity can cause this shift to feel abrupt, leaving your mind racing the moment you stir"
+        },
+        "groundingChunkIndices": [
+          9,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2860,
+          "endIndex": 3016,
+          "text": "\\n* **Metabolism and digestion:** Late-evening meals require active digestion and can prompt mild reflux or blood sugar shifts that disrupt sleep continuity"
+        },
+        "groundingChunkIndices": [
+          5,
+          10
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3018,
+          "endIndex": 3214,
+          "text": "Similarly, evening alcohol consumption acts as a sedative initially, but as the liver metabolises it during the early morning, it creates a rebound effect that fragments REM sleep and wakes you up"
+        },
+        "groundingChunkIndices": [
+          1,
+          10
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3215,
+          "endIndex": 3386,
+          "text": "\\n* **Bladder signals:** Fluid intake close to bedtime or age-related shifts in bladder tone can send physical wake-up signals precisely when your sleep is at its lightest"
+        },
+        "groundingChunkIndices": [
+          6,
+          11
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3215,
+          "endIndex": 3550,
+          "text": "\\n* **Bladder signals:** Fluid intake close to bedtime or age-related shifts in bladder tone can send physical wake-up signals precisely when your sleep is at its lightest.\"\n    },\n    {\n      \"heading\": \"Why falling back asleep feels so difficult\",\n      \"body\": \"The moment you realize you are awake, a common behavioural trap begins"
+        },
+        "groundingChunkIndices": [
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3552,
+          "endIndex": 3665,
+          "text": "You check the clock, calculate how many hours remain before your alarm, and try to force yourself back into sleep"
+        },
+        "groundingChunkIndices": [
+          1,
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3781,
+          "endIndex": 3968,
+          "text": "Actively trying to sleep is an effortful, conscious task that does the exact opposite: it activates your sympathetic nervous system, increases your heart rate, and elevates mental arousal"
+        },
+        "groundingChunkIndices": [
+          5,
+          6
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3970,
+          "endIndex": 4102,
+          "text": "\\n\\nLying in bed feeling frustrated also conditions the brain to associate your mattress with wakefulness and worry rather than rest"
+        },
+        "groundingChunkIndices": [
+          8,
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4104,
+          "endIndex": 4188,
+          "text": "The longer you stay in bed battling your thoughts, the more alert you tend to become"
+        },
+        "groundingChunkIndices": [
+          6,
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4104,
+          "endIndex": 4416,
+          "text": "The longer you stay in bed battling your thoughts, the more alert you tend to become.\"\n    },\n    {\n      \"heading\": \"What to do when you find yourself wide awake\",\n      \"body\": \"When you wake up at 3am, how you respond in the first half hour makes a significant difference to how the rest of your night unfolds"
+        },
+        "groundingChunkIndices": [
+          6,
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4104,
+          "endIndex": 4509,
+          "text": "The longer you stay in bed battling your thoughts, the more alert you tend to become.\"\n    },\n    {\n      \"heading\": \"What to do when you find yourself wide awake\",\n      \"body\": \"When you wake up at 3am, how you respond in the first half hour makes a significant difference to how the rest of your night unfolds:\\n\\n* **Keep the clock turned away:** Avoid checking the time on your phone or bedside table"
+        },
+        "groundingChunkIndices": [
+          11
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4511,
+          "endIndex": 4607,
+          "text": "Knowing the exact minute adds cognitive calculation and time anxiety that keep your brain active"
+        },
+        "groundingChunkIndices": [
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4608,
+          "endIndex": 4699,
+          "text": "\\n* **Give it roughly twenty minutes:** Rest quietly and allow your body to drift naturally"
+        },
+        "groundingChunkIndices": [
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4701,
+          "endIndex": 4777,
+          "text": "If you notice you are tossing, turning, or ruminating, gently get out of bed"
+        },
+        "groundingChunkIndices": [
+          8,
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4778,
+          "endIndex": 4870,
+          "text": "\\n* **Change your environment under low light:** Move to a comfortable chair in another room"
+        },
+        "groundingChunkIndices": [
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4872,
+          "endIndex": 4936,
+          "text": "Keep lighting low and warm, and avoid looking at backlit screens"
+        },
+        "groundingChunkIndices": [
+          11,
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4938,
+          "endIndex": 5138,
+          "text": "Engage in a quiet, low-stimulation activity—such as reading a physical book, listening to soft instrumental sounds, or doing gentle breathing exercises—until you feel heavy-lidded and drowsy again"
+        },
+        "groundingChunkIndices": [
+          8,
+          11,
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5139,
+          "endIndex": 5250,
+          "text": "\\n* **Return to bed only when sleepy:** When your eyes feel heavy and yawn reflexes return, climb back into bed"
+        },
+        "groundingChunkIndices": [
+          8
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5252,
+          "endIndex": 5327,
+          "text": "If sleep still does not come after another stretch, repeat the cycle calmly"
+        },
+        "groundingChunkIndices": [
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5252,
+          "endIndex": 5515,
+          "text": "If sleep still does not come after another stretch, repeat the cycle calmly.\"\n    },\n    {\n      \"heading\": \"Daytime habits that protect nighttime continuity\",\n      \"body\": \"Protecting uninterrupted sleep often happens long before you put your head on the pillow"
+        },
+        "groundingChunkIndices": [
+          12,
+          13
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5252,
+          "endIndex": 5739,
+          "text": "If sleep still does not come after another stretch, repeat the cycle calmly.\"\n    },\n    {\n      \"heading\": \"Daytime habits that protect nighttime continuity\",\n      \"body\": \"Protecting uninterrupted sleep often happens long before you put your head on the pillow:\\n\\n* **Anchor your morning wake time:** Waking up at the same time every day—including on weekends—is one of the most reliable ways to set your internal circadian clock and ensure sufficient sleep pressure by nightfall"
+        },
+        "groundingChunkIndices": [
+          14,
+          8
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5740,
+          "endIndex": 5939,
+          "text": "\\n* **Seek morning daylight:** Exposure to natural outdoor light within an hour of waking sends a clear signal to your brain's master clock, helping synchronize your natural nighttime hormone rhythms"
+        },
+        "groundingChunkIndices": [
+          14,
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5940,
+          "endIndex": 6100,
+          "text": "\\n* **Mind the evening wind-down:** Give yourself at least an hour before bed without work emails, emotionally charged conversations, or heavy physical workouts"
+        },
+        "groundingChunkIndices": [
+          8,
+          10
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6102,
+          "endIndex": 6315,
+          "text": "\\n* **Keep your bedroom cool, dark, and quiet:** Aim for a room temperature that feels slightly cool to support your core body cooling, and use earplugs or eye masks if environmental noises or streetlights intrude"
+        },
+        "groundingChunkIndices": [
+          3,
+          11
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6102,
+          "endIndex": 6509,
+          "text": "\\n* **Keep your bedroom cool, dark, and quiet:** Aim for a room temperature that feels slightly cool to support your core body cooling, and use earplugs or eye masks if environmental noises or streetlights intrude.\"\n    }\n  ],\n  \"when_to_seek_care\": \"While occasional middle-of-the-night awakenings happen to almost everyone, persistent disruption is worth discussing with a doctor or primary care clinician"
+        },
+        "groundingChunkIndices": [
+          1,
+          3
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6511,
+          "endIndex": 6668,
+          "text": "Book an appointment if:\\n\\n* You wake up repeatedly and struggle to return to sleep at least 3 nights per week, and this has continued for 3 months or longer"
+        },
+        "groundingChunkIndices": [
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6669,
+          "endIndex": 6805,
+          "text": "\\n* You wake up gasping for breath, choking, or with a very dry mouth, or a bed partner notices loud snoring or pauses in your breathing"
+        },
+        "groundingChunkIndices": [
+          11
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6806,
+          "endIndex": 6931,
+          "text": "\\n* You experience restless, uncomfortable sensations in your legs that create an irresistible urge to move them when resting"
+        },
+        "groundingChunkIndices": [
+          5,
+          7
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6932,
+          "endIndex": 7048,
+          "text": "\\n* Daytime fatigue, brain fog, or low mood is interfering with your work, relationships, or ability to drive safely"
+        },
+        "groundingChunkIndices": [
+          3,
+          15
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 7049,
+          "endIndex": 7185,
+          "text": "\\n* Nighttime awakenings are accompanied by drenching night sweats, unexplained weight loss, chronic pain, or frequent painful urination"
+        },
+        "groundingChunkIndices": [
+          9,
+          7,
+          10
+        ]
+      }
+    ]
+  },
+  "usage": {
+    "promptTokenCount": 1877,
+    "candidatesTokenCount": 2560,
+    "totalTokenCount": 5415,
+    "trafficType": "ON_DEMAND",
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1877
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 2560
+      }
+    ],
+    "thoughtsTokenCount": 978
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "id": "A1",
+  "prompt": "Write an article for The Body Cue.\n\nCategory: Movement\nSubtopic: walking after meals\nAngle: what the evidence actually shows\nAudience: people who sit at a desk all day\nFormat: explainer\n\nGround every claim with Google Search and cite real sources.",
+  "mode": "structured",
+  "seconds": 32,
+  "text": "{\n  \"title\": \"Walking After Meals: What the Evidence Actually Shows\",\n  \"slug\": \"walking-after-meals-evidence\",\n  \"excerpt\": \"A short stroll after eating can steady your post-meal blood sugar. Here is what research shows about timing, duration, and desk-bound days.\",\n  \"key_points\": [\n    \"Light walking for as little as 2 to 15 minutes after eating significantly moderates post-meal blood sugar spikes.\",\n    \"Muscular contractions in the legs pull glucose directly out of the bloodstream without demanding excess insulin from the pancreas.\",\n    \"Beginning a walk within 30 minutes of finishing a meal yields the greatest metabolic benefit by intercepting the natural glucose rise.\",\n    \"For desk workers, distributing short walking bouts across the day is often more effective for glucose regulation than a single gym session.\"\n  ],\n  \"sections\": [\n    {\n      \"heading\": \"What happens in the body after a meal\",\n      \"body\": \"When you finish eating, your digestive system breaks carbohydrates down into glucose. That glucose enters your bloodstream, prompting your body to release insulin so cells can absorb fuel. In healthy physiology, circulating glucose levels generally rise and reach a peak between 30 and 60 minutes after you take your last bite.\\n\\nFor desk workers, the default response to a meal is usually immobility. You finish lunch and immediately sit back down in front of a monitor. When your body remains stationary, your large muscle groups stay completely relaxed. In this low-energy state, glucose remains in the bloodstream longer, requiring higher amounts of insulin to clear it. Over months and years, frequent and sharp post-meal glucose surges can place unnecessary strain on blood vessels and contribute to reduced insulin sensitivity.\"\n    },\n    {\n      \"heading\": \"The mechanism: how muscles clear fuel without extra effort\",\n      \"body\": \"Skeletal muscle is your body's primary consumer of glucose. During periods of rest, muscle cells rely almost entirely on insulin signaling to open the gates—known as glucose transporter proteins—that let circulating sugar inside.\\n\\nWhen your muscles contract, however, something practical happens. Even the mild muscular work of an easy stroll activates those same transport proteins through a separate mechanical pathway. Your leg and core muscles draw sugar out of circulation directly, without needing your pancreas to produce extra insulin. This acts like a natural metabolic sponge, dampening the height of the post-meal glucose rise before it peaks.\"\n    },\n    {\n      \"heading\": \"What the clinical trials reveal about duration and timing\",\n      \"body\": \"A landmark 2022 systematic review and meta-analysis published in *Sports Medicine* examined how light physical activity impacts post-meal markers compared to sitting still. The researchers found that light-intensity walking produced a clear, statistically significant reduction in postprandial glucose and insulin levels. Even brief walking breaks lasting between 2 and 5 minutes showed measurable improvements over continuous sitting.\\n\\nTiming also matters. Research indicates that moving within 30 minutes of eating captures the ascending curve of blood sugar. Waiting an hour or two after a meal still offers general cardiovascular benefits, but it misses the window where glucose absorption peaks. A randomized study comparing three 10-minute post-meal walks against a single continuous 30-minute walk found that dispersing the movement directly after eating resulted in better overall 24-hour glycemic balance.\"\n    },\n    {\n      \"heading\": \"A realistic approach for desk workers\",\n      \"body\": \"If you work at a desk all day, setting aside 30 minutes for a post-lunch workout is rarely realistic. Fortunately, the evidence does not demand intense exertion or athletic gear.\\n\\n* **Keep the pace conversational:** Strolling at an easy, comfortable pace is enough to stimulate glucose clearance without causing digestive discomfort or sweating.\\n* **Aim for 10 to 15 minutes:** A quick loop around the office floor, pacing a quiet corridor, or walking around the block provides sufficient muscular activation.\\n* **Target the most carbohydrate-dense meal:** If walking after every meal is impractical, focus on the meal that typically contains the most carbohydrates or precedes your longest sedentary block.\\n* **Use indoor pacing if needed:** Inclement weather or tight schedules do not prevent movement. Walking up and down a staircase at a relaxed pace or pacing while taking a phone call achieves the same physiological outcome.\"\n    },\n    {\n      \"heading\": \"Digestive ease and cardiovascular benefits\",\n      \"body\": \"Beyond blood sugar regulation, light movement after eating encourages gentle gastric motility. Walking upright can help alleviate common post-meal complaints such as abdominal heaviness, sluggishness, and bloating.\\n\\nAdditionally, blunting sharp glucose fluctuations helps protect the endothelium, the delicate inner lining of your blood vessels. Frequent, steep blood sugar spikes can trigger transient oxidative stress and arterial stiffness. Light movement stimulates blood flow and supports vascular compliance, turning an everyday habit into an effective tool for long-term cardiometabolic wellness.\"\n    }\n  ],\n  \"when_to_seek_care\": \"While mild drowsiness after a heavy meal can happen occasionally, certain symptoms warrant evaluation by a healthcare professional. Make an appointment to discuss your symptoms if you notice:\\n\\n* Intense, overwhelming fatigue, brain fog, or dizziness that occurs reliably 1 to 2 hours after meals.\\n* Persistent unquenchable thirst, frequent urination (especially waking multiple times at night), or unexplained weight loss.\\n* Blood sugar readings from routine home monitoring that consistently remain above 140 mg/dL (7.8 mmol/L) two hours after starting a meal.\\n* Episodes of shakiness, sweating, rapid heartbeat, or confusion after eating, which may suggest reactive hypoglycemia.\\n* Severe, sharp, or persistent abdominal pain, chronic nausea, or difficulty swallowing that does not resolve with lifestyle adjustments.\",\n  \"sources\": [\n    {\n      \"title\": \"The Acute Effects of Interrupting Prolonged Sitting Time in Adults with Standing and Light-Intensity Walking on Biomarkers of Cardiometabolic Health in Adults: A Systematic Review and Meta-analysis\",\n      \"url\": \"https://link.springer.com/article/10.1007/s40279-022-01649-4\",\n      \"publisher\": \"Sports Medicine\"\n    },\n    {\n      \"title\": \"Advice to walk after meals is more effective for lowering postprandial glycaemia in type 2 diabetes than advice to walk at any time: a randomised crossover trial\",\n      \"url\": \"https://link.springer.com/article/10.1007/s00125-016-4085-2\",\n      \"publisher\": \"Diabetologia\"\n    },\n    {\n      \"title\": \"Manage Blood Sugar: Physical Activity\",\n      \"url\": \"https://www.cdc.gov/diabetes/managing/active.html\",\n      \"publisher\": \"Centers for Disease Control and Prevention\"\n    }\n  ],\n  \"seo\": {\n    \"title\": \"Walking After Meals: What the Evidence Shows\",\n    \"description\": \"Discover how a short walk after eating improves blood sugar regulation, eases digestion, and supports desk workers throughout the day.\"\n  },\n  \"faq\": [\n    {\n      \"question\": \"How long should I wait after eating before I start walking?\",\n      \"answer\": \"Starting within 15 to 30 minutes after your meal is ideal, as this allows muscle contractions to intercept the natural rise in blood glucose before it reaches its peak.\"\n    },\n    {\n      \"question\": \"How fast do I need to walk to see a benefit?\",\n      \"answer\": \"A light to moderate, conversational pace is sufficient. Vigorous exercise is not necessary and may cause digestive discomfort right after eating.\"\n    },\n    {\n      \"question\": \"Is standing just as effective as walking after meals?\",\n      \"answer\": \"Standing is better than remaining seated, but research shows that light walking provides significantly greater reductions in blood sugar and insulin due to active muscle contraction.\"\n    }\n  ]\n} ",
+  "finishReason": "STOP",
+  "grounding": {
+    "webSearchQueries": [
+      "walking after meals blood sugar meta analysis sports medicine 2022",
+      "light walking after eating postprandial glucose sedentary desk workers"
+    ],
+    "searchEntryPoint": {
+      "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n    <a class=\"chip\" href=\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOVuM8Wzi3KYJSEPyrLVUBq2yXBM8YO3N8UsbF55xMhp_DR0qFZnocCpoGNdkFWUbWCSuPI_MrjmU571haTIEfaWyRsgWDI79CuiJHlUPo4CKftTcu6gHkLkl8gAa9S4RJ63MZZFrzhJhav723hE2taK5WdR9FPA0X3O-FYt1BRm3tPad7OWaaY9bimhkgNnN0MvyEW66RwxMtosc3JAIpd9zojBLPtWnDI0MmHAOR_aK3PcMZJOCVaRXCNc-zXbLMiC5g8r7xWfE=\">light walking after eating postprandial glucose sedentary desk workers</a>\n    <a class=\"chip\" href=\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUm85_ZfNKjQWsGUP9mGp87fiZvox-Z37Qdm2ph4_1ocJpFOtw0-IOBIhgw9M1OSYOJzcg4Qr_bhOApdVvxDD8RHpwO6zBdFTJbLSBEq6fHL8p0cv2Q8l8mHz3ruz-n8rshfaL_585O8mDoljL5o-HGCfEraDmovDcY-fFAGKnH9vDD5QjJfnoJVZmfDNXgD4xY4d3qYCWuTJbo7YSWyM_V6W-fm4cpj4vdnXz8qRuCUb9ctXk02lRVvvklqyVQkHeKQ-lyw==\">walking after meals blood sugar meta analysis sports medicine 2022</a>\n  </div>\n</div>\n"
+    },
+    "groundingChunks": [
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFca64-Ji4Wb1bUVz91wAofzSDQVN0XqPDwdlFxTFe8V9oC8EijI9n0Ruyznl6TZXDfeie9t-845gPeNnbJXG36MQs36ka_U0JC--tGA7r-DTqHgxCzmL8VYowM-rFfpbZTmyokW3YbGyOVPbF3xXcGkxX2Cb_vQwTFK4z63i5UqDe_Hul88A==",
+          "title": "ifpa-fitness.com",
+          "domain": "ifpa-fitness.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG21ebzEsZ25G7NUZsxNjWeQCFn1jQbgpUX6ycwnktFEyjC2bh8xL4p6-mMfaObBAKoaYDGmCqXFFJqjr_bLoqb5t9I1FgCFfSf1kbeT3O84Ls4x1bArwGlerrK_oK45z9os-dIg9m0eOsxksxxH29L9EhIUjkiKmsuIdvX-r15-o5qVh-KB17hApCOxfHgfBTRKzKGwaI=",
+          "title": "news-medical.net",
+          "domain": "news-medical.net"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH275_385oRxviq6iyvetUMudC6AAUK6jwx02T08Fin9EOnvLA2t9Ie1JE0LcX22LVSGXePV_oTCcmp192PHgnsFtTmpXjPp7J-NOThfBYCUlTImD-BsiPXuYnfD544dVdiNe7Xi-sDyDHXi58Th7QPA61EDfmw4ZDlCnXTfXethSClEIjFdcWix2JwC9XvfxA-uJIfmw==",
+          "title": "ina-respond.net",
+          "domain": "ina-respond.net"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlWWDzbmJp52U8orkZesCxkEgAognDpWUnb0zj1INj5BkvcBaQhjCY-0jr5hMBdcKfGI8St_XUTXk5vJSBJDJnuvbRI6VTGzvm9yXPRiIRVbsiWU4nNrsmIMGPeNaOD2yg3Sj6HFy_W76Ba0uWXN1f09Uu3aGZe-2IJv6cWXvCeH9WcQn50kWh6LN35od1rmdfh_XI1qcaslgL6LTgC9wNKvGCXG2UFEI-YyhJsO8zLzRsdUnTqvtjX4wou7YXxRzLgkfzf21Du4X-iwnh",
+          "title": "facebook.com",
+          "domain": "facebook.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVN4WYRYLnoVYqv_lTIGiZ4ZIBNk4JrqyeMdVOQ9pUxcbE_UuRYdu8t7A-8DyRD-Y3Y6SJomlcCD5oLE1S9KqJyPs-fqPIZx8HycYoVZb04lxbYvoaxxrJUl2RG1gR289YdS7EApOobAaJJaXJwbRZYOGc10qR_45QyZ5DfvyunMSE1ojaQGzTCjCruLWEmxdDco_tG2kc-Cl-OFLnpazPLxJ8UeW7bKvDo5q8k5cSf1tfjrjwt6TGdtjIt_0Yxz0Xn5PWy7UnumsA255WQRlrLxMfCg==",
+          "title": "facebook.com",
+          "domain": "facebook.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmk7j41BqdJEV7CfBmLeNkciy_sAkC_0GfmrtiIp_A3z4ufZrgouvBoxx00OwUHTJlcWFmLyyisgcQi0Z1zuGnyZJ49P5kmFcsx-J9Zhc49tVVK0uyjNV62pvPHSnmBkyUPLXPHff5_S3VwYGc_6MWCNjipmoGh5QqkybDbTi7E25CKuGPWUM=",
+          "title": "vynleads.com",
+          "domain": "vynleads.com"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRmyOAKbStp2uSJmbYmTdsOzsPRDKPGz_R3J-cMNHHBr2aB46KcXdYC1tDBdstspdy4d-Mj_DTmnDQ_HhxMsCKrmF4tDVY2qYKjJtL-W__OBQCTNvMw-V_vcG43RMR1YQ8yJFmvCRt1UGh-kpR7Y95uts=",
+          "title": "nih.gov",
+          "domain": "nih.gov"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNkFLGwsTE8xCZ_01zzGJz-H8M3_kz9zl9q5LCfqOwOg56SIBSjex__oqYU8tsdtI0rWwB5HCKDSzme-cNnp2zvW_5FMenrLmuWmLbgJaQv30te7jAiDZEYb7OsiiOTxdGAMgWlamUW9-4xLk=",
+          "title": "nih.gov",
+          "domain": "nih.gov"
+        }
+      }
+    ],
+    "groundingSupports": [
+      {
+        "segment": {
+          "startIndex": 193,
+          "endIndex": 1017,
+          "text": "Here is what research shows about timing, duration, and desk-bound days.\",\n  \"key_points\": [\n    \"Light walking for as little as 2 to 15 minutes after eating significantly moderates post-meal blood sugar spikes.\",\n    \"Muscular contractions in the legs pull glucose directly out of the bloodstream without demanding excess insulin from the pancreas.\",\n    \"Beginning a walk within 30 minutes of finishing a meal yields the greatest metabolic benefit by intercepting the natural glucose rise.\",\n    \"For desk workers, distributing short walking bouts across the day is often more effective for glucose regulation than a single gym session.\"\n  ],\n  \"sections\": [\n    {\n      \"heading\": \"What happens in the body after a meal\",\n      \"body\": \"When you finish eating, your digestive system breaks carbohydrates down into glucose"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1019,
+          "endIndex": 1120,
+          "text": "That glucose enters your bloodstream, prompting your body to release insulin so cells can absorb fuel"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1122,
+          "endIndex": 1259,
+          "text": "In healthy physiology, circulating glucose levels generally rise and reach a peak between 30 and 60 minutes after you take your last bite"
+        },
+        "groundingChunkIndices": [
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1260,
+          "endIndex": 1334,
+          "text": "\\n\\nFor desk workers, the default response to a meal is usually immobility"
+        },
+        "groundingChunkIndices": [
+          3
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1336,
+          "endIndex": 1404,
+          "text": "You finish lunch and immediately sit back down in front of a monitor"
+        },
+        "groundingChunkIndices": [
+          3
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1491,
+          "endIndex": 1607,
+          "text": "In this low-energy state, glucose remains in the bloodstream longer, requiring higher amounts of insulin to clear it"
+        },
+        "groundingChunkIndices": [
+          1,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1609,
+          "endIndex": 1767,
+          "text": "Over months and years, frequent and sharp post-meal glucose surges can place unnecessary strain on blood vessels and contribute to reduced insulin sensitivity"
+        },
+        "groundingChunkIndices": [
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1609,
+          "endIndex": 1935,
+          "text": "Over months and years, frequent and sharp post-meal glucose surges can place unnecessary strain on blood vessels and contribute to reduced insulin sensitivity.\"\n    },\n    {\n      \"heading\": \"The mechanism: how muscles clear fuel without extra effort\",\n      \"body\": \"Skeletal muscle is your body's primary consumer of glucose"
+        },
+        "groundingChunkIndices": [
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1937,
+          "endIndex": 2109,
+          "text": "During periods of rest, muscle cells rely almost entirely on insulin signaling to open the gates—known as glucose transporter proteins—that let circulating sugar inside"
+        },
+        "groundingChunkIndices": [
+          1,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2180,
+          "endIndex": 2303,
+          "text": "Even the mild muscular work of an easy stroll activates those same transport proteins through a separate mechanical pathway"
+        },
+        "groundingChunkIndices": [
+          1,
+          4,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2305,
+          "endIndex": 2425,
+          "text": "Your leg and core muscles draw sugar out of circulation directly, without needing your pancreas to produce extra insulin"
+        },
+        "groundingChunkIndices": [
+          1,
+          4,
+          0,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2427,
+          "endIndex": 2536,
+          "text": "This acts like a natural metabolic sponge, dampening the height of the post-meal glucose rise before it peaks"
+        },
+        "groundingChunkIndices": [
+          1,
+          0,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2427,
+          "endIndex": 2816,
+          "text": "This acts like a natural metabolic sponge, dampening the height of the post-meal glucose rise before it peaks.\"\n    },\n    {\n      \"heading\": \"What the clinical trials reveal about duration and timing\",\n      \"body\": \"A landmark 2022 systematic review and meta-analysis published in *Sports Medicine* examined how light physical activity impacts post-meal markers compared to sitting still"
+        },
+        "groundingChunkIndices": [
+          6,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2818,
+          "endIndex": 2965,
+          "text": "The researchers found that light-intensity walking produced a clear, statistically significant reduction in postprandial glucose and insulin levels"
+        },
+        "groundingChunkIndices": [
+          1,
+          6
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2967,
+          "endIndex": 3079,
+          "text": "Even brief walking breaks lasting between 2 and 5 minutes showed measurable improvements over continuous sitting"
+        },
+        "groundingChunkIndices": [
+          6
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3105,
+          "endIndex": 3207,
+          "text": "Research indicates that moving within 30 minutes of eating captures the ascending curve of blood sugar"
+        },
+        "groundingChunkIndices": [
+          1,
+          7,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3209,
+          "endIndex": 3346,
+          "text": "Waiting an hour or two after a meal still offers general cardiovascular benefits, but it misses the window where glucose absorption peaks"
+        },
+        "groundingChunkIndices": [
+          1,
+          2,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3348,
+          "endIndex": 3560,
+          "text": "A randomized study comparing three 10-minute post-meal walks against a single continuous 30-minute walk found that dispersing the movement directly after eating resulted in better overall 24-hour glycemic balance"
+        },
+        "groundingChunkIndices": [
+          1,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3751,
+          "endIndex": 3826,
+          "text": "Fortunately, the evidence does not demand intense exertion or athletic gear"
+        },
+        "groundingChunkIndices": [
+          1,
+          4,
+          3
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3827,
+          "endIndex": 3995,
+          "text": "\\n\\n* **Keep the pace conversational:** Strolling at an easy, comfortable pace is enough to stimulate glucose clearance without causing digestive discomfort or sweating"
+        },
+        "groundingChunkIndices": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3996,
+          "endIndex": 4160,
+          "text": "\\n* **Aim for 10 to 15 minutes:** A quick loop around the office floor, pacing a quiet corridor, or walking around the block provides sufficient muscular activation"
+        },
+        "groundingChunkIndices": [
+          1,
+          2,
+          4,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4161,
+          "endIndex": 4359,
+          "text": "\\n* **Target the most carbohydrate-dense meal:** If walking after every meal is impractical, focus on the meal that typically contains the most carbohydrates or precedes your longest sedentary block"
+        },
+        "groundingChunkIndices": [
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4459,
+          "endIndex": 4584,
+          "text": "Walking up and down a staircase at a relaxed pace or pacing while taking a phone call achieves the same physiological outcome"
+        },
+        "groundingChunkIndices": [
+          6,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4459,
+          "endIndex": 4771,
+          "text": "Walking up and down a staircase at a relaxed pace or pacing while taking a phone call achieves the same physiological outcome.\"\n    },\n    {\n      \"heading\": \"Digestive ease and cardiovascular benefits\",\n      \"body\": \"Beyond blood sugar regulation, light movement after eating encourages gentle gastric motility"
+        },
+        "groundingChunkIndices": [
+          2,
+          3
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4773,
+          "endIndex": 4891,
+          "text": "Walking upright can help alleviate common post-meal complaints such as abdominal heaviness, sluggishness, and bloating"
+        },
+        "groundingChunkIndices": [
+          2,
+          3
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4892,
+          "endIndex": 5024,
+          "text": "\\n\\nAdditionally, blunting sharp glucose fluctuations helps protect the endothelium, the delicate inner lining of your blood vessels"
+        },
+        "groundingChunkIndices": [
+          1,
+          2,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5026,
+          "endIndex": 5122,
+          "text": "Frequent, steep blood sugar spikes can trigger transient oxidative stress and arterial stiffness"
+        },
+        "groundingChunkIndices": [
+          2,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5124,
+          "endIndex": 5282,
+          "text": "Light movement stimulates blood flow and supports vascular compliance, turning an everyday habit into an effective tool for long-term cardiometabolic wellness"
+        },
+        "groundingChunkIndices": [
+          1,
+          0
+        ]
+      }
+    ]
+  },
+  "usage": {
+    "promptTokenCount": 1860,
+    "candidatesTokenCount": 2164,
+    "totalTokenCount": 5125,
+    "trafficType": "ON_DEMAND",
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1860
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 2164
+      }
+    ],
+    "thoughtsTokenCount": 1101
+  }
+}

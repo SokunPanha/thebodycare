@@ -1,0 +1,547 @@
+{
+  "id": "A5",
+  "prompt": "Write an article for The Body Cue.\n\nCategory: Symptom Guide\nSubtopic: natural ways to lower blood pressure without medication\nAngle: what people can do themselves\nAudience: adults recently told their blood pressure is high\nFormat: explainer",
+  "mode": "structured",
+  "seconds": 33,
+  "text": "{\n  \"title\": \"Ways to Lower Blood Pressure Through Everyday Habits\",\n  \"slug\": \"lower-blood-pressure-everyday-habits\",\n  \"excerpt\": \"If a recent check showed high blood pressure, practical daily changes can make a meaningful difference. Here is what the evidence supports.\",\n  \"key_points\": [\n    \"Modifying daily nutrition by cutting dietary sodium and eating more potassium-rich whole foods often helps reduce arterial pressure.\",\n    \"Aiming for 150 minutes of moderate aerobic activity weekly, alongside simple resistance work, supports healthy vessel flexibility.\",\n    \"Prioritising 7 or more hours of restful sleep and practising slow breathing help calm the nervous system.\",\n    \"Lifestyle shifts work alongside medical guidance and are not a replacement for clinical care when it is needed.\"\n  ],\n  \"sections\": [\n    {\n      \"heading\": \"Understanding What Your Reading Signals\",\n      \"body\": \"Receiving a higher reading than expected can feel unsettling. Blood pressure simply reflects the force of blood pushing against the walls of your arteries as your heart pumps. It is recorded in two numbers: the top number (systolic) measures pressure during a heartbeat, and the bottom number (diastolic) measures pressure while the heart rests between beats.\\n\\nBlood pressure fluctuates naturally throughout the day in response to movement, stress, meals, and hydration. A single elevated reading is rarely a diagnosis on its own. Instead, it serves as a cue to observe your routines, track your numbers consistently, and discuss a plan with a healthcare provider.\"\n    },\n    {\n      \"heading\": \"Rethinking Salt and Potassium on Your Plate\",\n      \"body\": \"Dietary habits have a direct, well-documented effect on arterial tension. The most impactful change for many people involves reducing sodium intake. Most dietary sodium comes from pre-packaged, processed foods and restaurant meals rather than the salt shaker at the table. Health guidelines generally suggest aiming for less than 2,300 milligrams of sodium per day, or about 5 to 6 grams of total salt.\\n\\nEqually important is increasing potassium intake through whole foods, which helps your kidneys balance sodium levels and allows blood vessel walls to relax. You can build a heart-supportive plate by focusing on:\\n\\n* **Vegetables and leafy greens:** Spinach, broccoli, and sweet potatoes.\\n* **Fruits:** Bananas, berries, oranges, and avocados.\\n* **Whole grains and legumes:** Lentils, beans, oats, and brown rice.\\n* **Lean proteins and healthy fats:** Fish, seeds, unsalted nuts, and olive oil.\\n\\nAdopting an eating pattern rich in whole foods, like the DASH dietary approach, often leads to noticeable improvements in blood pressure readings within a few weeks.\"\n    },\n    {\n      \"heading\": \"Building Movement into Your Routine\",\n      \"body\": \"Regular physical activity strengthens the heart muscle, allowing it to pump blood with less effort and decreasing the strain on your arteries. You do not need intense athletic training to see benefits; consistency matters far more than intensity.\\n\\nHealth authorities recommend aiming for at least 150 minutes of moderate-intensity aerobic exercise each week. This can be broken into 30-minute sessions across five days, such as brisk walking, cycling, swimming, or yard work.\\n\\nIn addition to aerobic movement, research suggests that resistance and isometric exercises provide clear cardiovascular support. Simple bodyweight movements like wall sits, planks, or light resistance band sessions two to three times per week help improve vascular tone. If you have been inactive for a while, building up slowly allows your body to adapt comfortably.\"\n    },\n    {\n      \"heading\": \"Resting Your Nervous System and Protecting Sleep\",\n      \"body\": \"Your blood pressure is tightly linked to your autonomic nervous system. Chronic emotional strain, frequent poor sleep, and stimulant exposure can keep your system in a heightened state of alertness.\\n\\nSleeping fewer than seven hours a night on a regular basis is strongly associated with elevated blood pressure. Establishing a consistent sleep schedule and keeping your sleeping environment dark and cool support the natural drop in nighttime blood pressure that your body needs.\\n\\nDuring waking hours, deliberate breathing exercises can activate your body's relaxation pathways. Spending 10 to 15 minutes a day practising slow, paced breathing (aiming for fewer than 10 breaths per minute) has been shown to produce modest reductions in arterial tension. Reducing alcohol intake to recommended limits and avoiding tobacco products also remove immediate chemical stressors that elevate pressure.\"\n    },\n    {\n      \"heading\": \"How to Track Your Numbers Accurately at Home\",\n      \"body\": \"Monitoring your blood pressure at home helps establish your genuine baseline, free from the temporary spike that clinical visits sometimes cause. To get reliable data:\\n\\n* **Rest first:** Sit quietly with your feet flat on the floor and back supported for five minutes before measuring.\\n* **Position correctly:** Use a validated upper-arm cuff rather than a wrist monitor, resting your arm on a table at heart level.\\n* **Avoid triggers:** Do not smoke, drink caffeine, or exercise within 30 minutes of taking a reading.\\n* **Keep a log:** Take two readings one minute apart in the morning and two in the evening over a seven-day period, recording the average to share with your clinician.\"\n    }\n  ],\n  \"when_to_seek_care\": \"Lifestyle habits are valuable tools, but they work alongside professional clinical oversight rather than replacing it. Seek medical evaluation under the following circumstances:\\n\\n* **Immediate emergency care:** If your blood pressure reading reaches 180 mmHg systolic or 120 mmHg diastolic, or if any elevated reading is accompanied by chest pain, shortness of breath, severe back pain, sudden weakness or numbness, changes in vision, or difficulty speaking.\\n* **Routine clinical review:** If your home readings consistently average 140/90 mmHg or higher across several weeks despite making lifestyle changes.\\n* **New or evolving symptoms:** If you experience frequent unexplained morning headaches, persistent dizziness, or episodes of feeling faint when standing.\",\n  \"sources\": [\n    {\n      \"title\": \"High blood pressure (hypertension) - Prevention and management\",\n      \"url\": \"https://www.nhs.uk/conditions/high-blood-pressure-hypertension/\",\n      \"publisher\": \"NHS\"\n    },\n    {\n      \"title\": \"Managing High Blood Pressure with Healthy Lifestyle Habits\",\n      \"url\": \"https://www.heart.org/en/health-topics/high-blood-pressure/changes-you-can-make-to-manage-high-blood-pressure\",\n      \"publisher\": \"American Heart Association\"\n    },\n    {\n      \"title\": \"Hypertension in adults: diagnosis and management\",\n      \"url\": \"https://www.nice.org.uk/guidance/ng136\",\n      \"publisher\": \"National Institute for Health and Care Excellence (NICE)\"\n    }\n  ],\n  \"seo\": {\n    \"title\": \"How to Lower Blood Pressure Naturally\",\n    \"description\": \"Discover evidence-backed daily habits to help lower high blood pressure, including diet changes, exercise, sleep, and knowing when to see a doctor.\"\n  },\n  \"faq\": [\n    {\n      \"question\": \"How quickly do lifestyle changes lower blood pressure?\",\n      \"answer\": \"Noticeable shifts in blood pressure readings often begin appearing within two to four weeks of consistent dietary changes and regular exercise, though long-term maintenance is essential for sustained results.\"\n    },\n    {\n      \"question\": \"Does drinking more water lower blood pressure?\",\n      \"answer\": \"Adequate hydration helps maintain healthy blood volume and kidney function, but drinking excess water does not directly treat high blood pressure; balanced salt intake and overall diet play a much larger role.\"\n    },\n    {\n      \"question\": \"Can walking alone help bring blood pressure down?\",\n      \"answer\": \"Yes. Brisk walking for 30 minutes on most days is one of the most thoroughly researched and effective forms of aerobic exercise for supporting lower blood pressure.\"\n    }\n  ]\n} ",
+  "finishReason": "STOP",
+  "grounding": {
+    "webSearchQueries": [
+      "AHA lifestyle changes blood pressure guidelines",
+      "NHS high blood pressure lifestyle prevention guidelines"
+    ],
+    "searchEntryPoint": {
+      "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n    <a class=\"chip\" href=\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyePLZB9fbTgGeU2WvhcY0OPUUcBmB58K4sDph9gKc9ZoKUf83txp5M390cuppglWK_dmhN2KGmmCOEJ2gK9bLZdN5MBN-9tshKusMxx0J64EHj35dJZ3AQnTbIdBtikBhQhD80SAWcgDFwT5JY2QG1Ql-uw94mxWPMcbVCFeHHm6k9BgR2yKsCY6MiGM-3DwdcOuQ8MBLca24BV9JXPGDPPuNiCica2o_ix7O0NokDA7p\">AHA lifestyle changes blood pressure guidelines</a>\n    <a class=\"chip\" href=\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEALvIg4m6n8Xfsln2zPPBCKxzP4pbmH1aG14a5hnzdQZMKr0yuohGnfDa_unrVDDl0hHwBiGPX5qkJKEdUmIh38W5v2uBOghE1QLqlv4x6vVJtpTlIL05jqpGOnCYp8d4t3BQQQnpBLyqmgPq8aLbpvrJ295GTiAjNoh0X26gDtVtwXALSl7SowqYcVZ2dj0ezmyiKVBZuykUtXEO-OAnd8xBxWvsZIRrs4TOeLTPandI9Kno_XMf1UX-_\">NHS high blood pressure lifestyle prevention guidelines</a>\n  </div>\n</div>\n"
+    },
+    "groundingChunks": [
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyaeIEr7UKWiDCxko83g1Cr3U2Dr0SlGOAKIDx4F07P1wL7P-oH7xf4QD0rRNc349p75TBlrP15-Ryw61aW2-K2ZFGik6tDX6E1YQE5yv2Ij_LF4yriOOgdii0NjlGGVJ4DxktzRn8oBAS3WAqG55V2Kn8SEqSngmS_aE4kp2e4n7KmUSYOfXURnQ82xXoj2AftwAFKoylFy0WlJ1e-HaL0mnymhA=",
+          "title": "ekhuft.nhs.uk",
+          "domain": "ekhuft.nhs.uk"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCLWH5E-ivStL5ZbWf__oaH4NRjOFxg_KQbt2ouqrZVebzfh7SI4IwJ1YW7YcH52PFKkMx6PgphMeSoYdfmi1rl8E5gtznY1DHPvIWh-5mM7X58UuJYaDa0SW4KN9EVzZOuyu8NmA7UHhMV4D1gUw32YOvmTbGT0YO8qsDNlLbJZcUfGVF2UzDEWnHI__7NnbCbQhYHtkP-pPjLchZ",
+          "title": "heart.org",
+          "domain": "heart.org"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHInc-uWuuDdAwDOkObcqNuzQ3ddbKNPzhFdespNFs_k15vI3HztCGHEvCW774Cqa-rWfDB7pdeI2z1GN8leDTNbXdZKI8-rgyUTNmxdhDiWZiS5mFDfE2fZTYuDz_kV2gM2pqqKArDYE46J1TjK8hAsCtRXC0502G59MIWDSjcRTR00YNyUKPB3WfIrSD2jIdzH__jUWWMPzEw6jx7BcNctnhQImQra-tWVQNUdlIK2Zrbc9tfTiRV0EKe7V1f-VbV-40zP6D7pby6eB4qv8r4AA==",
+          "title": "scot.nhs.uk",
+          "domain": "scot.nhs.uk"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVAlOhhU60mBOBmm-liYCJzDVft5xriSFsBlhOIBeGZfhGM2rPtaydE02JVg3hcpu34Ozlteg3QvEl3BxMlrtgJJKq59tCN-lCkrYYa5vMTE1vty7jcKOukwzM6EQ4n3teXsNPsqniON6rYxO2",
+          "title": "www.nhs.uk",
+          "domain": "www.nhs.uk"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfcx5MyyMvbljqM17kvB-0vO_dVmQCxzmH-HbT91KpY2nlxG6G2BbCXBGa1TnwOXkSuRxyiLNwo5vwTKDmO7iJX9MJiLPSMYgK6ePXdx-QlVkWXx74ajFAOtdMyHwXMcigWP57lVbvrD0eJ_bsgf_4kHY1ioVuhLi6sDpL8vw1lSyM-wFxqEzbp-U5GLmyF_Npej5Z69mJ3h78SKTcoY1ZlLL9zZG_RwvEUaClnQ==",
+          "title": "heart.org",
+          "domain": "heart.org"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeVnfCbwYfe78tPxK9CBARpbJmL7I_EFu_cnCHKYOr-yMSwtp-s9E-UCisoy-fSVC3aqLoj0CvDn5QnM6V2ofQ78bldoAaiTGZ2p5iXxMDvs1mg2QE7U0NdySTZXo0QQbfZOro0an3vE0b5GuvH7HstO_47giyMEtvv_2LlSQ4n8AZjTeoOqj21hWsJSRK7zrIWszqUPdGOJ44Um1_qZnrJKvsfF9eqcuLiWTqZUgeDxIulVHx",
+          "title": "heart.org",
+          "domain": "heart.org"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkm2Xxd_2s7M3xgsMdBOX39z67JBCYkWgicBEMSUDGFxf1hXlpdvFrA1sVxx1gTPidqGHbAfyHkmgpepUKMjPnid64jB-2uC_GMFWKBW0FXap6bHasbofxrBQMj0Bc7lIDfH2LVRGoPE0geMR14Hgkz7M7AsoNZGxRAFYIF1xKx-AnYe-CG0s=",
+          "title": "patient.info",
+          "domain": "patient.info"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElAorhkibFQw4EK9tOkIG2E9JgsDTpD9Tk-Y7687YhyjlxqzdacH4K5wjX21ukNigDRr95_cP-V0-uzDoC4t9H27FI47AvBVoXU_EGexeroJMXhOibgRrKS-kv9E-BPnZ7C0O3ddu5x1NQsBouEVjnUumz3UHWM7Qdk8g3ol623vvr1q_22gnJra50aiYNl5m-LwOTp2_7ls6IE9gLJB2-8xlAjJ9Jvd8L2FTkzic=",
+          "title": "heart.org",
+          "domain": "heart.org"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuXAg6rxubNQfYfS7KDHdcyysz9yBktPFNwW6ml8f7Fqw24HFD3wb2-aNXvHcVsTdbmv_lstNb006q-6ADT11ta63diEW4QduowV-qPyraRVqr0IW2qEFUPJ_K0PkvXk2gMJX3Eyphx87ugw==",
+          "title": "archerpharmacy.co.uk",
+          "domain": "archerpharmacy.co.uk"
+        }
+      },
+      {
+        "web": {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfRB6sDD2fBiP1bcFCOVNbMz1hgwNr6_lVRTLoG7JBlFUT4wJTYjVLLaABmO3rKsd3lXwLq_RuU4ZjZpQbtdoFZR4cxUBotEQM7fh6EnRSHflbDbPR67vXJiEFyc1GcMgiVN71ioLA6ETwVkO6eGlRJBveRBQiWZ22vOMNhGeyTeGI5Bf6wl8o_E3F935KMFeo7wnyBqWUkNTgU_P-Zvna7j14KWMYU01oPAh3tc_NKNIpVGxRmNlOgX1E5QcD",
+          "title": "inovanewsroom.org",
+          "domain": "inovanewsroom.org"
+        }
+      }
+    ],
+    "groundingSupports": [
+      {
+        "segment": {
+          "startIndex": 237,
+          "endIndex": 429,
+          "text": "Here is what the evidence supports.\",\n  \"key_points\": [\n    \"Modifying daily nutrition by cutting dietary sodium and eating more potassium-rich whole foods often helps reduce arterial pressure"
+        },
+        "groundingChunkIndices": [
+          0,
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 237,
+          "endIndex": 567,
+          "text": "Here is what the evidence supports.\",\n  \"key_points\": [\n    \"Modifying daily nutrition by cutting dietary sodium and eating more potassium-rich whole foods often helps reduce arterial pressure.\",\n    \"Aiming for 150 minutes of moderate aerobic activity weekly, alongside simple resistance work, supports healthy vessel flexibility"
+        },
+        "groundingChunkIndices": [
+          2,
+          3
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 237,
+          "endIndex": 680,
+          "text": "Here is what the evidence supports.\",\n  \"key_points\": [\n    \"Modifying daily nutrition by cutting dietary sodium and eating more potassium-rich whole foods often helps reduce arterial pressure.\",\n    \"Aiming for 150 minutes of moderate aerobic activity weekly, alongside simple resistance work, supports healthy vessel flexibility.\",\n    \"Prioritising 7 or more hours of restful sleep and practising slow breathing help calm the nervous system"
+        },
+        "groundingChunkIndices": [
+          1,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 237,
+          "endIndex": 799,
+          "text": "Here is what the evidence supports.\",\n  \"key_points\": [\n    \"Modifying daily nutrition by cutting dietary sodium and eating more potassium-rich whole foods often helps reduce arterial pressure.\",\n    \"Aiming for 150 minutes of moderate aerobic activity weekly, alongside simple resistance work, supports healthy vessel flexibility.\",\n    \"Prioritising 7 or more hours of restful sleep and practising slow breathing help calm the nervous system.\",\n    \"Lifestyle shifts work alongside medical guidance and are not a replacement for clinical care when it is needed"
+        },
+        "groundingChunkIndices": [
+          0,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 966,
+          "endIndex": 1078,
+          "text": "Blood pressure simply reflects the force of blood pushing against the walls of your arteries as your heart pumps"
+        },
+        "groundingChunkIndices": [
+          6,
+          7
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1080,
+          "endIndex": 1262,
+          "text": "It is recorded in two numbers: the top number (systolic) measures pressure during a heartbeat, and the bottom number (diastolic) measures pressure while the heart rests between beats"
+        },
+        "groundingChunkIndices": [
+          0,
+          7
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1377,
+          "endIndex": 1435,
+          "text": "A single elevated reading is rarely a diagnosis on its own"
+        },
+        "groundingChunkIndices": [
+          3,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1437,
+          "endIndex": 1569,
+          "text": "Instead, it serves as a cue to observe your routines, track your numbers consistently, and discuss a plan with a healthcare provider"
+        },
+        "groundingChunkIndices": [
+          0,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1437,
+          "endIndex": 1736,
+          "text": "Instead, it serves as a cue to observe your routines, track your numbers consistently, and discuss a plan with a healthcare provider.\"\n    },\n    {\n      \"heading\": \"Rethinking Salt and Potassium on Your Plate\",\n      \"body\": \"Dietary habits have a direct, well-documented effect on arterial tension"
+        },
+        "groundingChunkIndices": [
+          8,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1738,
+          "endIndex": 1811,
+          "text": "The most impactful change for many people involves reducing sodium intake"
+        },
+        "groundingChunkIndices": [
+          8,
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1813,
+          "endIndex": 1935,
+          "text": "Most dietary sodium comes from pre-packaged, processed foods and restaurant meals rather than the salt shaker at the table"
+        },
+        "groundingChunkIndices": [
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 1937,
+          "endIndex": 2065,
+          "text": "Health guidelines generally suggest aiming for less than 2,300 milligrams of sodium per day, or about 5 to 6 grams of total salt"
+        },
+        "groundingChunkIndices": [
+          0,
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2066,
+          "endIndex": 2225,
+          "text": "\\n\\nEqually important is increasing potassium intake through whole foods, which helps your kidneys balance sodium levels and allows blood vessel walls to relax"
+        },
+        "groundingChunkIndices": [
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2227,
+          "endIndex": 2357,
+          "text": "You can build a heart-supportive plate by focusing on:\\n\\n* **Vegetables and leafy greens:** Spinach, broccoli, and sweet potatoes"
+        },
+        "groundingChunkIndices": [
+          1,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2358,
+          "endIndex": 2413,
+          "text": "\\n* **Fruits:** Bananas, berries, oranges, and avocados"
+        },
+        "groundingChunkIndices": [
+          1,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2414,
+          "endIndex": 2484,
+          "text": "\\n* **Whole grains and legumes:** Lentils, beans, oats, and brown rice"
+        },
+        "groundingChunkIndices": [
+          6,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2485,
+          "endIndex": 2566,
+          "text": "\\n* **Lean proteins and healthy fats:** Fish, seeds, unsalted nuts, and olive oil"
+        },
+        "groundingChunkIndices": [
+          6,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2567,
+          "endIndex": 2735,
+          "text": "\\n\\nAdopting an eating pattern rich in whole foods, like the DASH dietary approach, often leads to noticeable improvements in blood pressure readings within a few weeks"
+        },
+        "groundingChunkIndices": [
+          8,
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2567,
+          "endIndex": 2963,
+          "text": "\\n\\nAdopting an eating pattern rich in whole foods, like the DASH dietary approach, often leads to noticeable improvements in blood pressure readings within a few weeks.\"\n    },\n    {\n      \"heading\": \"Building Movement into Your Routine\",\n      \"body\": \"Regular physical activity strengthens the heart muscle, allowing it to pump blood with less effort and decreasing the strain on your arteries"
+        },
+        "groundingChunkIndices": [
+          8
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 2965,
+          "endIndex": 3067,
+          "text": "You do not need intense athletic training to see benefits; consistency matters far more than intensity"
+        },
+        "groundingChunkIndices": [
+          8
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3068,
+          "endIndex": 3181,
+          "text": "\\n\\nHealth authorities recommend aiming for at least 150 minutes of moderate-intensity aerobic exercise each week"
+        },
+        "groundingChunkIndices": [
+          3
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3183,
+          "endIndex": 3298,
+          "text": "This can be broken into 30-minute sessions across five days, such as brisk walking, cycling, swimming, or yard work"
+        },
+        "groundingChunkIndices": [
+          8,
+          2
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3299,
+          "endIndex": 3430,
+          "text": "\\n\\nIn addition to aerobic movement, research suggests that resistance and isometric exercises provide clear cardiovascular support"
+        },
+        "groundingChunkIndices": [
+          2,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3432,
+          "endIndex": 3572,
+          "text": "Simple bodyweight movements like wall sits, planks, or light resistance band sessions two to three times per week help improve vascular tone"
+        },
+        "groundingChunkIndices": [
+          2,
+          0,
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3574,
+          "endIndex": 3669,
+          "text": "If you have been inactive for a while, building up slowly allows your body to adapt comfortably"
+        },
+        "groundingChunkIndices": [
+          8
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3841,
+          "endIndex": 3966,
+          "text": "Chronic emotional strain, frequent poor sleep, and stimulant exposure can keep your system in a heightened state of alertness"
+        },
+        "groundingChunkIndices": [
+          3,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 3967,
+          "endIndex": 4081,
+          "text": "\\n\\nSleeping fewer than seven hours a night on a regular basis is strongly associated with elevated blood pressure"
+        },
+        "groundingChunkIndices": [
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4250,
+          "endIndex": 4350,
+          "text": "\\n\\nDuring waking hours, deliberate breathing exercises can activate your body's relaxation pathways"
+        },
+        "groundingChunkIndices": [
+          1,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4352,
+          "endIndex": 4526,
+          "text": "Spending 10 to 15 minutes a day practising slow, paced breathing (aiming for fewer than 10 breaths per minute) has been shown to produce modest reductions in arterial tension"
+        },
+        "groundingChunkIndices": [
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4528,
+          "endIndex": 4666,
+          "text": "Reducing alcohol intake to recommended limits and avoiding tobacco products also remove immediate chemical stressors that elevate pressure"
+        },
+        "groundingChunkIndices": [
+          2,
+          4
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4528,
+          "endIndex": 4906,
+          "text": "Reducing alcohol intake to recommended limits and avoiding tobacco products also remove immediate chemical stressors that elevate pressure.\"\n    },\n    {\n      \"heading\": \"How to Track Your Numbers Accurately at Home\",\n      \"body\": \"Monitoring your blood pressure at home helps establish your genuine baseline, free from the temporary spike that clinical visits sometimes cause"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 4908,
+          "endIndex": 5048,
+          "text": "To get reliable data:\\n\\n* **Rest first:** Sit quietly with your feet flat on the floor and back supported for five minutes before measuring"
+        },
+        "groundingChunkIndices": [
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5049,
+          "endIndex": 5179,
+          "text": "\\n* **Position correctly:** Use a validated upper-arm cuff rather than a wrist monitor, resting your arm on a table at heart level"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5284,
+          "endIndex": 5452,
+          "text": "\\n* **Keep a log:** Take two readings one minute apart in the morning and two in the evening over a seven-day period, recording the average to share with your clinician"
+        },
+        "groundingChunkIndices": [
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5284,
+          "endIndex": 5607,
+          "text": "\\n* **Keep a log:** Take two readings one minute apart in the morning and two in the evening over a seven-day period, recording the average to share with your clinician.\"\n    }\n  ],\n  \"when_to_seek_care\": \"Lifestyle habits are valuable tools, but they work alongside professional clinical oversight rather than replacing it"
+        },
+        "groundingChunkIndices": [
+          0,
+          5
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5609,
+          "endIndex": 5949,
+          "text": "Seek medical evaluation under the following circumstances:\\n\\n* **Immediate emergency care:** If your blood pressure reading reaches 180 mmHg systolic or 120 mmHg diastolic, or if any elevated reading is accompanied by chest pain, shortness of breath, severe back pain, sudden weakness or numbness, changes in vision, or difficulty speaking"
+        },
+        "groundingChunkIndices": [
+          7
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 5950,
+          "endIndex": 6101,
+          "text": "\\n* **Routine clinical review:** If your home readings consistently average 140/90 mmHg or higher across several weeks despite making lifestyle changes"
+        },
+        "groundingChunkIndices": [
+          0,
+          9
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6102,
+          "endIndex": 6258,
+          "text": "\\n* **New or evolving symptoms:** If you experience frequent unexplained morning headaches, persistent dizziness, or episodes of feeling faint when standing"
+        },
+        "groundingChunkIndices": [
+          3
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6102,
+          "endIndex": 7513,
+          "text": "\\n* **New or evolving symptoms:** If you experience frequent unexplained morning headaches, persistent dizziness, or episodes of feeling faint when standing.\",\n  \"sources\": [\n    {\n      \"title\": \"High blood pressure (hypertension) - Prevention and management\",\n      \"url\": \"https://www.nhs.uk/conditions/high-blood-pressure-hypertension/\",\n      \"publisher\": \"NHS\"\n    },\n    {\n      \"title\": \"Managing High Blood Pressure with Healthy Lifestyle Habits\",\n      \"url\": \"https://www.heart.org/en/health-topics/high-blood-pressure/changes-you-can-make-to-manage-high-blood-pressure\",\n      \"publisher\": \"American Heart Association\"\n    },\n    {\n      \"title\": \"Hypertension in adults: diagnosis and management\",\n      \"url\": \"https://www.nice.org.uk/guidance/ng136\",\n      \"publisher\": \"National Institute for Health and Care Excellence (NICE)\"\n    }\n  ],\n  \"seo\": {\n    \"title\": \"How to Lower Blood Pressure Naturally\",\n    \"description\": \"Discover evidence-backed daily habits to help lower high blood pressure, including diet changes, exercise, sleep, and knowing when to see a doctor.\"\n  },\n  \"faq\": [\n    {\n      \"question\": \"How quickly do lifestyle changes lower blood pressure?\",\n      \"answer\": \"Noticeable shifts in blood pressure readings often begin appearing within two to four weeks of consistent dietary changes and regular exercise, though long-term maintenance is essential for sustained results"
+        },
+        "groundingChunkIndices": [
+          1
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 6102,
+          "endIndex": 7822,
+          "text": "\\n* **New or evolving symptoms:** If you experience frequent unexplained morning headaches, persistent dizziness, or episodes of feeling faint when standing.\",\n  \"sources\": [\n    {\n      \"title\": \"High blood pressure (hypertension) - Prevention and management\",\n      \"url\": \"https://www.nhs.uk/conditions/high-blood-pressure-hypertension/\",\n      \"publisher\": \"NHS\"\n    },\n    {\n      \"title\": \"Managing High Blood Pressure with Healthy Lifestyle Habits\",\n      \"url\": \"https://www.heart.org/en/health-topics/high-blood-pressure/changes-you-can-make-to-manage-high-blood-pressure\",\n      \"publisher\": \"American Heart Association\"\n    },\n    {\n      \"title\": \"Hypertension in adults: diagnosis and management\",\n      \"url\": \"https://www.nice.org.uk/guidance/ng136\",\n      \"publisher\": \"National Institute for Health and Care Excellence (NICE)\"\n    }\n  ],\n  \"seo\": {\n    \"title\": \"How to Lower Blood Pressure Naturally\",\n    \"description\": \"Discover evidence-backed daily habits to help lower high blood pressure, including diet changes, exercise, sleep, and knowing when to see a doctor.\"\n  },\n  \"faq\": [\n    {\n      \"question\": \"How quickly do lifestyle changes lower blood pressure?\",\n      \"answer\": \"Noticeable shifts in blood pressure readings often begin appearing within two to four weeks of consistent dietary changes and regular exercise, though long-term maintenance is essential for sustained results.\"\n    },\n    {\n      \"question\": \"Does drinking more water lower blood pressure?\",\n      \"answer\": \"Adequate hydration helps maintain healthy blood volume and kidney function, but drinking excess water does not directly treat high blood pressure; balanced salt intake and overall diet play a much larger role"
+        },
+        "groundingChunkIndices": [
+          8,
+          0
+        ]
+      },
+      {
+        "segment": {
+          "startIndex": 7931,
+          "endIndex": 8089,
+          "text": "Brisk walking for 30 minutes on most days is one of the most thoroughly researched and effective forms of aerobic exercise for supporting lower blood pressure"
+        },
+        "groundingChunkIndices": [
+          8,
+          2
+        ]
+      }
+    ]
+  },
+  "usage": {
+    "promptTokenCount": 1855,
+    "candidatesTokenCount": 2203,
+    "totalTokenCount": 5255,
+    "trafficType": "ON_DEMAND",
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1855
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 2203
+      }
+    ],
+    "thoughtsTokenCount": 1197
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "A1": [
+    {
+      "host": "ifpa-fitness.com",
+      "url": "https://www.ifpa-fitness.com/blog/the-mechanical-magic-of-the-post-meal-walk",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "news-medical.net",
+      "url": "https://www.news-medical.net/health/Walking-After-Meals-Small-Habit-Big-Metabolic-Gains.aspx",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "ina-respond.net",
+      "url": "https://ina-respond.net/2024/08/13/walking-after-a-mealits-effect-on-blood-glucose-control/",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "facebook.com",
+      "url": "https://www.facebook.com/houstonmethodist/posts/a-quick-walk-after-eating-might-be-more-useful-than-it-seemseven-1015-minutes-ca/1445111840989213/",
+      "status": 400,
+      "authority": false
+    },
+    {
+      "host": "facebook.com",
+      "url": "https://www.facebook.com/walledlakeprimarycare/posts/managing-blood-sugar-doesnt-have-to-mean-a-gym-membershipa-2022-meta-analysis-in/122190287750802901/",
+      "status": 400,
+      "authority": false
+    },
+    {
+      "host": "vynleads.com",
+      "url": "https://vynleads.com/learn/metabolic-health/post-meal-walking-for-blood-sugar",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "ncbi.nlm.nih.gov",
+      "url": "https://www.ncbi.nlm.nih.gov/search/research-news/17034/",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "pmc.ncbi.nlm.nih.gov",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12216464/",
+      "status": 200,
+      "authority": true
+    }
+  ],
+  "A2": [
+    {
+      "host": "acibademinternational.com",
+      "url": "https://acibademinternational.com/blog/waking-up-at-3am-the-physiology-behind-the-worlds-most-annoying-hour/",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "sleepscienceacademy.com",
+      "url": "https://sleepscienceacademy.com/blog/trouble-staying-asleep/why-do-i-wake-up-at-3-am/",
+      "status": 403,
+      "authority": false
+    },
+    {
+      "host": "health.harvard.edu",
+      "url": "https://www.health.harvard.edu/sleep/the-3-am-wake-up-why-it-happens-to-women-more-often-after-55",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "ubiehealth.com",
+      "url": "https://ubiehealth.com/doctors-note/why-wake-3am-night-doc-explains-common-4-causes-2762q2",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "texashealth.org",
+      "url": "https://www.texashealth.org/areyouawellbeing/Health-and-Well-Being/why-you-wake-up-at-3am-and-how-to-stop",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "sleepcentral.org.au",
+      "url": "https://sleepcentral.org.au/Central/Central/Contents/Stimulus-control.aspx",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "sleephealthsolutionsohio.com",
+      "url": "https://www.sleephealthsolutionsohio.com/blog/stimulus-control-therapy-insomnia/",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "sleepfoundation.org",
+      "url": "https://www.sleepfoundation.org/sleep-hygiene/how-to-fall-asleep-fast",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "scienceworkshealth.com",
+      "url": "https://www.scienceworkshealth.com/post/cbt-i-20-minute-rule-get-out-of-bed",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "mdsearchlight.com",
+      "url": "https://mdsearchlight.com/mental-health/chronic-insomnia-longterm-difficulty-falling-or-staying-asleep/",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "gwinnettlung.com",
+      "url": "https://gwinnettlung.com/blog/what-is-chronic-insomnia-understanding-long-term-sleep-issues/",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "sleephealth.org",
+      "url": "https://www.sleephealth.org/insomnia/",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "aastweb.org",
+      "url": "https://aastweb.org/insomnia-types-diagnosis-and-treatment/",
+      "status": 200,
+      "authority": false
+    }
+  ],
+  "A3": [
+    {
+      "host": "ubiehealth.com",
+      "url": "https://ubiehealth.com/doctors-note/chest-tightness-food-airway-constriction-science5753q3",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "mayoclinic.org",
+      "url": "https://www.mayoclinic.org/diseases-conditions/esophagitis/symptoms-causes/syc-20361224",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "mayoclinic.org",
+      "url": "https://www.mayoclinic.org/diseases-conditions/heartburn/in-depth/heartburn-gerd/art-20046483",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "mayoclinic.org",
+      "url": "https://www.mayoclinic.org/diseases-conditions/esophageal-spasms/symptoms-causes/syc-20372250",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "coppellemergencyroom.com",
+      "url": "https://coppellemergencyroom.com/blog/chest-pain-after-eating-causes-concerns-and-when-to-worry/",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "jeffersonhealth.org",
+      "url": "https://www.jeffersonhealth.org/your-health/living-well/understanding-esophageal-spasms",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "my.clevelandclinic.org",
+      "url": "https://my.clevelandclinic.org/health/diseases/15575-esophageal-spasms",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "intermountainhealthib.staywellsolutionsonline.com",
+      "url": "https://intermountainhealthib.staywellsolutionsonline.com/Bedside/82,116033en",
+      "status": 403,
+      "authority": false
+    },
+    {
+      "host": "newsnetwork.mayoclinic.org",
+      "url": "https://newsnetwork.mayoclinic.org/discussion/heartburn-or-heart-attack-when-to-worry-2/",
+      "status": 200,
+      "authority": true
+    }
+  ],
+  "A4": [
+    {
+      "host": "thesleepreset.com",
+      "url": "https://www.thesleepreset.com/blog/the-role-of-sleep-stages-in-your-3am-wake-ups",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "sleepdynamics.com",
+      "url": "https://sleepdynamics.com/why-do-i-wake-up-at-3-a-m-common-causes-of-middle-of-the-night-waking/",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "health.harvard.edu",
+      "url": "https://www.health.harvard.edu/healthbeat/sleep-smarter-as-you-age-6-ways-to-rest-better-at-night",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "nhsinform.scot",
+      "url": "https://www.nhsinform.scot/illnesses-and-conditions/mental-health/insomnia/",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "dailyrecord.co.uk",
+      "url": "https://www.dailyrecord.co.uk/news/health/nhs-6-hour-rule-people-37119748",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "sleepfoundation.org",
+      "url": "https://www.sleepfoundation.org/sleep-hygiene/why-do-i-wake-up-at-the-same-time-every-night",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "sleepscienceacademy.com",
+      "url": "https://sleepscienceacademy.com/blog/trouble-staying-asleep/why-do-i-wake-up-at-3-am/",
+      "status": 403,
+      "authority": false
+    },
+    {
+      "host": "ubiehealth.com",
+      "url": "https://ubiehealth.com/doctors-note/why-wake-3am-nightly-sleep-doctor-explains-tips-4262q2",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "nhs.uk",
+      "url": "https://www.nhs.uk/conditions/insomnia/",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "ubiehealth.com",
+      "url": "https://ubiehealth.com/doctors-note/nighttime-cortisol-spike-symptoms-adrenal-sleep-3751q1",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "keepingwellnwl.nhs.uk",
+      "url": "https://www.keepingwellnwl.nhs.uk/self-help-resources/common-problems/managing-sleep",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "health.harvard.edu",
+      "url": "https://www.health.harvard.edu/healthy-aging-and-longevity/the-big-sleep-problems",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "nhs.uk",
+      "url": "https://www.nhs.uk/every-mind-matters/mental-health-issues/sleep/",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "youtube.com",
+      "url": "https://www.youtube.com/watch?v=Wsslt3ynA-E",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "johndecosmodo.com",
+      "url": "https://johndecosmodo.com/sleep-and-cortisol/",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "health.harvard.edu",
+      "url": "https://www.health.harvard.edu/sleep/what-happens-during-sleep-and-how-to-improve-it",
+      "status": 200,
+      "authority": true
+    }
+  ],
+  "A5": [
+    {
+      "host": "mgdm.ekhuft.nhs.uk",
+      "url": "https://mgdm.ekhuft.nhs.uk/documents/download/high-blood-pressure-hypertension-patient-information-leaflet",
+      "status": 0,
+      "authority": true
+    },
+    {
+      "host": "heart.org",
+      "url": "https://www.heart.org/-/media/Files/Health-Topics/High-Blood-Pressure/Steps-To-Improve-High-BP.pdf",
+      "status": 403,
+      "authority": true
+    },
+    {
+      "host": "rightdecisions.scot.nhs.uk",
+      "url": "https://www.rightdecisions.scot.nhs.uk/tam-treatments-and-medicines-nhs-highland/adult-therapeutic-guidelines/cardiovascular/hypertension-guidelines/",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "nhs.uk",
+      "url": "https://www.nhs.uk/conditions/high-blood-pressure/",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "heart.org",
+      "url": "https://www.heart.org/-/media/Healthy-Living-Files/LE8-Fact-Sheets/LE8_How_To_Manage_Blood_Pressure.pdf?sc_lang=en",
+      "status": 403,
+      "authority": true
+    },
+    {
+      "host": "newsroom.heart.org",
+      "url": "https://newsroom.heart.org/news/new-high-blood-pressure-guideline-emphasizes-prevention-early-treatment-to-reduce-cvd-risk",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "patient.info",
+      "url": "https://patient.info/heart-health/high-blood-pressure-hypertension/lifestyle",
+      "status": 200,
+      "authority": true
+    },
+    {
+      "host": "heart.org",
+      "url": "https://www.heart.org/en/healthy-living/healthy-lifestyle/lifes-essential-8/how-to-manage-blood-pressure-fact-sheet",
+      "status": 403,
+      "authority": true
+    },
+    {
+      "host": "archerpharmacy.co.uk",
+      "url": "https://archerpharmacy.co.uk/blood-pressure-nhs/",
+      "status": 200,
+      "authority": false
+    },
+    {
+      "host": "inovanewsroom.org",
+      "url": "https://www.inovanewsroom.org/expert-commentary/2026/02/the-american-heart-association-has-updated-high-blood-pressure-guidelines/",
+      "status": 200,
+      "authority": false
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+[
+  {
+    "id": "A1",
+    "words": 949,
+    "title": "Walking After Meals: What the Evidence Actually Shows",
+    "titleLength": 53,
+    "headings": [
+      "What happens in the body after a meal",
+      "The mechanism: how muscles clear fuel without extra effort",
+      "What the clinical trials reveal about duration and timing",
+      "A realistic approach for desk workers",
+      "Digestive ease and cardiovascular benefits"
+    ],
+    "keyPoints": 4,
+    "faq": 3,
+    "when_to_seek_care": "While mild drowsiness after a heavy meal can happen occasionally, certain symptoms warrant evaluation by a healthcare professional. Make an appointment to discuss your symptoms if you notice:\n\n* Intense, overwhelming fatigue, brain fog, or dizziness that occurs reliably 1 to 2 hours after meals.\n* Persistent unquenchable thirst, frequent urination (especially waking multiple times at night), or unexplained weight loss.\n* Blood sugar readings from routine home monitoring that consistently remain above 140 mg/dL (7.8 mmol/L) two hours after starting a meal.\n* Episodes of shakiness, sweating, rapid heartbeat, or confusion after eating, which may suggest reactive hypoglycemia.\n* Severe, sharp, or persistent abdominal pain, chronic nausea, or difficulty swallowing that does not resolve with lifestyle adjustments.",
+    "sources": [
+      {
+        "title": "The Acute Effects of Interrupting Prolonged Sitting Time in Adults with Standing and Light-Intensity Walking on Biomarkers of Cardiometabolic Health in Adults: A Systematic Review and Meta-analysis",
+        "url": "https://link.springer.com/article/10.1007/s40279-022-01649-4",
+        "publisher": "Sports Medicine",
+        "host": "link.springer.com",
+        "kind": "authority",
+        "status": 200,
+        "final": "https://link.springer.com/article/10.1007/s40279-022-01649-4",
+        "inGrounding": false
+      },
+      {
+        "title": "Advice to walk after meals is more effective for lowering postprandial glycaemia in type 2 diabetes than advice to walk at any time: a randomised crossover trial",
+        "url": "https://link.springer.com/article/10.1007/s00125-016-4085-2",
+        "publisher": "Diabetologia",
+        "host": "link.springer.com",
+        "kind": "authority",
+        "status": 200,
+        "final": "https://link.springer.com/article/10.1007/s00125-016-4085-2",
+        "inGrounding": false
+      },
+      {
+        "title": "Manage Blood Sugar: Physical Activity",
+        "url": "https://www.cdc.gov/diabetes/managing/active.html",
+        "publisher": "Centers for Disease Control and Prevention",
+        "host": "cdc.gov",
+        "kind": "authority",
+        "status": 404,
+        "final": "https://www.cdc.gov/diabetes/managing/active.html",
+        "inGrounding": false
+      }
+    ],
+    "groundedHosts": [
+      "ifpa-fitness.com",
+      "news-medical.net",
+      "ina-respond.net",
+      "facebook.com",
+      "vynleads.com",
+      "nih.gov"
+    ],
+    "searches": [
+      "walking after meals blood sugar meta analysis sports medicine 2022",
+      "light walking after eating postprandial glucose sedentary desk workers"
+    ],
+    "leaks": {
+      "drugs": [
+        "22 systematic review and meta-analysis published in *Sports Medicine* examined how light physical activity impacts post-meal mar"
+      ],
+      "dose": [
+        "from routine home monitoring that consistently remain above 140 mg/dL (7.8 mmol/L) two hours after starting a meal. * Episodes"
+      ],
+      "diagnose": [],
+      "cure": []
+    }
+  },
+  {
+    "id": "A2",
+    "words": 1195,
+    "title": "Why You Wake Up at 3 AM and Can't Fall Back Asleep",
+    "titleLength": 50,
+    "headings": [
+      "The Architecture of the Second Half of the Night",
+      "What Your Hormones and Temperature Are Doing",
+      "The 20-Minute Rule and the Clock-Watching Trap",
+      "Everyday Triggers That Fragment Early Morning Sleep"
+    ],
+    "keyPoints": 4,
+    "faq": 3,
+    "when_to_seek_care": "While occasional nighttime waking is common and often responds to behavioral adjustments, persistent disruption deserves a clinical conversation. Consider speaking to a healthcare professional if you experience:\n\n* **The three-by-three threshold:** Waking up and staying awake for 30 minutes or more, happening at least 3 nights per week, for a duration of 3 months or longer. This is the standard diagnostic timeframe for chronic insomnia.\n* **Signs of breathing disruption:** Waking with a choking or gasping sensation, waking with a very dry mouth or morning headache, or if a partner observes persistent loud snoring or breathing pauses.\n* **Significant daytime impairment:** Excessive daytime fatigue, falling asleep involuntarily (such as while driving or sitting quietly), memory lapses, or severe mood changes affecting daily responsibilities.\n* **Physical symptoms at night:** Nighttime awakenings accompanied by chest discomfort, shortness of breath, severe heartburn, hot flushes, or uncomfortable crawling sensations in your legs that compel you to move.\n* **Sudden urinary changes:** Needing to get up to urinate multiple times per night if this is a newly developed pattern.",
+    "sources": [
+      {
+        "title": "Why you wake up at 3 a.m.",
+        "url": "https://www.health.harvard.edu/staying-healthy/why-you-wake-up-at-3-am",
+        "publisher": "Harvard Health Publishing",
+        "host": "health.harvard.edu",
+        "kind": "authority",
+        "status": 404,
+        "final": "https://www.health.harvard.edu/staying-healthy/why-you-wake-up-at-3-am",
+        "inGrounding": true
+      },
+      {
+        "title": "Stimulus Control Therapy for Insomnia",
+        "url": "https://www.sleepfoundation.org/insomnia/treatment/stimulus-control-therapy",
+        "publisher": "Sleep Foundation",
+        "host": "sleepfoundation.org",
+        "kind": "authority",
+        "status": 404,
+        "final": "https://www.sleepfoundation.org/insomnia/treatment/stimulus-control-therapy",
+        "inGrounding": true
+      },
+      {
+        "title": "International Classification of Sleep Disorders (ICSD-3-TR): Insomnia Criteria",
+        "url": "https://aasm.org/clinical-resources/practice-standards/classification-of-sleep-disorders/",
+        "publisher": "American Academy of Sleep Medicine",
+        "host": "aasm.org",
+        "kind": "authority",
+        "status": 404,
+        "final": "https://aasm.org/clinical-resources/practice-standards/classification-of-sleep-disorders/",
+        "inGrounding": false
+      }
+    ],
+    "groundedHosts": [
+      "acibademinternational.com",
+      "sleepscienceacademy.com",
+      "harvard.edu",
+      "ubiehealth.com",
+      "texashealth.org",
+      "sleepcentral.org.au",
+      "sleephealthsolutionsohio.com",
+      "sleepfoundation.org",
+      "scienceworkshealth.com",
+      "mdsearchlight.com",
+      "gwinnettlung.com",
+      "sleephealth.org",
+      "aastweb.org"
+    ],
+    "searches": [
+      "why do people wake up at 3am sleep architecture NHS Mayo Clinic",
+      "stimulus control therapy 20 minute rule sleep foundation",
+      "chronic insomnia definition ICSD 3 nights a week 3 months"
+    ],
+    "leaks": {
+      "drugs": [
+        "tness signals that directly oppose sleep. Behavioral sleep medicine relies on a principle called stimulus control to break this"
+      ],
+      "dose": [],
+      "diagnose": [
+        " during the day and dissipates while you sleep. By 3:00 AM, you have already cleared a large portion of that sleep pressure, meaning the",
+        " * **Follow the 20-minute guideline:** If you estimate that you have been awake for roughly 20 minutes and feel alert rather than dro",
+        "he time activates calculation and worry about how much rest you have left, which raises your heart rate and increases mental alertnes"
+      ],
+      "cure": []
+    }
+  },
+  {
+    "id": "A3",
+    "words": 1114,
+    "title": "Chest Tightness After Eating: Causes and When to Get Checked",
+    "titleLength": 60,
+    "headings": [
+      "Why Digestion Can Feel Like Chest Pressure",
+      "Common Digestive Causes of Post-Meal Tightness",
+      "When Post-Meal Tightness Involves the Heart",
+      "Everyday Habits That Support Smoother Digestion"
+    ],
+    "keyPoints": 4,
+    "faq": 3,
+    "when_to_seek_care": "Chest tightness should never be dismissed without clarity on its origin. Use these specific thresholds to guide your next steps:\n\n**Seek emergency medical care immediately (call emergency services) if:**\n* The tightness is sudden, severe, crushing, or feels like a heavy weight on your chest.\n* Chest pressure radiates to your jaw, neck, back, shoulders, or down one or both arms.\n* The sensation is accompanied by shortness of breath, cold sweats, unexplained dizziness, lightheadedness, or sudden nausea.\n* Discomfort worsens with physical exertion or does not settle after five minutes of resting.\n\n**Schedule an urgent appointment with a healthcare provider (within 24 to 48 hours) if:**\n* You notice a new pattern of post-meal chest tightness that occurs consistently after eating.\n* You experience difficulty swallowing, food feeling stuck in your throat, or painful swallowing.\n* Walking or mild exertion shortly after eating reliably triggers chest pressure, even if it fades when you sit down.\n\n**Discuss with your doctor at a routine consultation if:**\n* Discomfort happens more than twice a week despite eating smaller meals and remaining upright.\n* Post-meal fullness frequently wakes you from sleep or leaves a persistent sour taste in your mouth.\n* You find yourself changing the consistency of your food or avoiding normal meals because of recurring discomfort.",
+    "sources": [
+      {
+        "title": "Heartburn or Heart Attack: When to Worry",
+        "url": "https://www.mayoclinic.org/diseases-conditions/heartburn/in-depth/heartburn-gerd/art-20046483",
+        "publisher": "Mayo Clinic",
+        "host": "mayoclinic.org",
+        "kind": "authority",
+        "status": 200,
+        "final": "https://www.mayoclinic.org/diseases-conditions/heartburn/in-depth/heartburn-gerd/art-20046483",
+        "inGrounding": true
+      },
+      {
+        "title": "Esophageal Spasms: Symptoms, Causes & Treatment",
+        "url": "https://my.clevelandclinic.org/health/diseases/17639-esophageal-spasms",
+        "publisher": "Cleveland Clinic",
+        "host": "my.clevelandclinic.org",
+        "kind": "authority",
+        "status": 404,
+        "final": "https://my.clevelandclinic.org/health/diseases/17639-esophageal-spasms",
+        "inGrounding": true
+      },
+      {
+        "title": "Esophagitis: Symptoms and Causes",
+        "url": "https://www.mayoclinic.org/diseases-conditions/esophagitis/symptoms-causes/syc-20361224",
+        "publisher": "Mayo Clinic",
+        "host": "mayoclinic.org",
+        "kind": "authority",
+        "status": 200,
+        "final": "https://www.mayoclinic.org/diseases-conditions/esophagitis/symptoms-causes/syc-20361224",
+        "inGrounding": true
+      }
+    ],
+    "groundedHosts": [
+      "ubiehealth.com",
+      "mayoclinic.org",
+      "coppellemergencyroom.com",
+      "jeffersonhealth.org",
+      "clevelandclinic.org",
+      "staywellsolutionsonline.com"
+    ],
+    "searches": [
+      "chest tightness after eating causes NHS Mayo Clinic",
+      "esophageal spasm postprandial chest tightness gastrointestinal cardiac"
+    ],
+    "leaks": {
+      "drugs": [],
+      "dose": [],
+      "diagnose": [],
+      "cure": []
+    }
+  },
+  {
+    "id": "A4",
+    "words": 1205,
+    "title": "Why You Keep Waking Up at 3am and Can't Fall Back Asleep",
+    "titleLength": 56,
+    "headings": [
+      "The biology of the 3am wake-up",
+      "Internal shifts that nudge you awake",
+      "Why falling back asleep feels so difficult",
+      "What to do when you find yourself wide awake",
+      "Daytime habits that protect nighttime continuity"
+    ],
+    "keyPoints": 4,
+    "faq": 3,
+    "when_to_seek_care": "While occasional middle-of-the-night awakenings happen to almost everyone, persistent disruption is worth discussing with a doctor or primary care clinician. Book an appointment if:\n\n* You wake up repeatedly and struggle to return to sleep at least 3 nights per week, and this has continued for 3 months or longer.\n* You wake up gasping for breath, choking, or with a very dry mouth, or a bed partner notices loud snoring or pauses in your breathing.\n* You experience restless, uncomfortable sensations in your legs that create an irresistible urge to move them when resting.\n* Daytime fatigue, brain fog, or low mood is interfering with your work, relationships, or ability to drive safely.\n* Nighttime awakenings are accompanied by drenching night sweats, unexplained weight loss, chronic pain, or frequent painful urination.",
+    "sources": [
+      {
+        "title": "Insomnia: Overview and Self-Care",
+        "url": "https://www.nhs.uk/conditions/insomnia/",
+        "publisher": "NHS",
+        "host": "nhs.uk",
+        "kind": "authority",
+        "status": 200,
+        "final": "https://www.nhs.uk/conditions/insomnia/",
+        "inGrounding": true
+      },
+      {
+        "title": "Why Do I Wake Up at the Same Time Every Night?",
+        "url": "https://www.sleepfoundation.org/sleep-faqs/why-do-i-wake-up-at-the-same-time-every-night",
+        "publisher": "Sleep Foundation",
+        "host": "sleepfoundation.org",
+        "kind": "authority",
+        "status": 200,
+        "final": "https://www.sleepfoundation.org/sleep-hygiene/why-do-i-wake-up-at-the-same-time-every-night",
+        "inGrounding": true
+      },
+      {
+        "title": "Why You Wake Up in the Middle of the Night",
+        "url": "https://www.health.harvard.edu/staying-healthy/why-you-wake-up-in-the-middle-of-the-night",
+        "publisher": "Harvard Health Publishing",
+        "host": "health.harvard.edu",
+        "kind": "authority",
+        "status": 404,
+        "final": "https://www.health.harvard.edu/staying-healthy/why-you-wake-up-in-the-middle-of-the-night",
+        "inGrounding": true
+      }
+    ],
+    "groundedHosts": [
+      "thesleepreset.com",
+      "sleepdynamics.com",
+      "harvard.edu",
+      "nhsinform.scot",
+      "dailyrecord.co.uk",
+      "sleepfoundation.org",
+      "sleepscienceacademy.com",
+      "ubiehealth.com",
+      "nhs.uk",
+      "keepingwellnwl.nhs.uk",
+      "youtube.com",
+      "johndecosmodo.com"
+    ],
+    "searches": [
+      "why wake up at 3am sleep architecture middle of the night awakenings nhs sleep foundation",
+      "middle of the night insomnia sleep drive circadian rhythm cortisol dip",
+      "nhs insomnia waking up during the night",
+      "harvard health waking up in the middle of the night"
+    ],
+    "leaks": {
+      "drugs": [],
+      "dose": [],
+      "diagnose": [
+        "ep. By around 3am—assuming a bedtime between 10pm and 11pm—you have already cleared three or four sleep cycles. You have also cleared a",
+        "d 11pm—you have already cleared three or four sleep cycles. You have also cleared a large portion of your \"sleep pressure,\" the neuro",
+        "daytime fatigue. Should I stay in bed if I cannot sleep? If you have been awake for around twenty minutes and feel restless, it is he",
+        "rtness. Why do I wake up feeling wide awake at 3am? By 3am, you have cleared most of your deep sleep and accumulated sleep pressure. Com"
+      ],
+      "cure": []
+    }
+  },
+  {
+    "id": "A5",
+    "words": 990,
+    "title": "Ways to Lower Blood Pressure Through Everyday Habits",
+    "titleLength": 52,
+    "headings": [
+      "Understanding What Your Reading Signals",
+      "Rethinking Salt and Potassium on Your Plate",
+      "Building Movement into Your Routine",
+      "Resting Your Nervous System and Protecting Sleep",
+      "How to Track Your Numbers Accurately at Home"
+    ],
+    "keyPoints": 4,
+    "faq": 3,
+    "when_to_seek_care": "Lifestyle habits are valuable tools, but they work alongside professional clinical oversight rather than replacing it. Seek medical evaluation under the following circumstances:\n\n* **Immediate emergency care:** If your blood pressure reading reaches 180 mmHg systolic or 120 mmHg diastolic, or if any elevated reading is accompanied by chest pain, shortness of breath, severe back pain, sudden weakness or numbness, changes in vision, or difficulty speaking.\n* **Routine clinical review:** If your home readings consistently average 140/90 mmHg or higher across several weeks despite making lifestyle changes.\n* **New or evolving symptoms:** If you experience frequent unexplained morning headaches, persistent dizziness, or episodes of feeling faint when standing.",
+    "sources": [
+      {
+        "title": "High blood pressure (hypertension) - Prevention and management",
+        "url": "https://www.nhs.uk/conditions/high-blood-pressure-hypertension/",
+        "publisher": "NHS",
+        "host": "nhs.uk",
+        "kind": "authority",
+        "status": 200,
+        "final": "https://www.nhs.uk/conditions/high-blood-pressure/",
+        "inGrounding": true
+      },
+      {
+        "title": "Managing High Blood Pressure with Healthy Lifestyle Habits",
+        "url": "https://www.heart.org/en/health-topics/high-blood-pressure/changes-you-can-make-to-manage-high-blood-pressure",
+        "publisher": "American Heart Association",
+        "host": "heart.org",
+        "kind": "authority",
+        "status": 403,
+        "final": "https://www.heart.org/en/health-topics/high-blood-pressure/changes-you-can-make-to-manage-high-blood-pressure",
+        "inGrounding": true
+      },
+      {
+        "title": "Hypertension in adults: diagnosis and management",
+        "url": "https://www.nice.org.uk/guidance/ng136",
+        "publisher": "National Institute for Health and Care Excellence (NICE)",
+        "host": "nice.org.uk",
+        "kind": "authority",
+        "status": 200,
+        "final": "https://www.nice.org.uk/guidance/ng136",
+        "inGrounding": false
+      }
+    ],
+    "groundedHosts": [
+      "ekhuft.nhs.uk",
+      "heart.org",
+      "scot.nhs.uk",
+      "nhs.uk",
+      "patient.info",
+      "archerpharmacy.co.uk",
+      "inovanewsroom.org"
+    ],
+    "searches": [
+      "AHA lifestyle changes blood pressure guidelines",
+      "NHS high blood pressure lifestyle prevention guidelines"
+    ],
+    "leaks": {
+      "drugs": [],
+      "dose": [
+        " Health guidelines generally suggest aiming for less than 2,300 milligrams of sodium per day, or about 5 to 6 grams of total salt. Eq",
+        "less than 2,300 milligrams of sodium per day, or about 5 to 6 grams of total salt. Equally important is increasing potassium inta"
+      ],
+      "diagnose": [
+        " two to three times per week help improve vascular tone. If you have been inactive for a while, building up slowly allows your body t"
+      ],
+      "cure": []
+    }
+  }
+]
