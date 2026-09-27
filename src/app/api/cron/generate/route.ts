@@ -4,7 +4,7 @@ import { revalidateTag } from "next/cache";
 
 import { generationConfig } from "@/config/generation";
 import { env } from "@/env";
-import { runPipeline } from "@/features/generation";
+import { notifyReview, runPipeline } from "@/features/generation";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { CONTENT_TAG } from "@/lib/supabase/server";
 
@@ -32,6 +32,9 @@ export async function GET(request: Request) {
   if (generationConfig.autoPublish && outcomes.some((o) => o.status === "success")) {
     revalidateTag(CONTENT_TAG, "max");
   }
+
+  // Tell staff there's something to review. Skipped when drafts publish themselves.
+  if (!generationConfig.autoPublish) await notifyReview(outcomes);
 
   // healthchecks.io: ping only when the run did its job — a missed or failed ping emails you
   // (OPERATIONS.md §2). A skip (lock held, cap reached, matrix empty) still counts as healthy.

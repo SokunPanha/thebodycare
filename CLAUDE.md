@@ -176,6 +176,9 @@ seven topics + a search box don't fit narrower); below that, a search icon and t
   `nearest_content`, and `persist_draft` — one transaction, no partial posts.
 - The pipeline takes the admin client as a parameter (rule 4) and all its deps are injectable;
   `tests/integration/pipeline.test.ts` runs G1–G10 with a fake model.
+- **Review emails:** after each cron run, `notifyReview` sends one email listing the new drafts
+  (Gmail SMTP, `SMTP_USER` + an App Password in `SMTP_PASSWORD`; `REVIEW_NOTIFY_TO` defaults to
+  `SMTP_USER`). Unset = no email. A send failure is logged and never fails the run.
 - `pnpm test:live` runs the scope-guard fixtures against real Gemini (a few cents). It is not part
   of `pnpm test`. Run it whenever `prompts/*/guard-scope` or EDITORIAL.md changes.
 

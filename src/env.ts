@@ -64,6 +64,19 @@ const serverSchema = z.object({
   // emails you. (OPERATIONS.md §2)
   HEALTHCHECK_URL: z.url().optional(),
 
+  // Review notifications — one email per cron run listing drafts awaiting review. Optional:
+  // without SMTP_USER/SMTP_PASSWORD nothing is sent. Gmail needs an App Password, not the login.
+  SMTP_HOST: z.string().min(1).default("smtp.gmail.com"),
+  SMTP_PORT: z.coerce.number().int().positive().default(465),
+  SMTP_USER: optionalSecret,
+  // Gmail shows App Passwords in groups of four ("abcd efgh …"); the spaces aren't part of it.
+  SMTP_PASSWORD: z.preprocess(
+    (value) => (typeof value === "string" ? value.replace(/\s+/g, "") || undefined : value),
+    z.string().min(1).optional(),
+  ),
+  // Comma-separated. Defaults to SMTP_USER — you email yourself.
+  REVIEW_NOTIFY_TO: optionalSecret,
+
   // Later — optional until the newsletter ships.
   RESEND_API_KEY: optionalSecret,
 });

@@ -79,6 +79,7 @@ export type ArticleOutcome =
       runId: string;
       postId: string;
       slug: string;
+      title: string;
       costUsd: number;
       cover: boolean;
     }
@@ -365,7 +366,15 @@ async function runOne(
 
     // 8. Cover — non-fatal: a failure leaves the placeholder and a failed cover run to retry.
     const cover = await attachCover(db, deps, postId, draft, cell.category_name, meter);
-    return { status: "success", runId, postId, slug, costUsd: meter.spent, cover };
+    return {
+      status: "success",
+      runId,
+      postId,
+      slug,
+      title: draft.title,
+      costUsd: meter.spent,
+      cover,
+    };
   } catch (error) {
     const stop = error instanceof Stop ? error : null;
     const message = error instanceof Error ? error.message : String(error);

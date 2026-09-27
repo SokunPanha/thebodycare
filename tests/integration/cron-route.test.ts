@@ -6,7 +6,8 @@ import { status as supabase } from "./local-supabase";
 
 vi.mock("server-only", () => ({}));
 const runPipeline = vi.fn(async () => []);
-vi.mock("@/features/generation", () => ({ runPipeline }));
+const notifyReview = vi.fn(async () => {});
+vi.mock("@/features/generation", () => ({ runPipeline, notifyReview }));
 
 let GET: (request: Request) => Promise<Response>;
 const SECRET = "s".repeat(40);
@@ -42,6 +43,7 @@ describe("GET /api/cron/generate", () => {
     const response = await GET(request(`Bearer ${SECRET}`));
     expect(response.status).toBe(200);
     expect(runPipeline).toHaveBeenCalledOnce();
+    expect(notifyReview).toHaveBeenCalledWith([]);
     expect(await response.json()).toEqual({ outcomes: [] });
   });
 });

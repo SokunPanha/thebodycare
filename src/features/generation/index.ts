@@ -9,4 +9,5 @@ export {
   type GuardResult,
   type ScopeVerdict,
 } from "./steps/guard-scope";
+export { notifyReview, reviewEmail } from "./notify-review";
 export { defaultDeps, runPipeline, type ArticleOutcome, type PipelineDeps } from "./pipeline";
